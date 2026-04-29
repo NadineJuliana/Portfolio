@@ -1,1 +1,16 @@
-@use "./styles/main.scss";
+@use './styles/main.scss';
+
+.theme-light {
+  --text-color: rgb(29, 29, 29);
+  --bg-color: rgb(248, 247, 229);
+}
+
+.theme-dark {
+  --text-color: rgb(248, 247, 229);
+  --bg-color: rgb(29, 29, 29);
+}
+
+.theme-color {
+  --text-color: rgb(248, 247, 229);
+  --bg-color: rgb(33, 56, 48);
+}
