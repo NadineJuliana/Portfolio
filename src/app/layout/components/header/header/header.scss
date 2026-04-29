@@ -1,0 +1,18 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+header.theme-light {
+  color: rgb(29, 29, 29);
+}
+
+header.theme-dark,
+header.theme-color {
+  color: rgb(248, 247, 229);
+}

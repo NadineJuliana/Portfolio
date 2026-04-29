@@ -1,1 +1,4 @@
-<p>header works!</p>
+<header [ngClass]="'theme-' + (theme$ | async)">
+  <div class="logo">Bauer</div>
+  <div class="burger">☰</div>
+</header>
