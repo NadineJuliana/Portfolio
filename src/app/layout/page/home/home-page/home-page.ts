@@ -7,6 +7,7 @@ import { SkillsSection } from '../../../../features/skills/skills-section/skills
 import { ProjectsSection } from '../../../../features/projects/projects-section/projects-section';
 import { ReferencesSection } from '../../../../features/references/references-section/references-section';
 import { ContactSection } from '../../../../features/contact/contact-section/contact-section';
+import { ThemeService } from '../../../../core/services/theme.service';
 
 @Component({
   selector: 'app-home-page',
@@ -15,5 +16,18 @@ import { ContactSection } from '../../../../features/contact/contact-section/con
   styleUrl: './home-page.scss',
 })
 export class HomePage {
+  constructor(private themeService: ThemeService) { }
 
+  ngAfterViewInit() {
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const theme = entry.target.getAttribute('data-theme' as string) as 'light' | 'dark' | 'color';
+          this.themeService.setTheme(theme);
+        }
+      })
+    }, { threshold: 0.6 });
+    sections.forEach(section => observer.observe(section));
+  }
 }
