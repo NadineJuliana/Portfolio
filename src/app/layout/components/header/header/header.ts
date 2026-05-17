@@ -11,8 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class Header {
   theme$: Observable<'light' | 'dark' | 'color'>;
+  heroActive$: Observable<boolean>;
 
   constructor(private themeService: ThemeService) {
     this.theme$ = this.themeService.theme$;
+    this.heroActive$ = this.themeService.heroActive$;
   }
 }
