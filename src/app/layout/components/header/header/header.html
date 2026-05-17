@@ -1,4 +1,13 @@
-<header [ngClass]="'theme-' + (theme$ | async)">
+<header
+  [ngClass]="['theme-' + (theme$ | async), (heroActive$ | async) ? 'hero-active' : 'hero-inactive']"
+>
+  <div class="header-left-links">
+    @if (heroActive$ | async) {
+      <a href="#">Git</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Mail</a>
+    }
+  </div>
   <div class="logo">Bauer</div>
   <div class="burger">☰</div>
 </header>
