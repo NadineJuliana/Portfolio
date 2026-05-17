@@ -25,6 +25,8 @@ export class HomePage {
         if (entry.isIntersecting) {
           const theme = entry.target.getAttribute('data-theme' as string) as 'light' | 'dark' | 'color';
           this.themeService.setTheme(theme);
+          const isHero = entry.target.id === 'hero';
+          this.themeService.setHeroActive(isHero);
         }
       })
     }, { threshold: 0.6 });
