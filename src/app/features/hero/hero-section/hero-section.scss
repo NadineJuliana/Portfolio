@@ -1,0 +1,47 @@
+.greeting {
+  padding-top: 72px;
+  padding-bottom: 40px;
+  width: 460px;
+}
+
+h1 {
+  margin: 8px 0;
+
+  span {
+    display: block;
+    line-height: 1;
+  }
+}
+
+.scroll-down {
+  position: relative;
+  width: 144px;
+  height: 144px;
+  margin-top: 90px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 38px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.spinner {
+  animation: spin 10s linear infinite;
+  width: 144px;
+  height: 144px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
