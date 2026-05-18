@@ -1,20 +1,21 @@
-import { AsyncPipe, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { ThemeService } from './../../../../core/services/theme.service';
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, computed, inject } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, AsyncPipe],
+  imports: [NgClass],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
-  theme$: Observable<'light' | 'dark' | 'color'>;
-  heroActive$: Observable<boolean>;
+  private themeService = inject(ThemeService);
+  readonly theme = this.themeService.theme;
+  readonly isHeroSection = this.themeService.heroActive;
 
-  constructor(private themeService: ThemeService) {
-    this.theme$ = this.themeService.theme$;
-    this.heroActive$ = this.themeService.heroActive$;
+  currentLang: 'de' | 'en' = 'de';
+
+  setLanguage(lang: 'de' | 'en') {
+    this.currentLang = lang;
   }
 }
