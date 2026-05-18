@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
 import { Header } from '../../../components/header/header/header';
 import { Footer } from '../../../components/footer/footer/footer';
 import { HeroSection } from '../../../../features/hero/hero-section/hero-section';
@@ -15,21 +15,26 @@ import { ThemeService } from '../../../../core/services/theme.service';
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
-export class HomePage {
-  constructor(private themeService: ThemeService) { }
+export class HomePage implements AfterViewInit {
+  private themeService = inject(ThemeService);
+  private sectionObserver!: IntersectionObserver;
+
+  @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
+
 
   ngAfterViewInit() {
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
+    this.sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const theme = entry.target.getAttribute('data-theme' as string) as 'light' | 'dark' | 'color';
-          this.themeService.setTheme(theme);
-          const isHero = entry.target.id === 'hero';
-          this.themeService.setHeroActive(isHero);
-        }
-      })
+        if (!entry.isIntersecting) return;
+        const theme = entry.target.getAttribute('data-theme' as string) as 'light' | 'dark' | 'color';
+        this.themeService.setTheme(theme);
+        this.themeService.setHeroActive(entry.target.id === 'hero');
+      });
     }, { threshold: 0.6 });
-    sections.forEach(section => observer.observe(section));
+    this.sections.forEach(section => this.sectionObserver.observe(section.nativeElement));
+  }
+
+  ngOnDestroy() {
+    this.sectionObserver?.disconnect();
   }
 }
