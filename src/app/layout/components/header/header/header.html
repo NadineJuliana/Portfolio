@@ -17,7 +17,13 @@
       </nav>
     }
   </div>
-  <div class="logo"><img src="icons/initials.png" alt="Initials Image" />Bauer</div>
+  @if (!isHeroSection()) {
+    <a href="#hero" class="logo logo-link">
+      <img src="icons/initials.png" alt="Initials Image" />Bauer
+    </a>
+  } @else {
+    <div class="logo"><img src="icons/initials.png" alt="Initials Image" />Bauer</div>
+  }
   <div class="header-right">
     <div class="header-language-switcher">
       @if (currentLang === 'de') {
