@@ -1,7 +1,18 @@
-.greeting {
+.hero-content {
+  display: flex;
+  position: relative;
+  overflow: hidden;
   padding-top: 72px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.greeting {
+  // padding-top: 72px;
   padding-bottom: 40px;
-  width: 460px;
+  // width: 460px;
 }
 
 h1 {
@@ -44,4 +55,39 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.hero-right {
+  flex: 1.5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.star {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+.big-green {
+  bottom: 0;
+  left: 0;
+}
+
+.big-pink{
+  top: 0;
+  right: 0;
+}
+
+.profile-img {
+  position: absolute;
+  bottom: 0;
+  width: 550px;
+  height: 850px;
+  rotate: -15deg;
 }
