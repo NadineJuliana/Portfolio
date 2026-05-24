@@ -8,10 +8,11 @@ import { ProjectsSection } from '../../../../features/projects/projects-section/
 import { ReferencesSection } from '../../../../features/references/references-section/references-section';
 import { ContactSection } from '../../../../features/contact/contact-section/contact-section';
 import { ThemeService } from '../../../../core/services/theme.service';
+import { SideNavigation } from '../../../shared/side-navigation/side-navigation';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Header, Footer, HeroSection, AboutMeSection, SkillsSection, ProjectsSection, ReferencesSection, ContactSection],
+  imports: [Header, Footer, HeroSection, AboutMeSection, SkillsSection, ProjectsSection, ReferencesSection, ContactSection, SideNavigation],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
@@ -29,6 +30,7 @@ export class HomePage implements AfterViewInit {
         const theme = entry.target.getAttribute('data-theme' as string) as 'light' | 'dark' | 'color';
         this.themeService.setTheme(theme);
         this.themeService.setHeroActive(entry.target.id === 'hero');
+        this.themeService.setActiveSection(entry.target.id);
       });
     }, { threshold: 0.6 });
     this.sections.forEach(section => this.sectionObserver.observe(section.nativeElement));
