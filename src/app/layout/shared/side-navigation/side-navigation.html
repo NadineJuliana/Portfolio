@@ -1,1 +1,7 @@
-<p>side-navigation works!</p>
+<nav class="side-nav">
+  @for (section of sections; track section) {
+    <button class="bullet-btn" (click)="scrollToSection(section)" [attr.aria-label]="section">
+      <img [src]="getImage(section)" [alt]="section" />
+    </button>
+  }
+</nav>
