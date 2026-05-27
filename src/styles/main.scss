@@ -1,6 +1,6 @@
-@forward "./abstracts/breakpoints.scss";
-@forward "./abstracts/mixins.scss";
-@forward "./abstracts/variables.scss";
-@forward "./base/fonts.scss";
-@forward "./base/global.scss";
-@forward "./base/typography.scss";
+@use "./abstracts/breakpoints.scss";
+@use "./abstracts/mixins.scss";
+@use "./abstracts/variables.scss";
+@use "./base/fonts.scss";
+@use "./base/global.scss";
+@use "./base/typography.scss";
