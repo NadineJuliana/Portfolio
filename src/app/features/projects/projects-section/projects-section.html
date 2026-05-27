@@ -1,1 +1,41 @@
-<p>projects-section works!</p>
+<div class="projects-content">
+  <div class="projects-header">
+    <h2>My work</h2>
+    <p class="text-header">
+      Explore a selection of my work here - interact with the projects to see my skills in action.
+    </p>
+  </div>
+  <div class="projects-slider">
+    <div class="projects-preview" [style.background]="currentProject.backgroundColor">
+      <img class="project-image" [src]="currentProject.image" alt="Projects Screenshot" />
+      <img class="accent-icon" [src]="currentProject.accentIcon" alt="Accent Icon" />
+    </div>
+    <div class="projects-descriptions">
+      <div class="projects-infos">
+        <div class="infos-header">
+          <h4>{{ currentProject.title }}</h4>
+          <img class="bounce" [src]="currentProject.emoji" alt="Emoji" />
+        </div>
+        <p class="languages">{{ currentProject.languages }}</p>
+        <article>
+          {{ currentProject.description }}
+        </article>
+        <div class="info-buttons">
+          <a class="btn-primary" [href]="currentProject.github" target="_blank">
+            GitHub <img class="arrow default-arrow" src="icons/arrow_right.svg" alt="Arrow" />
+            <img class="arrow hover-arrow" src="icons/arrow_outward.svg" alt="Arrow Hover" />
+          </a>
+          <a class="btn-primary" [href]="currentProject.liveTest" target="_blank">
+            Live Test <img class="arrow default-arrow" src="icons/arrow_right.svg" alt="Arrow" />
+            <img class="arrow hover-arrow" src="icons/arrow_outward.svg" alt="Arrow Hover" />
+          </a>
+        </div>
+      </div>
+      <div class="projects-navlinks">
+        <button (click)="previousProject()"><< Previous project</button>
+
+        <button (click)="nextProject()">Next project >></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+@use '../../../../styles/abstracts/variables.scss' as *;
+
+.projects-content {
+  padding-top: 72px;
+}
+
+.projects-header {
+  width: 942px;
+  height: 102px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  .text-header {
+    width: 600px;
+    p {
+      word-break: break-word;
+    }
+  }
+}
+
+.projects-slider {
+  width: 1216px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.projects-preview {
+  position: relative;
+  width: 488px;
+  height: 488px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $bg-black;
+  border-radius: 4px;
+  .project-image {
+    width: 414px;
+    height: 294px;
+    z-index: 10;
+    border-radius: 4px;
+  }
+  .accent-icon {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.projects-descriptions {
+  width: 688px;
+  height: 422px;
+}
+
+.projects-infos {
+  width: 100%;
+  height: 368px;
+  background-color: $bg-black;
+  color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 32px;
+  margin-bottom: 32px;
+}
+
+.infos-header {
+  display: flex;
+  justify-content: space-between;
+  .bounce {
+    width: 32px;
+    height: 32px;
+    animation: bounce 1s infinite ease-in-out;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.languages {
+  padding: 16px 0;
+  color: $bg-color;
+}
+
+.info-buttons {
+  margin-top: 32px;
+  display: flex;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-right: 32px;
+    .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 14px;
+      height: 14px;
+    }
+    .hover-arrow {
+      display: none;
+    }
+    &:hover {
+      background-color: $highlight-primary;
+      .default-arrow {
+        display: none;
+      }
+
+      .hover-arrow {
+        display: block;
+      }
+    }
+  }
+}
+
+.projects-navlinks {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:hover {
+      color: $highlight-primary;
+    }
+  }
+}
