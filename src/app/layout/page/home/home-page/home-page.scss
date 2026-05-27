@@ -1,6 +1,13 @@
-@use "../../../../../styles.scss" as*;
+@use '../../../../../styles.scss' as *;
 
-.section{
+.section {
   background: var(--bg-color);
   color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
 }
