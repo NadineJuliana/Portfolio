@@ -1,44 +1,46 @@
 <header [ngClass]="['theme-' + theme(), isHeroSection() ? 'hero-active' : 'hero-inactive']">
-  <div class="header-left-links">
-    @if (isHeroSection()) {
-      <nav class="navigation-left">
-        <a href="https://github.com/NadineJuliana"
-          ><img class="icon-default" src="icons/github.svg" alt="GitHub" />
-          <img class="icon-hover" src="icons/github_pink.svg" alt="GitHub"
-        /></a>
-        <a href="https://www.linkedin.com/in/nadine-bauer-1615123b6/"
-          ><img class="icon-default" src="icons/linkedin.svg" alt="LinkedIn" />
-          <img class="icon-hover" src="icons/linkedin_pink.svg" alt="LinkedIn"
-        /></a>
-        <a href="#contact"
-          ><img class="icon-default" src="icons/email.svg" alt="Mail" />
-          <img class="icon-hover" src="icons/email_pink.svg" alt="Mail"
-        /></a>
-      </nav>
-    }
-  </div>
-  @if (!isHeroSection()) {
-    <a href="#hero" class="logo logo-link">
-      <img src="icons/initials.png" alt="Initials Image" />Bauer
-    </a>
-  } @else {
-    <div class="logo"><img src="icons/initials.png" alt="Initials Image" />Bauer</div>
-  }
-  <div class="header-right">
-    <div class="header-language-switcher">
-      @if (currentLang === 'de') {
-        <a (click)="setLanguage('en')">EN</a>
-      } @else {
-        <a (click)="setLanguage('de')">DE</a>
+  <div class="container">
+    <div class="header-left-links">
+      @if (isHeroSection()) {
+        <nav class="navigation-left">
+          <a href="https://github.com/NadineJuliana"
+            ><img class="icon-default" src="icons/github.svg" alt="GitHub" />
+            <img class="icon-hover" src="icons/github_pink.svg" alt="GitHub"
+          /></a>
+          <a href="https://www.linkedin.com/in/nadine-bauer-1615123b6/"
+            ><img class="icon-default" src="icons/linkedin.svg" alt="LinkedIn" />
+            <img class="icon-hover" src="icons/linkedin_pink.svg" alt="LinkedIn"
+          /></a>
+          <a href="#contact"
+            ><img class="icon-default" src="icons/email.svg" alt="Mail" />
+            <img class="icon-hover" src="icons/email_pink.svg" alt="Mail"
+          /></a>
+        </nav>
       }
     </div>
-    <div class="burger">
-      @if (theme() === 'light') {
-        <img class="burgericon-default" src="icons/menu_black.svg" alt="Burger Menu" />
-      } @else {
-        <img class="burgericon-default" src="icons/menu_white.svg" alt="Burger Menu" />
-      }
-      <img class="burgericon-hover" src="icons/menu_pink.svg" alt="Burger Menu" />
+    @if (!isHeroSection()) {
+      <a href="#hero" class="logo logo-link">
+        <img src="icons/initials.png" alt="Initials Image" />Bauer
+      </a>
+    } @else {
+      <div class="logo"><img src="icons/initials.png" alt="Initials Image" />Bauer</div>
+    }
+    <div class="header-right">
+      <div class="header-language-switcher">
+        @if (currentLang === 'de') {
+          <a (click)="setLanguage('en')">EN</a>
+        } @else {
+          <a (click)="setLanguage('de')">DE</a>
+        }
+      </div>
+      <div class="burger">
+        @if (theme() === 'light') {
+          <img class="burgericon-default" src="icons/menu_black.svg" alt="Burger Menu" />
+        } @else {
+          <img class="burgericon-default" src="icons/menu_white.svg" alt="Burger Menu" />
+        }
+        <img class="burgericon-hover" src="icons/menu_pink.svg" alt="Burger Menu" />
+      </div>
     </div>
   </div>
 </header>
