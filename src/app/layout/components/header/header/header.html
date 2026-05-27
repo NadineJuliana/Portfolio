@@ -18,13 +18,10 @@
         </nav>
       }
     </div>
-    @if (!isHeroSection()) {
-      <a href="#hero" class="logo logo-link">
-        <img src="icons/initials.png" alt="Initials Image" />Bauer
-      </a>
-    } @else {
-      <div class="logo"><img src="icons/initials.png" alt="Initials Image" />Bauer</div>
-    }
+    <a href="#hero" class="logo" [class.logo-link]="!isHeroSection()">
+      <img src="icons/initials.png" alt="Initials Image" />
+      Bauer
+    </a>
     <div class="header-right">
       <div class="header-language-switcher">
         @if (currentLang === 'de') {
