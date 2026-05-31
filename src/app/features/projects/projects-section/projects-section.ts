@@ -9,8 +9,8 @@ import { PROJECTS } from './data/projects.data';
 })
 export class ProjectsSection {
   projects = PROJECTS;
-
   currentIndex = 0;
+  showDescription = false;
 
   get currentProject() {
     return this.projects[this.currentIndex];

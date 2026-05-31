@@ -11,10 +11,21 @@
       <img class="accent-icon" [src]="currentProject.accentIcon" alt="Accent Icon" />
     </div>
     <div class="projects-descriptions">
+      @if (showDescription) {
+        <div class="role-description">
+          {{currentProject.roleDescription}}
+        </div>
+      }
       <div class="projects-infos">
         <div class="infos-header">
           <h4>{{ currentProject.title }}</h4>
-          <img class="bounce" [src]="currentProject.emoji" alt="Emoji" />
+          <img
+            class="bounce"
+            [src]="currentProject.emoji"
+            alt="Emoji"
+            (mouseenter)="showDescription = true"
+            (mouseleave)="showDescription = false"
+          />
         </div>
         <p class="languages">{{ currentProject.languages }}</p>
         <article>
