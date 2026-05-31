@@ -30,7 +30,7 @@
           <a (click)="setLanguage('de')">DE</a>
         }
       </div>
-      <div class="burger">
+      <div class="burger" (click)="openMenu()">
         @if (theme() === 'light') {
           <img class="burgericon-default" src="icons/menu_black.svg" alt="Burger Menu" />
         } @else {
@@ -38,6 +38,9 @@
         }
         <img class="burgericon-hover" src="icons/menu_pink.svg" alt="Burger Menu" />
       </div>
+      @if (isMenuOpen) {
+        <app-burger-menu (closeMenu)="closeMenu()"></app-burger-menu>
+      }
     </div>
   </div>
 </header>

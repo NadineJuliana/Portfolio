@@ -121,6 +121,7 @@ header.theme-color {
 }
 
 .header-right {
+  position: relative;
   grid-column: 3;
   justify-self: end;
   display: flex;
