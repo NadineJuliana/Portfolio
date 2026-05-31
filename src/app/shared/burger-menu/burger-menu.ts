@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-burger-menu',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './burger-menu.scss',
 })
 export class BurgerMenu {
+  @Output() closeMenu = new EventEmitter<void>();
+  isMenuOpen = false;
 
+  close(): void {
+    this.closeMenu.emit();
+  }
 }
