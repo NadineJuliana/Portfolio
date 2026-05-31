@@ -11,6 +11,7 @@ export const PROJECTS: Project[] = [
     backgroundColor: '#b9c814 ',
     accentIcon: './icons/star_pink_mid.svg',
     emoji: './icons/checkbox.svg',
+    roleDescription: 'Projekt 1',
 
     github: 'https://github.com/NadineJuliana/Join-Project.git',
     liveTest: 'https://join-2-1224.developerakademie.net/angular-projects/join/login'
@@ -26,6 +27,7 @@ export const PROJECTS: Project[] = [
     backgroundColor: '#ea8eb8',
     accentIcon: './icons/star_green_mid.svg',
     emoji: './icons/chicken.svg',
+    roleDescription: 'Projekt 2',
 
     github: 'https://github.com/NadineJuliana/-El-Pollo-Loco-.git',
     liveTest: 'https://nadine-bauer.developerakademie.net/el-pollo-loco/index.html'
@@ -41,6 +43,7 @@ export const PROJECTS: Project[] = [
     backgroundColor: '#213830',
     accentIcon: './icons/star_pink_mid.svg',
     emoji: './icons/speakbubble.svg',
+    roleDescription: 'Projekt 3',
 
     github: 'https://github.com/NadineJuliana/Pokedex.git',
     liveTest: 'https://nadine-bauer.developerakademie.net/pokedex/index.html'

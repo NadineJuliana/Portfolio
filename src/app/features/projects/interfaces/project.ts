@@ -1,12 +1,14 @@
 export interface Project {
-  image: string;
-  backgroundColor: string;
-  accentIcon: string;
-
   title: string;
-  emoji: string;
   languages: string;
   description: string;
+  image: string;
+
+  backgroundColor: string;
+  accentIcon: string;
+  emoji: string;
+  roleDescription: string;
+
 
   github: string;
   liveTest: string;
