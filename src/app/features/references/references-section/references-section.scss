@@ -1,31 +1,69 @@
-.references-content{
+@use '../../../../styles/abstracts/variables.scss' as *;
+
+.references-content {
   padding-top: 72px;
 }
 
-.references-list{
+.content-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-header img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.reference-content:hover .content-header img {
+  opacity: 1;
+}
+
+.references-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   margin-top: 42px;
+  width: 1216px;
+  height: 472px;
 }
 
-.reference{
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-}
-
-.reference-content{
+.reference {
   width: 384px;
-  border: 1px solid white ;
+}
+
+.reference-content {
+  width: 384px;
+  border: 1px solid $bg-white;
+  border-radius: 4px;
   padding: 32px;
   margin-bottom: 32px;
 }
 
-a{
+a {
   text-decoration: none;
-  color: white;
+  color: $bg-white;
+  display: flex;
+  justify-content: end;
+  &:hover {
+    color: $highlight-primary;
+  }
 }
 
-article{
+article {
   padding: 8px 0;
+}
+
+.first {
+  grid-column: 1;
+}
+
+.second {
+  grid-column: 2;
+  align-self: center;
+}
+
+.third {
+  grid-column: 3;
+  align-self: flex-end;
 }
