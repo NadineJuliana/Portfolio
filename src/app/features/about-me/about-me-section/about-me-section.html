@@ -1,9 +1,9 @@
 <div class="about-me-content">
   <div class="about-me-background">
-    <h2>About Me</h2>
     <div class="profile-image">
       <img src="img/Screenshot_20260428_143624.jpg" alt="Profile Image" />
     </div>
+    <h2>About Me</h2>
   </div>
   <div class="about-me-description">
     <article>
@@ -15,7 +15,42 @@
       <a href="#contact">
         <button class="btn-primary">Let's Talk</button>
       </a>
-      <img class="bounce" src="icons/emoji.svg" alt="Emoji Icon" />
+      <img
+        class="bounce"
+        src="icons/emoji.svg"
+        alt="Emoji Icon"
+        (mouseenter)="showMore = true"
+        (mouseleave)="showMore = false"
+      />
     </div>
+  </div>
+  <div class="about-me-overlay" [class.visible]="showMore">
+    <h4>More about me</h4>
+    <ul>
+      <li>
+        <img src="icons/check_circle.svg" alt="Check Circle" />
+        Team Player
+      </li>
+      <li>
+        <img src="icons/check_circle.svg" alt="Check Circle" />
+        Continuosly learning
+      </li>
+      <li>
+        <img src="icons/check_circle.svg" alt="Check Circle" />
+        Creative Thinker
+      </li>
+      <li>
+        <img src="icons/check_circle.svg" alt="Check Circle" />
+        Based near Munich
+      </li>
+      <li>
+        <img src="icons/check_circle.svg" alt="Check Circle" />
+        Open to work remote
+      </li>
+      <li>
+        <img src="icons/check_circle.svg" alt="Check Circle" />
+        Open to relocate
+      </li>
+    </ul>
   </div>
 </div>

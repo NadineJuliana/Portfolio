@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './about-me-section.scss',
 })
 export class AboutMeSection {
-
+  showMore = false;
 }
