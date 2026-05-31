@@ -1,0 +1,75 @@
+@use '../../../styles/abstracts/variables.scss' as *;
+
+.burgermenu-content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 208px;
+  height: 222px;
+  background-color: $bg-white;
+  padding: 16px;
+  border: 1px solid $bg-black;
+  border-radius: 4px;
+
+  .menu-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h4 {
+      color: rgba(33, 56, 48, 0.5);
+    }
+
+    .close-button {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .close-hover {
+        opacity: 0;
+      }
+
+      &:hover {
+        .close-default {
+          opacity: 0;
+        }
+
+        .close-hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  h6 {
+    color: $bg-black;
+
+    &:hover {
+      color: $bg-color;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-links:hover .menu-icon {
+    display: block;
+  }
+}
