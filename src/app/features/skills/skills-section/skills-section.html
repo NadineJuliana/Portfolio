@@ -11,8 +11,41 @@
   </div>
   <div class="skills-bottom">
     <div class="spinner">
-      <img src="icons/star_pink_mid.svg" alt="Spinner" class="spinner-icon" />
-      <img src="icons/mortarboard.svg" alt="Education Image" class="spinner-img" />
+      <img
+        src="icons/star_pink_mid.svg"
+        alt="Spinner"
+        class="spinner-icon"
+        (mouseenter)="showMore = true"
+        (mouseleave)="showMore = false"
+      />
+      <img
+        src="icons/mortarboard.svg"
+        alt="Education Image"
+        class="spinner-img"
+        (mouseenter)="showMore = true"
+        (mouseleave)="showMore = false"
+      />
+    </div>
+    <div class="more-skills" [class.visible]="showMore">
+      <h4>Don't see the skill you are looking for?</h4>
+      <article>
+        Feel free to contact me. I look forward to expanding on my previous knowledge. Alsi I have a
+        special interest in learning:
+      </article>
+      <div class="more-skills-list">
+        <div class="more-skills-items">
+          <img src="icons/python.svg" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div class="more-skills-items">
+          <img src="icons/django.svg" alt="Django" />
+          <p>Django</p>
+        </div>
+        <div class="more-skills-items">
+          <img src="icons/linux.svg" alt="Linux" />
+          <p>Linux</p>
+        </div>
+      </div>
     </div>
     <div class="skills-list-left">
       <div class="skills-list">

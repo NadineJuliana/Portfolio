@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './skills-section.scss',
 })
 export class SkillsSection {
-
+  showMore = false;
 }
