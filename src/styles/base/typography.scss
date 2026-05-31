@@ -1,4 +1,5 @@
 @use '../base/fonts.scss';
+@use '../abstracts/variables.scss' as *;
 
 body {
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;
@@ -45,10 +46,14 @@ a {
   text-decoration: none;
 }
 
-.btn-primary{
+.btn-primary {
   padding: 12px 24px;
   background: none;
   color: rgb(248, 247, 229);
   border: 1px solid rgb(248, 247, 229);
   border-radius: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: $highlight-primary;
+  }
 }
