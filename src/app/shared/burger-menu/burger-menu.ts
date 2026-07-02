@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-burger-menu',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './burger-menu.html',
   styleUrl: './burger-menu.scss',
 })
