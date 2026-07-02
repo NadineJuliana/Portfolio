@@ -1,0 +1,7 @@
+{
+  "hero": {
+    "greeting": "Hello there! I'm",
+    "role": "Frontend Developer",
+    "contactButton": "Get in Touch"
+  }
+}
