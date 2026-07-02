@@ -3,5 +3,13 @@
     "greeting": "Hallo! Ich bin",
     "role": "Frontend Entwicklerin",
     "contactButton": "Kontakt aufnehmen"
+  },
+    "navigation": {
+    "menu": "Menü",
+    "about": "Über mich",
+    "skills": "Skills",
+    "projects": "Portfolio",
+    "references": "Referenzen",
+    "contact": "Kontakt"
   }
 }

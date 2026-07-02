@@ -3,5 +3,13 @@
     "greeting": "Hello there! I'm",
     "role": "Frontend Developer",
     "contactButton": "Get in Touch"
+  },
+   "navigation": {
+    "menu": "Menu",
+    "about": "About Me",
+    "skills": "Skillset",
+    "projects": "Portfolio",
+    "references": "References",
+    "contact": "Contact me"
   }
 }
