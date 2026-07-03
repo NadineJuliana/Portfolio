@@ -27,5 +27,13 @@
       "Kontinuierliches Lernen",
       "Automotive Background"
     ]
+  },
+  "skills": {
+    "title": "Kernkompetenzen",
+    "description": "In meinen Frontend-Projekten habe ich mit modernen Webtechnologien responsive und interaktive Anwendungen entwickelt. Besonders wichtig sind mir saubere Benutzeroberflächen, wiederverwendbare Komponenten sowie eine kontinuierliche Verbesserung von Benutzerfreundlichkeit und Codequalität.",
+    "overlay": {
+      "title": "Die gesuchte Technologie ist nicht dabei?",
+      "description": "Ich lerne gerne neue Technologien kennen und erweitere kontinuierlich mein Wissen. Besonders diese Themen möchte ich in Zukunft noch weiter vertiefen."
+    }
   }
 }

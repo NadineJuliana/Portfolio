@@ -27,5 +27,13 @@
       "Continuous Learner",
       "Automotive Background"
     ]
+  },
+  "skills": {
+    "title": "Core Competencies",
+    "description": "Throughout my frontend projects, I have worked with modern web technologies to build responsive and interactive applications. I enjoy creating clean user interfaces, developing reusable components and continuously improving both usability and code quality.",
+    "overlay": {
+      "title": "Don't see the skill you're looking for?",
+      "description": "I'm always excited to learn new technologies and expand my skill set. Here are a few topics I'm currently exploring and would love to deepen further."
+    }
   }
 }
