@@ -82,5 +82,23 @@
         "roleDescription": "I worked with API requests, dynamic rendering and interactive UI elements to display structured Pokémon data."
       }
     }
+  },
+  "contact": {
+    "form": {
+      "nameLabel": "What's your name?",
+      "namePlaceholder": "Your name goes here",
+      "nameError": "Oops! It seems your name is missing",
+      "emailLabel": "What's your email?",
+      "emailPlaceholder": "youremail@email.com",
+      "emailError": "Oops! Your email is required",
+      "messageLabel": "How can I help you?",
+      "messagePlaceholder": "Hello Nadine, I am interested in...",
+      "messageError": "What do you need to develop?",
+      "privacyTextBefore": "I've read the",
+      "privacyLink": "privacy policy",
+      "privacyTextAfter": "and agree to the processing of my data.",
+      "privacyError": "Please accept the privacy policy",
+      "submit": "Drop a line"
+    }
   }
 }
