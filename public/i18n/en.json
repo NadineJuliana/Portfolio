@@ -35,5 +35,27 @@
       "title": "Don't see the skill you're looking for?",
       "description": "I'm always excited to learn new technologies and expand my skill set. Here are a few topics I'm currently exploring and would love to deepen further."
     }
+  },
+  "references": {
+    "title": "What my colleagues say about me",
+    "linkedinLabel": "LinkedIn Profile >>",
+    "dominik": {
+      "name": "Dominik K.",
+      "text": "Nadine shows a very good understanding of modern frontend technologies and applies new concepts quickly and purposefully. Her committed, structured way of working as well as her willingness to share knowledge and support others contribute significantly to a positive learning and team atmosphere.",
+      "role": "Team Partner",
+      "linkedin": "https://github.com/DominikKoniorczyk"
+    },
+    "vladislav": {
+      "name": "Vladislav P.",
+      "text": "I worked with Nadine on the JOIN project at Developer Akademie. Working with her was very pleasant and a lot of fun. She made great progress, especially with Angular and her logical thinking, and stands out with her know-how. Nadine is competent, responsible and a great team partner.",
+      "role": "Team Partner",
+      "linkedin": "https://github.com/Vladi079"
+    },
+    "third": {
+      "name": "Coming soon",
+      "text": "This reference will be added soon.",
+      "role": "Team Partner",
+      "linkedin": "https://github.com/NadineJuliana"
+    }
   }
 }

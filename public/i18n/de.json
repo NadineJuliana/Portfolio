@@ -35,5 +35,27 @@
       "title": "Die gesuchte Technologie ist nicht dabei?",
       "description": "Ich lerne gerne neue Technologien kennen und erweitere kontinuierlich mein Wissen. Besonders diese Themen möchte ich in Zukunft noch weiter vertiefen."
     }
+  },
+  "references": {
+    "title": "Was meine Kollegen über mich sagen",
+    "linkedinLabel": "Zum LinkedIn Profil >>",
+    "dominik": {
+      "name": "Dominik K.",
+      "text": "Nadine zeigt ein sehr gutes Verständnis für moderne Frontend-Technologien und setzt neue Konzepte schnell und zielgerichtet um. Ihre engagierte, strukturierte Arbeitsweise sowie ihre Bereitschaft, Wissen zu teilen und andere zu unterstützen, tragen maßgeblich zu einer positiven Lern- und Teamatmosphäre bei.",
+      "role": "Team Partner",
+      "linkedin": "https://github.com/DominikKoniorczyk"
+    },
+    "vladislav": {
+      "name": "Vladislav P.",
+      "text": "Ich habe mit Nadine am Projekt JOIN der Developer Akademie zusammengearbeitet. Die Zusammenarbeit war sehr angenehm und hat viel Spaß gemacht. Sie hat besonders im Bereich Angular und in ihrer logischen Denkweise große Fortschritte gemacht und überzeugt mit ihrem Know-how. Nadine ist kompetent, verantwortungsbewusst und eine tolle Teamkollegin.",
+      "role": "Team Partner",
+      "linkedin": "https://github.com/Vladi079"
+    },
+    "third": {
+      "name": "Kommt bald",
+      "text": "Diese Referenz wird noch ergänzt.",
+      "role": "Team Partner",
+      "linkedin": "https://github.com/NadineJuliana"
+    }
   }
 }
