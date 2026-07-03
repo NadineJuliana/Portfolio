@@ -2,7 +2,7 @@
 
 .contactform-content {
   width: 600px;
-  height: 370px;
+  min-height: 370px;
 
   h4 {
     margin-bottom: 8px;
@@ -72,15 +72,15 @@
     display: flex;
     font-size: 16px;
     display: flex;
-    flex-direction: column;
     margin-bottom: 4px;
     gap: 8px;
   }
 
   label {
-    height: 29px;
-    display: flex;
-    align-items: center;
+    display: block;
+    span {
+      display: inline;
+    }
     a {
       font-size: 16px;
       padding: 0 4px;
@@ -94,9 +94,10 @@
   }
 
   .checkbox-wrapper {
+    flex: 0 0 20px;
     width: 20px;
     height: 20px;
-    margin-right: 8px;
+    margin: 2px 8px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,9 +128,21 @@
   }
 
   .error-label {
-    height: 29px;
+    min-height: 29px;
     display: flex;
     align-items: center;
+    color: $error-color;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .input-error::placeholder {
+    color: $error-color;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   .submit {
