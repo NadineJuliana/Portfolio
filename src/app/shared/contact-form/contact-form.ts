@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -9,6 +10,9 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './contact-form.scss',
 })
 export class ContactForm {
+  private http = inject(HttpClient);
+
+  readonly mailEndpoint = 'send_mail.php';
 
   contactForm = new FormGroup({
     fullname: new FormControl('', {
@@ -45,19 +49,36 @@ export class ContactForm {
     return control.invalid && control.touched;
   }
 
-  formSubmit() {
-    if (this.contactForm.invalid) {
-      this.contactForm.markAllAsTouched();
-      return;
-    }
-
-    console.log(this.contactForm.value);
-
+  private resetForm(): void {
     this.contactForm.reset({
       fullname: '',
       mail: '',
       message: '',
       check: false,
+    });
+  }
+
+  formSubmit() : void {
+    if (this.contactForm.invalid) {
+      this.contactForm.markAllAsTouched();
+      return;
+    }
+
+    const payload = {
+      name: this.fullname.value,
+      email: this.mail.value,
+      message: this.message.value,
+    };
+
+    // console.log(this.contactForm.value);
+
+    this.http.post(this.mailEndpoint, payload, { responseType: 'text' }).subscribe({
+      next: () => {
+        this.resetForm();
+      },
+      error: (error) => {
+        console.error('Error sending email:', error);
+      }
     });
   }
 }
