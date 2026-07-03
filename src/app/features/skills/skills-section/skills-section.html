@@ -1,11 +1,9 @@
 <div class="skills-content">
   <div class="skills-top">
-    <h2>Core Competencies</h2>
+    <h2>{{ 'skills.title' | translate }}</h2>
     <div class="skills-description">
       <article>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed nisi nesciunt
-        sapiente consectetur sunt, ipsam repellendus corporis ut. Dolorum, laudantium odio impedit
-        assumenda voluptatem optio accusamus quidem nihil tempore?
+        {{ 'skills.description' | translate }}
       </article>
     </div>
   </div>
@@ -27,10 +25,9 @@
       />
     </div>
     <div class="more-skills" [class.visible]="showMore">
-      <h4>Don't see the skill you are looking for?</h4>
+      <h4>{{ 'skills.overlay.title' | translate }}</h4>
       <article>
-        Feel free to contact me. I look forward to expanding on my previous knowledge. Alsi I have a
-        special interest in learning:
+        {{ 'skills.overlay.description' | translate }}
       </article>
       <div class="more-skills-list">
         <div class="more-skills-items">
