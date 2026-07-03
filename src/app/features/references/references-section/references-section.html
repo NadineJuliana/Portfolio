@@ -1,52 +1,52 @@
 <div class="references-content">
-  <h2>What my colleagues say about me</h2>
+  <h2>{{ 'references.title' | translate }}</h2>
   <div class="references-list">
     <div class="reference first">
       <div class="reference-content">
         <div class="content-header">
-          <h4>Jhon Doe</h4>
+          <h4>{{ 'references.dominik.name' | translate }}</h4>
           <img src="icons/star_pink_mid.svg" alt="Star Icon" />
         </div>
         <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad impedit eligendi accusamus
-          saepe facere! Qui dolorum numquam soluta omnis, ipsum impedit fugiat dicta quibusdam
-          tenetur similique dolor delectus quos praesentium!
+          {{ 'references.dominik.text' | translate }}
         </article>
-        <h4>Team Partner</h4>
+        <h4>{{ 'references.dominik.role' | translate }}</h4>
       </div>
-      <a href="">Zum LinkedIn Profile >></a>
+      <a [href]="'references.dominik.linkedin' | translate" target="_blank">{{
+        'references.linkedinLabel' | translate
+      }}</a>
     </div>
 
     <div class="reference second">
       <div class="reference-content">
         <div class="content-header">
-          <h4>Jhon Doe</h4>
+          <h4>{{ 'references.vladislav.name' | translate }}</h4>
           <img src="icons/star_pink_mid.svg" alt="Star Icon" />
         </div>
         <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad impedit eligendi accusamus
-          saepe facere! Qui dolorum numquam soluta omnis, ipsum impedit fugiat dicta quibusdam
-          tenetur similique dolor delectus quos praesentium!
+          {{ 'references.vladislav.text' | translate }}
         </article>
-        <h4>Team Partner</h4>
+        <h4>{{ 'references.vladislav.role' | translate }}</h4>
       </div>
-      <a href="">Zum LinkedIn Profile >></a>
+      <a [href]="'references.vladislav.linkedin' | translate" target="_blank">{{
+        'references.linkedinLabel' | translate
+      }}</a>
     </div>
 
     <div class="reference third">
       <div class="reference-content">
         <div class="content-header">
-          <h4>Jhon Doe</h4>
+          <h4>{{ 'references.third.name' | translate }}</h4>
           <img src="icons/star_pink_mid.svg" alt="Star Icon" />
         </div>
         <article>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, harum doloremque autem
-          expedita officia voluptatum eius rem nam saepe nihil nulla voluptatem aut, iure ullam
-          explicabo eligendi provident quis molestiae?
+          {{ 'references.third.text' | translate }}
         </article>
-        <h4>Team Partner</h4>
+        <h4>{{ 'references.third.role' | translate }}</h4>
       </div>
-      <a href="">Zum LinkedIn Profile >></a>
+      <a [href]="'references.third.linkedin' | translate" target="_blank">{{
+        'references.linkedinLabel' | translate
+      }}</a>
     </div>
   </div>
 </div>
