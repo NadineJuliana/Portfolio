@@ -1,5 +1,5 @@
 export interface Project {
-  title: string;
+  translationKey: string;
   languages: string;
   description: string;
   image: string;
@@ -7,8 +7,6 @@ export interface Project {
   backgroundColor: string;
   accentIcon: string;
   emoji: string;
-  roleDescription: string;
-
 
   github: string;
   liveTest: string;
