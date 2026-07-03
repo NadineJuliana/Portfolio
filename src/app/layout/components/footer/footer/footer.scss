@@ -1,22 +1,23 @@
 @use '../../../../../styles/abstracts/variables.scss' as *;
 
-footer{
+footer {
   width: 739px;
   height: 19px;
   display: flex;
   justify-content: space-between;
-  .footer-links{
+  color: $bg-white;
+  .footer-links {
     width: 259px;
     height: 19px;
     display: flex;
     justify-content: space-between;
   }
-  a{
+  a {
     color: $bg-white;
     font-size: 16px;
     font-weight: 300;
     text-decoration: none;
-    &:hover{
+    &:hover {
       color: $highlight-primary;
     }
   }
