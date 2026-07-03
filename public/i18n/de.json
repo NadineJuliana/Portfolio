@@ -4,12 +4,28 @@
     "role": "Frontend Entwicklerin",
     "contactButton": "Kontakt aufnehmen"
   },
-    "navigation": {
+  "navigation": {
     "menu": "Menü",
     "about": "Über mich",
     "skills": "Skills",
     "projects": "Portfolio",
     "references": "Referenzen",
     "contact": "Kontakt"
+  },
+  "about": {
+    "title": "Über mich",
+    "greeting": "Hi, ich bin Nadine.",
+    "paragraph1": "Als ehemalige Kfz-Mechatronikerin habe ich meine Begeisterung für Softwareentwicklung durch meine Leidenschaft für technische Systeme und strukturierte Problemlösung entdeckt. Heute entwickle ich moderne Webanwendungen mit Angular und erweitere kontinuierlich meine Kenntnisse im Frontend- und Backend-Bereich.",
+    "paragraph2": "Mich begeistert nicht nur das Programmieren selbst, sondern vor allem das Verstehen komplexer Zusammenhänge. Ich lerne gerne neue Technologien kennen, verbessere meinen Code kontinuierlich und lege Wert auf saubere, wartbare Lösungen.",
+    "button": "Lass uns sprechen",
+    "overlayTitle": "Mehr über mich",
+    "facts": [
+      "Nähe München",
+      "Offen für Remote-Arbeit",
+      "Umzugsbereit",
+      "Analytische Denkweise",
+      "Kontinuierliches Lernen",
+      "Automotive Background"
+    ]
   }
 }

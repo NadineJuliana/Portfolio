@@ -4,12 +4,28 @@
     "role": "Frontend Developer",
     "contactButton": "Get in Touch"
   },
-   "navigation": {
+  "navigation": {
     "menu": "Menu",
     "about": "About Me",
     "skills": "Skillset",
     "projects": "Portfolio",
     "references": "References",
     "contact": "Contact me"
+  },
+  "about": {
+    "title": "About Me",
+    "greeting": "Hi, I'm Nadine.",
+    "paragraph1": "As a former automotive mechatronics technician, I discovered my passion for software development through my enthusiasm for technical systems and structured problem-solving. Today, I build modern web applications with Angular while continuously expanding my frontend and backend skills.",
+    "paragraph2": "What excites me most isn't just writing code—it's understanding how complex systems work. I enjoy learning new technologies, continuously improving my code and creating clean, maintainable solutions.",
+    "button": "Let's Talk",
+    "overlayTitle": "More about me",
+    "facts": [
+      "Based near Munich",
+      "Open to Remote Work",
+      "Open to relocate",
+      "Analytical Mindset",
+      "Continuous Learner",
+      "Automotive Background"
+    ]
   }
 }
