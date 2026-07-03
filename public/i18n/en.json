@@ -103,5 +103,8 @@
       "privacyError": "Please accept the privacy policy",
       "submit": "Drop a line"
     }
+  },
+  "footer": {
+    "imprint": "Imprint"
   }
 }

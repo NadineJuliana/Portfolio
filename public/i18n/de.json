@@ -103,5 +103,8 @@
       "privacyError": "Bitte akzeptiere die Datenschutzerklärung",
       "submit": "Nachricht senden"
     }
+  },
+  "footer": {
+    "imprint": "Impressum"
   }
 }
