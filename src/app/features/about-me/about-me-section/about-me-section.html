@@ -3,18 +3,20 @@
     <img src="img/Screenshot_20260428_143624.jpg" alt="Profile Image" />
   </div>
   <div class="headline">
-    <h2>About Me</h2>
+    <h2>{{ 'about.title' | translate }}</h2>
   </div>
 
   <div class="about-me-description">
     <article>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi architecto cum voluptatem et
-      molestias fuga laboriosam facilis, asperiores, non numquam quam dolorem similique
-      consequuntur, laborum iste deleniti ut facere nobis.
+      <p>{{ 'about.greeting' | translate }}</p>
+
+      <p>{{ 'about.paragraph1' | translate }}</p>
+
+      <p>{{ 'about.paragraph2' | translate }}</p>
     </article>
     <div class="description-footer">
       <a href="#contact">
-        <button class="btn-primary">Let's Talk</button>
+        <button class="btn-primary">{{ 'about.button' | translate }}</button>
       </a>
       <img
         class="bounce"
@@ -26,32 +28,14 @@
     </div>
   </div>
   <div class="about-me-overlay" [class.visible]="showMore">
-    <h4>More about me</h4>
+    <h4>{{ 'about.overlayTitle' | translate }}</h4>
     <ul>
-      <li>
-        <img src="icons/check_circle.svg" alt="Check Circle" />
-        Team Player
-      </li>
-      <li>
-        <img src="icons/check_circle.svg" alt="Check Circle" />
-        Continuosly learning
-      </li>
-      <li>
-        <img src="icons/check_circle.svg" alt="Check Circle" />
-        Creative Thinker
-      </li>
-      <li>
-        <img src="icons/check_circle.svg" alt="Check Circle" />
-        Based near Munich
-      </li>
-      <li>
-        <img src="icons/check_circle.svg" alt="Check Circle" />
-        Open to work remote
-      </li>
-      <li>
-        <img src="icons/check_circle.svg" alt="Check Circle" />
-        Open to relocate
-      </li>
+      @for (fact of 'about.facts' | translate; track fact) {
+        <li>
+          <img src="icons/check_circle.svg" alt="Check Circle" />
+          {{ fact }}
+        </li>
+      }
     </ul>
   </div>
 </div>

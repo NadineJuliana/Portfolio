@@ -39,15 +39,17 @@ article {
   padding-bottom: 32px;
 }
 
+p{
+  margin-bottom: 12px;
+}
+
 .about-me-description {
   position: absolute;
-  top: 128px;
-  left: 442px;
-  top: 40%;
-  left: 65%;
+  top: 45%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: 600px;
-  height: 250px;
+  min-height: 250px;
   padding: 32px;
   background-color: $bg-black;
   color: $bg-white;
@@ -81,15 +83,15 @@ article {
 
 .about-me-overlay {
   width: 272px;
-  height: 263px;
+  min-height: 260px;
   padding: 32px;
   color: $bg-white;
   background-color: $highlight-primary;
   border-radius: 4px;
   border: 1px solid $bg-black;
   position: absolute;
-  right: 32px;
-  bottom: 80px;
+  right: 40px;
+  bottom: 40px;
   opacity: 0;
   transform: translateY(100vh);
 
