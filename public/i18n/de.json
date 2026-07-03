@@ -84,6 +84,9 @@
     }
   },
   "contact": {
+    "title": "Lass uns gemeinsam etwas Cooles entwickeln!",
+    "subtitle": "Du hast ein Problem zu lösen?",
+    "text": "Ich suche aktuell nach Einstiegsmöglichkeiten als Junior Frontend Entwicklerin mit wachsendem Fokus auf Fullstack Development. Wenn du jemanden suchst, der sauberen Code, strukturierte Problemlösung und die kontinuierliche Verbesserung von Lösungen schätzt, freue ich mich über deine Nachricht.",
     "form": {
       "nameLabel": "Wie heißt du?",
       "namePlaceholder": "Dein Name",

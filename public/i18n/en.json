@@ -84,6 +84,9 @@
     }
   },
   "contact": {
+    "title": "Let's build something cool together!",
+    "subtitle": "Got a problem to solve?",
+    "text": "I'm currently looking for opportunities as a Junior Frontend Developer, with a growing focus on fullstack development. If you are looking for someone who enjoys clean code, structured problem-solving and continuously improving solutions, feel free to contact me.",
     "form": {
       "nameLabel": "What's your name?",
       "namePlaceholder": "Your name goes here",
