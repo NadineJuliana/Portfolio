@@ -1,8 +1,8 @@
 <div class="projects-content">
   <div class="projects-header">
-    <h2>My work</h2>
+    <h2>{{ 'projects.title' | translate }}</h2>
     <p class="text-header">
-      Explore a selection of my work here - interact with the projects to see my skills in action.
+      {{ 'projects.intro' | translate }}
     </p>
   </div>
   <div class="projects-slider">
@@ -13,12 +13,12 @@
     <div class="projects-descriptions">
       @if (showDescription) {
         <div class="role-description">
-          {{currentProject.roleDescription}}
+          {{ currentProjectKey + '.roleDescription' | translate }}
         </div>
       }
       <div class="projects-infos">
         <div class="infos-header">
-          <h4>{{ currentProject.title }}</h4>
+          <h4>{{ currentProjectKey + '.title' | translate }}</h4>
           <img
             class="bounce"
             [src]="currentProject.emoji"
@@ -29,7 +29,7 @@
         </div>
         <p class="languages">{{ currentProject.languages }}</p>
         <article>
-          {{ currentProject.description }}
+          {{ currentProjectKey + '.description' | translate }}
         </article>
         <div class="info-buttons">
           <a class="btn-primary" [href]="currentProject.github" target="_blank">
@@ -43,9 +43,9 @@
         </div>
       </div>
       <div class="projects-navlinks">
-        <button (click)="previousProject()"><< Previous project</button>
+        <button (click)="previousProject()">{{ 'projects.navigation.previous' | translate }}</button>
 
-        <button (click)="nextProject()">Next project >></button>
+        <button (click)="nextProject()">{{ 'projects.navigation.next' | translate }}</button>
       </div>
     </div>
   </div>

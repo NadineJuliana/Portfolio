@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { PROJECTS } from './data/projects.data';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects-section',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './projects-section.html',
   styleUrl: './projects-section.scss',
 })
@@ -14,6 +15,10 @@ export class ProjectsSection {
 
   get currentProject() {
     return this.projects[this.currentIndex];
+  }
+
+  get currentProjectKey(): string {
+    return `projects.items.${this.currentProject.translationKey}`;
   }
 
   nextProject() {
