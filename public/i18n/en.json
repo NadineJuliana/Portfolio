@@ -57,5 +57,30 @@
       "role": "Team Partner",
       "linkedin": "https://github.com/NadineJuliana"
     }
+  },
+  "projects": {
+    "title": "My work",
+    "intro": "Explore a selection of my work here — interact with the projects to see my skills in action.",
+    "navigation": {
+      "previous": "<< Previous project",
+      "next": "Next project >>"
+    },
+    "items": {
+      "join": {
+        "title": "Join",
+        "description": "Task management app inspired by Kanban.",
+        "roleDescription": "In this group project, I focused on implementing core Angular functionality, working with Supabase and building interactive task management features."
+      },
+      "elPolloLoco": {
+        "title": "El Pollo Loco",
+        "description": "A 2D jump-and-run game built with JavaScript, HTML and CSS.",
+        "roleDescription": "I developed game logic, character movement, collision detection and interactive gameplay mechanics using object-oriented JavaScript."
+      },
+      "pokedex": {
+        "title": "Pokedex",
+        "description": "A Pokédex application that fetches and displays Pokémon data from an external API.",
+        "roleDescription": "I worked with API requests, dynamic rendering and interactive UI elements to display structured Pokémon data."
+      }
+    }
   }
 }
