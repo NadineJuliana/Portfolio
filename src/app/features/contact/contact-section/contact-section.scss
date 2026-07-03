@@ -9,7 +9,7 @@
   h2 {
     color: $highlight-secondary;
     line-height: 1;
-    margin-bottom: 64px;
+    margin-bottom: 52px;
   }
   h4 {
     color: $highlight-primary;
@@ -25,6 +25,11 @@
 .contact-header {
   width: 528px;
   height: 382px;
+}
+
+.contact-header h2 {
+  width: fit-content;
+  min-width: 650px;
 }
 
 .contactform {
