@@ -1,6 +1,8 @@
+@use '../../../../styles/abstracts/breakpoints.scss' as *;
+
 .side-nav {
   position: fixed;
-  right: 72px;
+  right: max(0px, calc((100vw - 1440px) / 2));
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -23,4 +25,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: $bp-xl) {
+  .side-nav {
+    right: max(72px, calc((100vw - 1440px) / 2 + 72px));
+  }
+}
+
+@media (max-width: $bp-lg) {
+  .side-nav {
+    display: none;
+  }
 }
