@@ -1,4 +1,5 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
+@use '../../../../styles/abstracts/breakpoints.scss' as *;
 
 .contact-content {
   display: flex;
@@ -154,5 +155,11 @@ app-footer {
 
   60% {
     transform: translateY(-10px) scaleY(1.25);
+  }
+}
+
+@media (max-width: $bp-xl) {
+  .scroll-top {
+    right: -5px;
   }
 }
