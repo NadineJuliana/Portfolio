@@ -1,4 +1,5 @@
 @use '../../../styles/abstracts/variables.scss' as *;
+@use '../../../styles/abstracts/breakpoints.scss' as *;
 
 .burgermenu-content {
   position: absolute;
@@ -71,5 +72,81 @@
 
   .nav-links:hover .menu-icon {
     display: block;
+  }
+
+  .mobile-social-links {
+    display: none;
+  }
+}
+
+@media (min-width: $bp-sm) and (max-width: 1023px) {
+  .burgermenu-content {
+    height: 270px;
+
+    .mobile-social-links {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-top: auto;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-xs) and (max-width: $bp-sm) {
+  .burgermenu-content {
+    width: 208px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+
+    .page-nav-links {
+      flex: 1;
+    }
+
+    .mobile-social-links {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-top: auto;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    h6:hover {
+      color: $bg-black;
+    }
+
+    .nav-links:hover .menu-icon {
+      display: none;
+    }
+
+    .close-button:hover {
+      .close-default {
+        opacity: 1;
+      }
+
+      .close-hover {
+        opacity: 0;
+      }
+    }
   }
 }
