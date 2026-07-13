@@ -1,4 +1,5 @@
 @use '../../../../../styles/abstracts/variables.scss' as *;
+@use '../../../../../styles/abstracts/breakpoints.scss' as *;
 
 a {
   text-decoration: none;
@@ -117,7 +118,7 @@ header.theme-color {
 }
 
 .hero-inactive .logo {
-  transform: translateX(-600px) scale(1);
+  transform: translateX(clamp(-600px, calc(-400px - (100vw - 1024px) * 0.4808), -400px)) scale(1);
 }
 
 .header-right {

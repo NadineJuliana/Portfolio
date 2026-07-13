@@ -2,7 +2,7 @@
 
 .side-nav {
   position: fixed;
-  right: max(0px, calc((100vw - 1440px) / 2));
+  right: max(16px, calc((100vw - 1440px) / 2 + 16px));
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -27,9 +27,15 @@
   align-items: center;
 }
 
-@media (max-width: $bp-xl) {
+@media (max-width: $bp-xxl) {
   .side-nav {
     right: max(72px, calc((100vw - 1440px) / 2 + 72px));
+  }
+}
+
+@media (min-width: $bp-lg) and (max-width: $bp-xl)  {
+  .side-nav {
+    right: max(24px, calc((100vw - 1440px) / 2 + 24px));
   }
 }
 

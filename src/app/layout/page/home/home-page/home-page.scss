@@ -1,4 +1,5 @@
 @use '../../../../../styles.scss' as *;
+@use '../../../../../styles/abstracts/breakpoints.scss' as *;
 
 .section {
   background: var(--bg-color);
@@ -13,7 +14,8 @@
   max-width: 1440px;
   width: 100%;
   height: 100%;
-  padding: 160px 72px 0 112px;
+  // padding: 160px 72px 0 112px;
+  padding: 160px clamp(32px, 5vw, 72px) 0 clamp(48px, 8vw, 112px);
 }
 
 app-hero-section,
@@ -27,4 +29,10 @@ app-contact-section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: $bp-xl) {
+  .container {
+    padding: 110px 42px 0 42px;
+  }
 }

@@ -1,7 +1,8 @@
 @use '../../../../../styles/abstracts/variables.scss' as *;
+@use '../../../../../styles/abstracts/breakpoints.scss' as *;
 
 footer {
-  width: 739px;
+  width: 740px;
   height: 19px;
   display: flex;
   justify-content: space-between;
@@ -20,5 +21,11 @@ footer {
     &:hover {
       color: $highlight-primary;
     }
+  }
+}
+
+@media (min-width: $bp-lg) and (max-width: $bp-xxl) {
+  footer {
+    width: clamp(500px, calc(500px + (100vw - 1024px) * 0.5769), 740px);
   }
 }
