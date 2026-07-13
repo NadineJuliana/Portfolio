@@ -3,11 +3,12 @@ import { Header } from '../../../layout/components/header/header/header';
 import { Footer } from '../../../layout/components/footer/footer/footer';
 import { ThemeService } from '../../../core/services/theme.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-privacypolicy-page',
-  imports: [Header, Footer, TranslatePipe],
+  imports: [Header, Footer, TranslatePipe, RouterLink],
   templateUrl: './privacypolicy-page.html',
   styleUrl: './privacypolicy-page.scss',
 })
@@ -17,6 +18,5 @@ export class PrivacypolicyPage {
   ngOnInit() {
     this.themeService.setTheme('dark');
     this.themeService.setHeroActive(false);
-    this.themeService.setActiveSection('imprint');
   }
 }

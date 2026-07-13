@@ -4,10 +4,11 @@ import { Footer } from '../../../layout/components/footer/footer/footer';
 import { Header } from '../../../layout/components/header/header/header';
 import { ThemeService } from '../../../core/services/theme.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-imprint-page',
-  imports: [Header, Footer, TranslatePipe],
+  imports: [Header, Footer, TranslatePipe, RouterLink],
   templateUrl: './imprint-page.html',
   styleUrl: './imprint-page.scss',
 })

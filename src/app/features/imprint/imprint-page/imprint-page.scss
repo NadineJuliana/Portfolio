@@ -1,4 +1,5 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
+@use '../../../../styles/abstracts/breakpoints.scss' as *;
 
 :host ::ng-deep .portfolio-highlight {
   color: $highlight-primary;
@@ -23,6 +24,11 @@
     margin-top: 24px;
   }
 
+  h5 {
+    color: $highlight-secondary;
+    margin-top: 24px;
+  }
+
   ul {
     margin-top: 24px;
   }
@@ -36,6 +42,10 @@
   }
 }
 
+.arrow {
+  display: none;
+}
+
 .imprint-section {
   display: flex;
   justify-content: center;
@@ -45,14 +55,16 @@
   .container {
     max-width: 1440px;
     width: 100%;
-    padding: 160px 72px 80px 112px;
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
 
+    .content {
+      padding: 160px 72px 80px 112px;
+    }
+
     .imprint-content {
       flex: 1;
-      margin-bottom: 40px;
     }
   }
 }
@@ -61,11 +73,13 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
+  padding: 0 72px 80px 112px;
 
   .animation-wrapper {
     position: relative;
-    width: 374px;
-    height: 263px;
+    width: 375px;
+    height: 265px;
+    max-width: 100%;
     .pink-star {
       width: 180px;
       height: 180px;
@@ -76,8 +90,8 @@
     }
 
     .green-star {
-      width: 263px;
-      height: 263px;
+      width: 265px;
+      height: 265px;
       position: absolute;
       right: 0;
       top: 0;
@@ -102,5 +116,84 @@
   }
   100% {
     transform: rotate(-360deg);
+  }
+}
+
+@media (min-width: $bp-xs) and (max-width: 1023px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    app-footer {
+      order: 1;
+      width: 100%;
+    }
+
+    .animation-wrapper {
+      order: 2;
+      width: clamp(300px, 80vw, 375px);
+      height: clamp(240px, 60vw, 265px);
+
+      .pink-star {
+        width: clamp(160px, 38vw, 180px);
+        height: clamp(160px, 38vw, 180px);
+      }
+
+      .green-star {
+        width: clamp(240px, 56vw, 263px);
+        height: clamp(240px, 56vw, 263px);
+      }
+    }
+  }
+  .arrow {
+    height: 32px;
+    width: 48px;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 24px;
+
+    img {
+      display: block;
+      transform: rotate(-90deg);
+      width: 16px;
+    }
+  }
+}
+
+@media (min-width: $bp-sm) and (max-width: $bp-md) {
+  .imprint-section {
+    .container {
+      .content {
+        padding: 120px 48px 48px 48px;
+      }
+    }
+  }
+  .footer-wrapper {
+    padding: 0 48px 48px 48px;
+  }
+}
+
+@media (min-width: $bp-xs) and (max-width: $bp-sm) {
+  .imprint-section {
+    .container {
+      .content {
+        padding: 120px 24px 48px 24px;
+      }
+    }
+  }
+  .footer-wrapper {
+    padding: 0 8px 0 8px;
+    .animation-wrapper {
+      .pink-star,
+      .green-star {
+        animation: none;
+      }
+    }
+  }
+  .arrow {
+    img {
+      width: 8px;
+    }
   }
 }
