@@ -1,23 +1,27 @@
+@use '../../../../styles/abstracts/breakpoints.scss' as *;
+
 .hero-content {
   display: flex;
   position: relative;
   overflow: hidden;
   width: 100%;
+  max-height: 710px;
 }
 
 .hero-left {
-  width: 456px;
+  max-width: 450px;
 }
 
 .greeting {
-  margin-bottom: 40px;
-  min-height: 304px;
+  margin-bottom: clamp(24px, 3vw, 40px);
+  min-height: clamp(240px, 22vw, 304px);
   line-height: 1;
 }
 
 .wrapper-name {
-  width: 455px;
+  width: clamp(360px, 32vw, 456px);
   height: 192px;
+  min-height: clamp(144px, 14vw, 192px);
   overflow-wrap: break-word;
 
   h1 {
@@ -27,9 +31,9 @@
 
 .scroll-down {
   position: relative;
-  width: 144px;
-  height: 144px;
-  margin-top: 90px;
+  width: clamp(104px, 10vw, 144px);
+  height: clamp(104px, 10vw, 144px);
+  margin-top: clamp(48px, 6vw, 90px);
 }
 
 .arrow {
@@ -37,7 +41,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
+  width: clamp(32px, 3vw, 40px);
   height: 38px;
   z-index: 10;
   pointer-events: none;
@@ -45,8 +49,8 @@
 
 .spinner {
   animation: spin 10s linear infinite;
-  width: 144px;
-  height: 144px;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes spin {
@@ -60,13 +64,16 @@
 
 .hero-right {
   position: relative;
-  width: 720px;
-  height: 100%;
+  width: clamp(660px, 50vw, 720px);
+  max-height: clamp(700px, 51vw, 710px);
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
 .star {
-  width: 500px;
-  height: 500px;
+  width: clamp(450px, 35vw, 500px);
+  height: clamp(450px, 35vw, 500px);
   position: absolute;
 }
 
@@ -81,9 +88,20 @@
 }
 
 .profile-img {
-  z-index: 1;
-  width: 720px;
-  height: 740px;
+  z-index: 999;
+  width: 90%;
+  height: 90%;
   object-fit: contain;
-  rotate: -15deg;
+}
+
+
+@media (min-width: $bp-lg) and (max-width: 1439px) {
+  .hero-left {
+    max-width: 380px;
+  }
+
+  .hero-right {
+    position: relative;
+    max-width: 630px;
+  }
 }

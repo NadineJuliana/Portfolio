@@ -1,4 +1,5 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
+@use '../../../../styles/abstracts/breakpoints.scss' as *;
 
 .projects-content {
   display: flex;
@@ -9,14 +10,16 @@
 }
 
 .projects-header {
-  min-width: 942px;
+  width: 100%;
+  max-width: 1216px;
   height: 102px;
   display: flex;
   align-items: center;
   gap: 40px;
   margin-bottom: 40px;
   .text-header {
-    width: 600px;
+    flex: 1;
+    width: clamp(320px, calc(320px + (100vw - 1024px) * 0.6731), 600px);
     p {
       word-break: break-word;
     }
@@ -24,7 +27,8 @@
 }
 
 .projects-slider {
-  width: 1216px;
+  width: 100%;
+  max-width: 1216px;
   display: flex;
   gap: 40px;
   align-items: center;
@@ -43,6 +47,7 @@
   .project-image {
     width: 414px;
     height: 294px;
+    object-fit: cover;
     z-index: 10;
     border-radius: 4px;
   }
@@ -107,7 +112,6 @@
 
 .languages {
   padding: 16px 0;
-  // color: $bg-color;
   color: $highlight-secondary;
 }
 
@@ -154,5 +158,50 @@
     &:hover {
       color: $highlight-primary;
     }
+  }
+}
+
+@media (min-width: $bp-xl) and (max-width: 1439px) {
+  .projects-descriptions {
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: $bp-lg) and (max-width: 1439px) {
+  .projects-header {
+    gap: clamp(24px, calc(24px + (100vw - 1024px) * 0.0385), 40px);
+
+    .text-header {
+      width: clamp(320px, calc(320px + (100vw - 1024px) * 0.6731), 600px);
+    }
+  }
+  .projects-slider {
+    gap: clamp(24px, calc(24px + (100vw - 1024px) * 0.0385), 40px);
+  }
+  .projects-preview {
+    width: clamp(360px, calc(360px + (100vw - 1024px) * 0.3077), 488px);
+    height: clamp(360px, calc(360px + (100vw - 1024px) * 0.3077), 488px);
+    .project-image {
+      width: clamp(300px, calc(300px + (100vw - 1024px) * 0.274), 414px);
+      height: auto;
+      aspect-ratio: 414 / 294;
+    }
+  }
+  .projects-descriptions {
+    width: clamp(500px, calc(500px + (100vw - 1024px) * 0.4519), 688px);
+    height: calc(500px - (100vw - 1024px) * 0.1875);
+
+    .role-description {
+      right: clamp(16px, calc(16px + (100vw - 1024px) * 0.0385), 32px);
+      width: calc(100% - 64px);
+      max-width: 520px;
+      padding: clamp(24px, calc(24px + (100vw - 1024px) * 0.0192), 32px);
+    }
+  }
+  .projects-infos {
+    height: auto;
+    min-height: 368px;
+    flex: 1;
+    padding-inline: clamp(24px, calc(24px + (100vw - 1024px) * 0.0192), 32px);
   }
 }

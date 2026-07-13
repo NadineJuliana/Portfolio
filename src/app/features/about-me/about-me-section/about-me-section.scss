@@ -1,4 +1,5 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
+@use '../../../../styles/abstracts/breakpoints.scss' as *;
 
 .about-me-content {
   display: flex;
@@ -9,7 +10,6 @@
   height: 100%;
   max-height: 710px;
 }
-
 
 .profile-image {
   position: absolute;
@@ -39,7 +39,7 @@ article {
   padding-bottom: 32px;
 }
 
-p{
+p {
   margin-bottom: 12px;
 }
 
@@ -110,5 +110,27 @@ p{
   li {
     list-style: none;
     margin-bottom: 8px;
+  }
+}
+
+@media (min-width: $bp-xl) and (max-width: 1439px) {
+  .about-me-description {
+    left: 70%;
+    width: 550px;
+  }
+  .about-me-overlay {
+    right: 40px;
+    bottom: 15px;
+  }
+}
+
+@media (min-width: $bp-lg) and (max-width: $bp-xl) {
+  .about-me-description {
+    left: 70%;
+    width: 450px;
+  }
+  .about-me-overlay {
+    right: -10px;
+    bottom: -15px;
   }
 }

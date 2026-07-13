@@ -21,19 +21,24 @@
 .contact-wrapper {
   display: flex;
   gap: 60px;
+  width: 100%;
 }
 
 .contact-header {
-  width: 528px;
-  height: 382px;
+  flex: 0 0 clamp(400px, calc(400px + (100vw - 1200px) * 0.5333), 528px);
+  max-width: 528px;
+  min-width: 0;
+  height: 100%;
 }
 
 .contact-header h2 {
-  width: fit-content;
-  min-width: 650px;
+  width: 650px;
+  max-width: none;
 }
 
 .contactform {
+  flex: 1 1 auto;
+  min-width: 0;
   padding-top: 210px;
 }
 
@@ -44,7 +49,7 @@
   .animation-wrapper {
     position: relative;
     width: 374px;
-    height: 263px;
+    height: 264px;
     .pink-star {
       width: 180px;
       height: 180px;
@@ -55,8 +60,8 @@
     }
 
     .green-star {
-      width: 263px;
-      height: 263px;
+      width: 264px;
+      height: 264px;
       position: absolute;
       right: 0;
       top: 0;
@@ -87,7 +92,7 @@
 app-footer {
   position: absolute;
   top: 640px;
-  left: 516px;
+  left: clamp(420px, calc(420px + (100vw - 1024px) * 0.2308), 516px);
 }
 
 .scroll-top {
@@ -158,8 +163,37 @@ app-footer {
   }
 }
 
-@media (max-width: $bp-xl) {
+@media (max-width: $bp-xxl) {
   .scroll-top {
     right: -5px;
+  }
+  .contact-wrapper {
+    padding-right: 48px;
+  }
+}
+
+@media (min-width: $bp-xl) and (max-width: 1439px) {
+  .contact-header h2 {
+    width: 1000px;
+  }
+
+  .contactform {
+    padding-top: 185px;
+  }
+}
+
+@media (min-width: $bp-lg) and (max-width: $bp-xl) {
+  .scroll-top {
+    right: -25px;
+  }
+  .contact-header h2 {
+    width: 950px;
+    margin-bottom: 32px;
+  }
+  .contact-wrapper {
+    padding-right: 24px;
+  }
+  .contactform {
+    padding-top: 170px;
   }
 }
