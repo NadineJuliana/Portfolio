@@ -1,5 +1,6 @@
 @use '../base/fonts.scss';
 @use '../abstracts/variables.scss' as *;
+@use '../abstracts/breakpoints.scss' as *;
 
 body {
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;
@@ -46,6 +47,10 @@ a {
   text-decoration: none;
 }
 
+.section-subtitle {
+  font-size: clamp(20px, 1.67vw, 24px);
+}
+
 .btn-primary {
   padding: 12px 24px;
   background: none;
@@ -55,5 +60,17 @@ a {
   cursor: pointer;
   &:hover {
     background-color: $highlight-primary;
+  }
+}
+
+@media (min-width: $bp-xs) and (max-width: 1023px) {
+  h1 {
+    font-size: clamp(72px, 6.67vw, 96px);
+  }
+  h2 {
+    font-size: clamp(40px, 5vw, 72px);
+  }
+  h3 {
+    font-size: clamp(32px, 3.33vw, 48px);
   }
 }
