@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
 import { Header } from '../../../components/header/header/header';
-import { Footer } from '../../../components/footer/footer/footer';
 import { HeroSection } from '../../../../features/hero/hero-section/hero-section';
 import { AboutMeSection } from '../../../../features/about-me/about-me-section/about-me-section';
 import { SkillsSection } from '../../../../features/skills/skills-section/skills-section';
@@ -9,21 +8,28 @@ import { ReferencesSection } from '../../../../features/references/references-se
 import { ContactSection } from '../../../../features/contact/contact-section/contact-section';
 import { ThemeService } from '../../../../core/services/theme.service';
 import { SideNavigation } from '../../../shared/side-navigation/side-navigation';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Header, Footer, HeroSection, AboutMeSection, SkillsSection, ProjectsSection, ReferencesSection, ContactSection, SideNavigation],
+  imports: [Header, HeroSection, AboutMeSection, SkillsSection, ProjectsSection, ReferencesSection, ContactSection, SideNavigation],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
 export class HomePage implements AfterViewInit {
   private themeService = inject(ThemeService);
+  private route = inject(ActivatedRoute);
   private sectionObserver!: IntersectionObserver;
 
   @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
 
 
   ngAfterViewInit() {
+    this.observeSections();
+    this.scrollToFragment();
+  }
+
+  private observeSections() {
     this.sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -34,6 +40,19 @@ export class HomePage implements AfterViewInit {
       });
     }, { threshold: 0.6 });
     this.sections.forEach(section => this.sectionObserver.observe(section.nativeElement));
+  }
+
+  private scrollToFragment() {
+    this.route.fragment.subscribe(fragment => {
+      if (!fragment) return;
+
+      requestAnimationFrame(() => {
+        document.getElementById(fragment)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    });
   }
 
   ngOnDestroy() {
