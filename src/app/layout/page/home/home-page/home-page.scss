@@ -1,13 +1,27 @@
 @use '../../../../../styles.scss' as *;
+@use '../../../../../styles/abstracts/variables.scss' as *;
 @use '../../../../../styles/abstracts/breakpoints.scss' as *;
 
 .section {
-  background: var(--bg-color);
-  color: var(--text-color);
   display: flex;
   justify-content: center;
   height: 100dvh;
   width: 100%;
+}
+
+.section[data-theme='light'] {
+  background-color: $bg-white;
+  color: $bg-black;
+}
+
+.section[data-theme='dark'] {
+  background-color: $bg-black;
+  color: $bg-white;
+}
+
+.section[data-theme='color'] {
+  background-color: $bg-color;
+  color: $bg-white;
 }
 
 .container {
@@ -29,6 +43,12 @@ app-contact-section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header,
+app-side-navigation {
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 @media (max-width: $bp-xl) {
