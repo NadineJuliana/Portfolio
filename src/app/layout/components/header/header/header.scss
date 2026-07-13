@@ -1,6 +1,15 @@
 @use '../../../../../styles/abstracts/variables.scss' as *;
 @use '../../../../../styles/abstracts/breakpoints.scss' as *;
 
+:host {
+  display: block;
+  width: 100%;
+}
+
+burger-menu {
+  z-index: 9999;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -164,5 +173,75 @@ header.theme-color {
     .burgericon-hover {
       opacity: 1;
     }
+  }
+}
+
+@media (min-width: $bp-xs) and (max-width: 1023px) {
+  :host-context(.home-header) header.hero-inactive {
+    display: none;
+  }
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88px;
+    padding: 20px 24px;
+  }
+
+  header.hero-active {
+    display: flex;
+  }
+
+  header .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left-links {
+    display: none;
+  }
+
+  .logo {
+    justify-self: auto;
+    transform: none;
+    // font-size: 20px;
+
+    img {
+      width: 52px;
+      height: 68px;
+    }
+  }
+
+  .hero-active .logo,
+  .hero-inactive .logo {
+    transform: none;
+  }
+
+  .header-right {
+    justify-self: auto;
+  }
+
+  .burger:hover {
+    .burgericon-default {
+      opacity: 1;
+    }
+
+    .burgericon-hover {
+      opacity: 0;
+    }
+  }
+}
+
+@media (min-width: $bp-xs) and (max-width: $bp-sm) {
+  header {
+    padding: 0;
+    height: 72px;
+  }
+  header .container {
+    height: 40px;
+    margin: 12px;
   }
 }
