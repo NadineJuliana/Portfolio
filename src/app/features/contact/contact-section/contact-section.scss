@@ -7,11 +7,13 @@
   width: 100%;
   height: 100%;
   max-height: 710px;
+
   h2 {
     color: $highlight-secondary;
     line-height: 1;
     margin-bottom: 52px;
   }
+
   h4 {
     color: $highlight-primary;
     margin-bottom: 40px;
@@ -42,14 +44,20 @@
   padding-top: 210px;
 }
 
+.contact-bottom {
+  display: contents;
+}
+
 .animation-content {
   position: absolute;
   left: 0;
   bottom: 0;
+
   .animation-wrapper {
     position: relative;
     width: 374px;
     height: 264px;
+
     .pink-star {
       width: 180px;
       height: 180px;
@@ -75,6 +83,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -84,6 +93,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -104,8 +114,8 @@ app-footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
 
   .arrow {
     width: 12px;
@@ -167,6 +177,7 @@ app-footer {
   .scroll-top {
     right: -5px;
   }
+
   .contact-wrapper {
     padding-right: 48px;
   }
@@ -186,14 +197,111 @@ app-footer {
   .scroll-top {
     right: -25px;
   }
+
   .contact-header h2 {
     width: 950px;
     margin-bottom: 32px;
   }
+
   .contact-wrapper {
     padding-right: 24px;
   }
+
   .contactform {
     padding-top: 170px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .contact-content {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    width: 100%;
+    padding-right: 0;
+    gap: 0;
+  }
+
+  .contact-header {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    height: auto;
+
+    h2 {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 32px;
+    }
+  }
+
+  .contactform {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding-top: 0;
+    margin-top: 32px;
+  }
+
+  .contact-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+
+  .scroll-top {
+    position: relative;
+    top: auto;
+    right: auto;
+    align-self: flex-end;
+    margin-top: -48px;
+    margin-bottom: 24px;
+    z-index: 2;
+  }
+
+  app-footer {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    order: 2;
+  }
+
+  .animation-content {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    order: 3;
+    margin-top: 40px;
+    overflow: hidden;
+  }
+
+  .animation-content .animation-wrapper {
+    width: clamp(300px, 80vw, 374px);
+    height: clamp(240px, 60vw, 264px);
+  }
+
+  .animation-content .pink-star {
+    width: clamp(160px, 38vw, 180px);
+    height: clamp(160px, 38vw, 180px);
+  }
+
+  .animation-content .green-star {
+    width: clamp(240px, 56vw, 264px);
+    height: clamp(240px, 56vw, 264px);
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .scroll-top {
+    margin-right: -8px;
   }
 }

@@ -41,6 +41,7 @@ header {
 
 header.theme-light {
   color: rgb(29, 29, 29);
+
   .header-language-switcher {
     border: 1px solid rgb(29, 29, 29);
   }
@@ -49,6 +50,7 @@ header.theme-light {
 header.theme-dark,
 header.theme-color {
   color: rgb(248, 247, 229);
+
   .header-language-switcher {
     border: 1px solid rgb(248, 247, 229);
   }
@@ -105,11 +107,12 @@ header.theme-color {
     transform 250ms cubic-bezier(0.77, 0, 0.175, 1),
     opacity 300ms ease,
     justify-self 250ms ease;
+
   img {
-    padding-top: 10px;
     object-fit: cover;
-    width: 60px;
-    height: 80px;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 4px;
   }
 }
 
@@ -117,6 +120,7 @@ header.theme-color {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
+
   &:hover {
     color: $highlight-primary;
   }
@@ -147,6 +151,7 @@ header.theme-color {
   justify-content: center;
   align-items: center;
   border-radius: 100px;
+
   &:hover {
     background-color: $highlight-primary;
   }
@@ -158,28 +163,33 @@ header.theme-color {
   justify-content: center;
   width: 30px;
   height: 30px;
+
   img {
     position: absolute;
     width: 24px;
     height: 16px;
   }
+
   .burgericon-hover {
     opacity: 0;
   }
+
   &:hover {
     .burgericon-default {
       opacity: 0;
     }
+
     .burgericon-hover {
       opacity: 1;
     }
   }
 }
 
-@media (min-width: $bp-xs) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   :host-context(.home-header) header.hero-inactive {
     display: none;
   }
+
   header {
     position: absolute;
     top: 0;
@@ -207,11 +217,12 @@ header.theme-color {
   .logo {
     justify-self: auto;
     transform: none;
-    // font-size: 20px;
 
     img {
-      width: 52px;
-      height: 68px;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin: 4px;
     }
   }
 
@@ -235,11 +246,12 @@ header.theme-color {
   }
 }
 
-@media (min-width: $bp-xs) and (max-width: $bp-sm) {
+@media (max-width: $bp-sm) {
   header {
     padding: 0;
     height: 72px;
   }
+
   header .container {
     height: 40px;
     margin: 12px;

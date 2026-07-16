@@ -5,7 +5,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-height: 710px;
+  height: 100%;
+  max-height: 740px;
 }
 
 .hero-left {
@@ -64,11 +65,11 @@
 
 .hero-right {
   position: relative;
-  width: clamp(660px, 50vw, 720px);
-  max-height: clamp(700px, 51vw, 710px);
+  width: clamp(680px, 52vw, 740px);
+  height: clamp(680px, 52vw, 740px);
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .star {
@@ -88,20 +89,117 @@
 }
 
 .profile-img {
-  z-index: 999;
-  width: 90%;
-  height: 90%;
+  z-index: 100;
+  width: clamp(660px, 50vw, 720px);
+  height: clamp(660px, 50vw, 720px);
   object-fit: contain;
 }
 
-
 @media (min-width: $bp-lg) and (max-width: 1439px) {
+  .hero-content {
+    gap: 70px;
+    max-height: none;
+    align-items: stretch;
+  }
+
   .hero-left {
-    max-width: 380px;
+    max-width: 320px;
   }
 
   .hero-right {
     position: relative;
     max-width: 630px;
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-content {
+    gap: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-content {
+    width: 100%;
+    min-height: calc(100dvh - 112px);
+    height: auto;
+    max-height: none;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    gap: 20px;
+  }
+
+  .hero-left {
+    width: 100%;
+    max-width: none;
+    flex-shrink: 0;
+  }
+
+  .greeting {
+    min-height: auto;
+    margin-bottom: 24px;
+  }
+
+  .wrapper-name {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+
+    h1 {
+      margin-top: 8px;
+    }
+  }
+
+  .hero-right {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    max-height: none;
+    min-height: clamp(390px, 75vw, 620px);
+    flex: 1;
+    margin-top: 32px;
+  }
+
+  .star {
+    width: clamp(265px, 75vw, 500px);
+    height: clamp(265px, 75vw, 500px);
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    max-height: 580px;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+
+  .scroll-down {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    width: clamp(88px, 24vw, 120px);
+    height: clamp(88px, 24vw, 120px);
+    margin-top: 0;
+    z-index: 200;
+  }
+
+  .arrow {
+    width: clamp(28px, 8vw, 36px);
+    height: auto;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .hero-left {
+    width: 100%;
+    padding-inline: 16px;
+  }
+
+  .hero-right {
+    width: 100%;
+    max-width: none;
+    margin-top: 32px;
   }
 }

@@ -17,9 +17,11 @@
   align-items: center;
   gap: 40px;
   margin-bottom: 40px;
+
   .text-header {
     flex: 1;
     width: clamp(320px, calc(320px + (100vw - 1024px) * 0.6731), 600px);
+
     p {
       word-break: break-word;
     }
@@ -44,6 +46,7 @@
   align-items: center;
   border: 1px solid $bg-black;
   border-radius: 4px;
+
   .project-image {
     width: 414px;
     height: 294px;
@@ -51,18 +54,31 @@
     z-index: 10;
     border-radius: 4px;
   }
+
   .accent-icon {
     width: 180px;
     height: 180px;
     position: absolute;
     left: 0;
     bottom: 0;
+    animation: spin 8s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
 .projects-descriptions {
   width: 688px;
   height: 422px;
+
   .role-description {
     background-color: $highlight-primary;
     color: $bg-white;
@@ -73,6 +89,10 @@
     width: 520px;
     border: 1px solid $bg-white;
     border-radius: 4px;
+
+    .close-button {
+      display: none;
+    }
   }
 }
 
@@ -92,6 +112,7 @@
 .infos-header {
   display: flex;
   justify-content: space-between;
+
   .bounce {
     width: 32px;
     height: 32px;
@@ -118,12 +139,14 @@
 .info-buttons {
   margin-top: 32px;
   display: flex;
+
   a {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     margin-right: 32px;
+
     .arrow {
       display: flex;
       justify-content: center;
@@ -131,11 +154,14 @@
       width: 14px;
       height: 14px;
     }
+
     .hover-arrow {
       display: none;
     }
+
     &:hover {
       background-color: $highlight-primary;
+
       .default-arrow {
         display: none;
       }
@@ -151,10 +177,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  min-width: 300px;
+
   button {
     border: none;
     background: none;
     cursor: pointer;
+
     &:hover {
       color: $highlight-primary;
     }
@@ -175,9 +204,11 @@
       width: clamp(320px, calc(320px + (100vw - 1024px) * 0.6731), 600px);
     }
   }
+
   .projects-slider {
     gap: clamp(24px, calc(24px + (100vw - 1024px) * 0.0385), 40px);
   }
+
   .projects-preview {
     width: clamp(360px, calc(360px + (100vw - 1024px) * 0.3077), 488px);
     height: clamp(360px, calc(360px + (100vw - 1024px) * 0.3077), 488px);
@@ -187,6 +218,7 @@
       aspect-ratio: 414 / 294;
     }
   }
+
   .projects-descriptions {
     width: clamp(500px, calc(500px + (100vw - 1024px) * 0.4519), 688px);
     height: calc(500px - (100vw - 1024px) * 0.1875);
@@ -198,10 +230,131 @@
       padding: clamp(24px, calc(24px + (100vw - 1024px) * 0.0192), 32px);
     }
   }
+
   .projects-infos {
     height: auto;
     min-height: 368px;
     flex: 1;
     padding-inline: clamp(24px, calc(24px + (100vw - 1024px) * 0.0192), 32px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .projects-content {
+    height: auto;
+    max-height: none;
+  }
+
+  .projects-header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: start;
+    gap: 0;
+
+    .text-header {
+      width: auto;
+    }
+  }
+
+  .projects-slider {
+    flex-direction: column;
+  }
+
+  .projects-preview {
+    width: clamp(288px, 60vw, 420px);
+    height: clamp(288px, 60vw, 420px);
+
+    .project-image {
+      width: 85%;
+      height: auto;
+      aspect-ratio: 414 / 294;
+    }
+
+    .accent-icon {
+      width: clamp(120px, 28vw, 180px);
+      height: clamp(120px, 28vw, 180px);
+    }
+  }
+
+  .projects-descriptions {
+    width: clamp(288px, 90vw, 600px);
+    height: auto;
+    position: relative;
+
+    .role-description {
+      z-index: 100;
+      width: 100%;
+      max-width: 420px;
+      right: 0;
+      top: -150px;
+      height: auto;
+      padding: 16px;
+
+      .close-button {
+        display: flex;
+        justify-content: end;
+        cursor: pointer;
+        margin-bottom: 8px;
+
+        img {
+          object-fit: contain;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  .projects-infos {
+    height: auto;
+    min-height: 0;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .projects-preview {
+    width: 288px;
+    height: 288px;
+
+    .project-image {
+      width: 244px;
+    }
+
+    .accent-icon {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .projects-infos {
+    padding: 16px;
+  }
+
+  .info-buttons {
+    height: auto;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0;
+      padding: 12px 12px;
+    }
+  }
+
+  .projects-descriptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .role-description {
+      max-width: 270px;
+      right: 0;
+      top: -190px;
+    }
   }
 }

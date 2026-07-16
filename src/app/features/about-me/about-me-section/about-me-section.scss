@@ -17,6 +17,7 @@
   bottom: 0;
   width: 528px;
   height: 740px;
+
   img {
     width: 100%;
     height: 100%;
@@ -30,6 +31,7 @@
   width: 328px;
   height: 72px;
   text-align: center;
+
   h2 {
     line-height: 1;
   }
@@ -60,10 +62,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   .bounce {
     width: 32px;
     height: 32px;
     animation: bounce 1s infinite ease-in-out;
+
     &:hover {
       animation-play-state: paused;
     }
@@ -94,22 +98,40 @@ p {
   bottom: 40px;
   opacity: 0;
   transform: translateY(10vh);
-
   transition:
     opacity 250ms ease,
     transform 250ms ease;
 
   &.visible {
+    animation-play-state: paused;
     opacity: 1;
     transform: translateY(0);
   }
+
   h4 {
     text-align: center;
     margin-bottom: 16px;
   }
+
   li {
     list-style: none;
     margin-bottom: 8px;
+  }
+
+  .overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .overlay-header h4 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .close-button {
+    display: none;
   }
 }
 
@@ -118,6 +140,7 @@ p {
     left: 70%;
     width: 550px;
   }
+
   .about-me-overlay {
     right: 40px;
     bottom: 15px;
@@ -129,8 +152,138 @@ p {
     left: 70%;
     width: 450px;
   }
+
   .about-me-overlay {
     right: -10px;
     bottom: -15px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .about-me-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    align-items: stretch;
+  }
+
+  .headline {
+    order: 1;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    text-align: right;
+    align-self: flex-end;
+    z-index: 3;
+
+    h2 {
+      line-height: 1;
+    }
+  }
+
+  .profile-image {
+    order: 2;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: clamp(240px, 48vw, 420px);
+    height: clamp(336px, 67vw, 588px);
+    align-self: flex-start;
+    z-index: 1;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .about-me-description {
+    order: 3;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: clamp(240px, 48vw, 420px);
+    min-height: 0;
+    margin-top: clamp(-96px, -10vw, -62px);
+    padding: clamp(16px, 3vw, 32px);
+    transform: none;
+    align-self: flex-end;
+    text-align: left;
+    z-index: 2;
+  }
+
+  article {
+    padding-bottom: 24px;
+  }
+
+  .description-footer {
+    gap: 12px;
+  }
+
+  .about-me-overlay {
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: -80px;
+    width: min(100%, 350px);
+    min-height: 260px;
+    opacity: 0;
+    transform: translateY(10%);
+    z-index: 4;
+    transition:
+      opacity 250ms ease,
+      transform 250ms ease;
+
+    ul {
+      padding-left: 20px;
+    }
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .close-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+
+      img {
+        object-fit: contain;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .headline {
+    margin-bottom: 32px;
+  }
+
+  .profile-image {
+    width: 240px;
+    height: 336px;
+  }
+
+  .about-me-description {
+    width: 240px;
+    margin-top: -62px;
+    padding: 16px;
+  }
+
+  .about-me-overlay {
+    padding: 30px 16px;
+    width: 270px;
   }
 }
