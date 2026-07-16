@@ -1,5 +1,6 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
 @use '../../../../styles/abstracts/breakpoints.scss' as *;
+@use '../../../../styles/abstracts/keyframes.scss' as *;
 
 .about-me-content {
   display: flex;
@@ -71,17 +72,6 @@ p {
     &:hover {
       animation-play-state: paused;
     }
-  }
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
   }
 }
 
