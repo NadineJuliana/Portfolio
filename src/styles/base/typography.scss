@@ -63,13 +63,15 @@ a {
   }
 }
 
-@media (min-width: $bp-xs) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   h1 {
     font-size: clamp(72px, 6.67vw, 96px);
   }
+
   h2 {
     font-size: clamp(40px, 5vw, 72px);
   }
+
   h3 {
     font-size: clamp(32px, 3.33vw, 48px);
   }

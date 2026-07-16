@@ -1,3 +1,5 @@
+@use '../../styles/abstracts/breakpoints.scss' as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +19,23 @@ main {
 }
 
 section {
-  min-height: 100vh;
-  padding-top: 88px;
+  min-height: 100dvh;
   scroll-snap-align: start;
+}
+
+@media (max-width: 1023px) {
+  main {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  section {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    scroll-snap-align: none;
+  }
 }
