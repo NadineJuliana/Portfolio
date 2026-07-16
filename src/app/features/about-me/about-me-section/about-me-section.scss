@@ -125,7 +125,7 @@ p {
   }
 }
 
-@media (min-width: $bp-xl) and (max-width: 1439px) {
+@media (min-width: $bp-desktop-lg) and (max-width: ($bp-desktop-xl - 1px)) {
   .about-me-description {
     left: 70%;
     width: 550px;
@@ -137,7 +137,7 @@ p {
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: $bp-xl) {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-lg - 1px)) {
   .about-me-description {
     left: 70%;
     width: 450px;
@@ -149,7 +149,7 @@ p {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .about-me-content {
     display: flex;
     flex-direction: column;
@@ -256,7 +256,7 @@ p {
   }
 }
 
-@media (max-width: $bp-sm) {
+@media (max-width: ($bp-phone - 1px)) {
   .headline {
     margin-bottom: 32px;
   }

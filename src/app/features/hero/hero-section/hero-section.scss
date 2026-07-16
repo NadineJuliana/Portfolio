@@ -87,7 +87,7 @@
   object-fit: contain;
 }
 
-@media (min-width: $bp-lg) and (max-width: 1439px) {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-xl  - 1px)) {
   .hero-content {
     gap: 70px;
     max-height: none;
@@ -105,13 +105,13 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: ($bp-desktop-lg - 1px)) {
   .hero-content {
     gap: 0;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .hero-content {
     width: 100%;
     min-height: calc(100dvh - 112px);
@@ -183,7 +183,7 @@
   }
 }
 
-@media (max-width: $bp-sm) {
+@media (max-width: $bp-phone) {
   .hero-left {
     width: 100%;
     padding-inline: 16px;

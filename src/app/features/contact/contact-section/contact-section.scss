@@ -139,7 +139,7 @@ app-footer {
   }
 }
 
-@media (max-width: $bp-xxl) {
+@media (max-width: $bp-desktop-xl) {
   .scroll-top {
     right: -5px;
   }
@@ -149,7 +149,7 @@ app-footer {
   }
 }
 
-@media (min-width: $bp-xl) and (max-width: 1439px) {
+@media (min-width: $bp-desktop-lg) and (max-width: ($bp-desktop-xl - 1px)) {
   .contact-header h2 {
     width: 1000px;
   }
@@ -159,7 +159,7 @@ app-footer {
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: $bp-xl) {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-lg - 1px)) {
   .scroll-top {
     right: -25px;
   }
@@ -178,7 +178,7 @@ app-footer {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .contact-content {
     flex-direction: column;
     width: 100%;
@@ -266,7 +266,7 @@ app-footer {
   }
 }
 
-@media (max-width: $bp-sm) {
+@media (max-width: $bp-phone) {
   .scroll-top {
     margin-right: -8px;
   }

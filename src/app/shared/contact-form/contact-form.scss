@@ -164,7 +164,7 @@
   }
 }
 
-@media (max-width: 1439px) {
+@media (max-width: ($bp-desktop-xl - 1px)) {
   .contactform-content {
     .form-top {
       min-height: 110px;
@@ -192,13 +192,13 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .form-top {
     gap: 0;
   }
 }
 
-@media (max-width: $bp-sm) {
+@media (max-width: $bp-phone) {
   .contactform-content {
     min-height: 0;
 

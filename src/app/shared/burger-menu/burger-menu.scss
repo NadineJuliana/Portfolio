@@ -79,7 +79,7 @@
   }
 }
 
-@media (min-width: $bp-sm) and (max-width: 1023px) {
+@media (min-width: $bp-phone) and (max-width: ($bp-desktop - 1px)) {
   .burgermenu-content {
     height: 270px;
 
@@ -103,7 +103,7 @@
   }
 }
 
-@media (min-width: $bp-xs) and (max-width: $bp-sm) {
+@media (max-width: ($bp-phone - 1px)) {
   .burgermenu-content {
     width: 208px;
     height: 270px;

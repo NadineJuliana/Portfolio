@@ -139,7 +139,7 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .skills-content {
     align-items: center;
     width: 100%;
@@ -206,7 +206,13 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $bp-tablet) {
+  .skills-list-items {
+    margin: 0 8px 16px 8px;
+  }
+}
+
+@media (max-width: $bp-phone-lg) {
   .more-skills {
     height: auto;
     left: auto;
@@ -214,13 +220,7 @@
   }
 }
 
-@media (max-width: $bp-md) {
-  .skills-list-items {
-    margin: 0 8px 16px 8px;
-  }
-}
-
-@media (max-width: $bp-sm) {
+@media (max-width: $bp-phone) {
   .more-skills {
     max-width: 280px;
   }

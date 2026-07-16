@@ -24,13 +24,13 @@ footer {
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: $bp-xxl) {
+@media (min-width: $bp-desktop) and (max-width: $bp-desktop-xl) {
   footer {
     width: clamp(500px, calc(500px + (100vw - 1024px) * 0.5769), 740px);
   }
 }
 
-@media (min-width: $bp-xs) and (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   footer {
     width: 100%;
     max-width: 100%;

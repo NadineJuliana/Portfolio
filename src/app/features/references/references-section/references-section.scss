@@ -83,25 +83,25 @@ article {
   align-self: flex-end;
 }
 
-@media (min-width: $bp-xl) and (max-width: 1439px) {
+@media (min-width: $bp-desktop-lg) and (max-width: ($bp-desktop-xl - 1px)) {
   .references-list {
     padding-right: 48px;
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: $bp-xxl) {
+@media (min-width: $bp-desktop) and (max-width: $bp-desktop-xl) {
   .references-content {
     max-height: 100%;
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: $bp-xl) {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-xl - 1px)) {
   .references-list {
     padding-right: 24px;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .references-content {
     height: auto;
     max-height: none;
@@ -113,7 +113,7 @@ article {
   }
 }
 
-@media (max-width: $bp-sm) {
+@media (max-width: $bp-phone) {
   .reference-content {
     padding: 16px;
   }

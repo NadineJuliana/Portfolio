@@ -27,19 +27,19 @@
   align-items: center;
 }
 
-@media (max-width: $bp-xxl) {
+@media (max-width: ($bp-desktop-xl - 1px)) {
   .side-nav {
     right: max(72px, calc((100vw - 1440px) / 2 + 72px));
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: $bp-xl)  {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-lg - 1px))  {
   .side-nav {
     right: max(24px, calc((100vw - 1440px) / 2 + 24px));
   }
 }
 
-@media (max-width: $bp-lg) {
+@media (max-width: ($bp-desktop - 1px)) {
   .side-nav {
     display: none;
   }

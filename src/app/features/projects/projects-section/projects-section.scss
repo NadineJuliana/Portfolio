@@ -65,7 +65,8 @@
     animation: spin 8s linear infinite;
   }
 }
-s .projects-descriptions {
+
+.projects-descriptions {
   width: 688px;
   height: 422px;
 
@@ -157,6 +158,7 @@ s .projects-descriptions {
   display: flex;
   justify-content: space-between;
   min-width: 300px;
+  gap: 12px;
 
   button {
     border: none;
@@ -169,13 +171,13 @@ s .projects-descriptions {
   }
 }
 
-@media (min-width: $bp-xl) and (max-width: 1439px) {
+@media (min-width: $bp-desktop-lg) and (max-width: ($bp-desktop-xl - 1px)) {
   .projects-descriptions {
     padding-right: 24px;
   }
 }
 
-@media (min-width: $bp-lg) and (max-width: 1439px) {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-xl - 1px)) {
   .projects-header {
     gap: clamp(24px, calc(24px + (100vw - 1024px) * 0.0385), 40px);
 
@@ -218,7 +220,7 @@ s .projects-descriptions {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: ($bp-desktop - 1px)) {
   .projects-content {
     height: auto;
     max-height: none;
@@ -293,7 +295,7 @@ s .projects-descriptions {
   }
 }
 
-@media (max-width: $bp-sm) {
+@media (max-width: ($bp-phone)) {
   .projects-preview {
     width: 288px;
     height: 288px;
