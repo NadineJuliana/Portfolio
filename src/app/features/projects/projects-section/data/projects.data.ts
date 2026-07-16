@@ -6,7 +6,7 @@ export const PROJECTS: Project[] = [
     languages: 'Angular | Supabase | SCSS',
     description: 'Task management app inspired by Kanban.',
 
-    image: './img/Screenshot 2026-05-27 132352.png',
+    image: './img/join.png',
     backgroundColor: '#b9c814 ',
     accentIcon: './icons/star_pink_mid.svg',
     emoji: './icons/checkbox.svg',
@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
     languages: 'JavaScript | HTML | CSS',
     description: '2D Jump and Run Game.',
 
-    image: './img/Screenshot 2026-05-27 132503.png',
+    image: './img/elpolloloco.png',
     backgroundColor: '#ea8eb8',
     accentIcon: './icons/star_green_mid.svg',
     emoji: './icons/chicken.svg',
@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     languages: 'JavaScript | HTML | CSS | API',
     description: 'Pokedex',
 
-    image: './img/Screenshot 2026-05-27 132434.png',
+    image: './img/pokedex.png',
     backgroundColor: '#213830',
     accentIcon: './icons/star_pink_mid.svg',
     emoji: './icons/speakbubble.svg',
