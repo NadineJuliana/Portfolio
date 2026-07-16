@@ -1,5 +1,6 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
 @use '../../../../styles/abstracts/breakpoints.scss' as *;
+@use '../../../../styles/abstracts/keyframes.scss' as *;
 
 .projects-content {
   display: flex;
@@ -64,18 +65,7 @@
     animation: spin 8s linear infinite;
   }
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.projects-descriptions {
+s .projects-descriptions {
   width: 688px;
   height: 422px;
 
@@ -117,17 +107,6 @@
     width: 32px;
     height: 32px;
     animation: bounce 1s infinite ease-in-out;
-  }
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
   }
 }
 

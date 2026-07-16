@@ -1,5 +1,6 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
 @use '../../../../styles/abstracts/breakpoints.scss' as *;
+@use '../../../../styles/abstracts/keyframes.scss' as *;
 
 :host ::ng-deep .portfolio-highlight {
   color: $highlight-primary;
@@ -98,24 +99,6 @@
       z-index: 1;
       animation: spin-left 10s linear infinite;
     }
-  }
-}
-
-@keyframes spin-right {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-left {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
   }
 }
 

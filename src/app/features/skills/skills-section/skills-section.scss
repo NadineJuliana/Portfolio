@@ -1,5 +1,6 @@
 @use '../../../../styles/abstracts/variables.scss' as *;
 @use '../../../../styles/abstracts/breakpoints.scss' as *;
+@use '../../../../styles/abstracts/keyframes.scss' as *;
 
 .skills-content {
   display: flex;
@@ -46,16 +47,6 @@
 
   &:hover .spinner-icon {
     animation-play-state: paused;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
   }
 }
 
@@ -148,9 +139,6 @@
   flex-wrap: wrap;
 }
 
-@media (min-width: $bp-xl) and (max-width: 1439px) {
-}
-
 @media (max-width: 1023px) {
   .skills-content {
     align-items: center;
@@ -215,17 +203,6 @@
     &:hover {
       scale: 1;
     }
-  }
-}
-
-@keyframes skill-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.12);
   }
 }
 
