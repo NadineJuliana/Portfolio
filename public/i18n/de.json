@@ -101,7 +101,10 @@
       "privacyLink": "Datenschutzerklärung",
       "privacyTextAfter": "gelesen und stimme der Verarbeitung meiner Daten zu.",
       "privacyError": "Bitte akzeptiere die Datenschutzerklärung",
-      "submit": "Nachricht senden"
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "submitSuccess": "Deine Nachricht wurde erfolgreich gesendet.",
+      "submitError": "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut."
     }
   },
   "footer": {

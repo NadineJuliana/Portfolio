@@ -101,7 +101,10 @@
       "privacyLink": "privacy policy",
       "privacyTextAfter": "and agree to the processing of my data.",
       "privacyError": "Please accept the privacy policy",
-      "submit": "Drop a line"
+      "submit": "Drop a line",
+      "sending": "Sending...",
+      "submitSuccess": "Your message was sent successfully.",
+      "submitError": "Your message could not be sent. Please try again."
     }
   },
   "footer": {
