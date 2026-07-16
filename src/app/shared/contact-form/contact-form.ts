@@ -3,6 +3,9 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { RouterLink } from "@angular/router";
+import { noWhitespaceValidator } from '../validators/no-whitespace.validator';
+
+type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contact-form',
@@ -15,17 +18,26 @@ export class ContactForm {
 
   readonly mailEndpoint = 'send_mail.php';
 
+  submitStatus: SubmitStatus = 'idle';
+
   contactForm = new FormGroup({
     fullname: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(5)]
+      nonNullable: true,
+      validators: [Validators.required, noWhitespaceValidator(), Validators.minLength(2), Validators.maxLength(100),]
     }),
+
     mail: new FormControl('', {
-      validators: [Validators.required, Validators.email],
+      nonNullable: true,
+      validators: [Validators.required, Validators.email, Validators.maxLength(254),],
     }),
+
     message: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(10)],
+      nonNullable: true,
+      validators: [Validators.required, noWhitespaceValidator(), Validators.minLength(10), Validators.maxLength(1000),],
     }),
+
     check: new FormControl(false, {
+      nonNullable: true,
       validators: [Validators.requiredTrue],
     }),
   })
@@ -46,8 +58,49 @@ export class ContactForm {
     return this.contactForm.controls.check;
   }
 
+  get isSending(): boolean {
+    return this.submitStatus === 'sending';
+  }
+
   isInvalid(control: FormControl): boolean {
     return control.invalid && control.touched;
+  }
+
+  formSubmit(): void {
+    if (this.contactForm.invalid) {
+      this.contactForm.markAllAsTouched();
+      return;
+    }
+
+    this.submitStatus = 'sending';
+
+    const payload = {
+      name: this.fullname.value.trim(),
+      email: this.mail.value.trim(),
+      message: this.message.value.trim(),
+    };
+
+    this.http.post(this.mailEndpoint, payload, { responseType: 'text' }).subscribe({
+      next: () => this.handleSubmitSuccess(),
+      error: (error) => this.handleSubmitError(error),
+    });
+  }
+
+  private handleSubmitSuccess(): void {
+    this.resetForm();
+    this.showStatusTemporarily('success');
+  }
+
+  private handleSubmitError(error: unknown): void {
+    console.error('Error sending email:', error);
+    this.showStatusTemporarily('error');
+  }
+
+  private showStatusTemporarily(status: 'success' | 'error'): void {
+    this.submitStatus = status;
+    window.setTimeout(() => {
+      this.submitStatus = 'idle';
+    }, 5000);
   }
 
   private resetForm(): void {
@@ -56,30 +109,6 @@ export class ContactForm {
       mail: '',
       message: '',
       check: false,
-    });
-  }
-
-  formSubmit() : void {
-    if (this.contactForm.invalid) {
-      this.contactForm.markAllAsTouched();
-      return;
-    }
-
-    const payload = {
-      name: this.fullname.value,
-      email: this.mail.value,
-      message: this.message.value,
-    };
-
-    // console.log(this.contactForm.value);
-
-    this.http.post(this.mailEndpoint, payload, { responseType: 'text' }).subscribe({
-      next: () => {
-        this.resetForm();
-      },
-      error: (error) => {
-        console.error('Error sending email:', error);
-      }
     });
   }
 }
