@@ -31,4 +31,12 @@ export class ProjectsSection {
       (this.currentIndex - 1 + this.projects.length)
       % this.projects.length;
   }
+
+  openOverlay() {
+    this.showDescription = true;
+  }
+
+  closeOverlay() {
+    this.showDescription = false;
+  }
 }

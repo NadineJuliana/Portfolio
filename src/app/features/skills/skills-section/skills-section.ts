@@ -9,4 +9,12 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class SkillsSection {
   showMore = false;
+
+  openOverlay() {
+    this.showMore = true;
+  }
+
+  closeOverlay() {
+    this.showMore = false;
+  }
 }

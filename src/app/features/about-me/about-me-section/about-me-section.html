@@ -24,11 +24,17 @@
         alt="Emoji Icon"
         (mouseenter)="showMore = true"
         (mouseleave)="showMore = false"
+        (click)="openOverlay()"
       />
     </div>
   </div>
   <div class="about-me-overlay" [class.visible]="showMore">
-    <h4>{{ 'about.overlayTitle' | translate }}</h4>
+    <div class="overlay-header">
+      <h4>{{ 'about.overlayTitle' | translate }}</h4>
+      <div class="close-button" (click)="closeOverlay()">
+        <img src="icons/close_white.svg" alt="Close Icon" />
+      </div>
+    </div>
     <ul>
       @for (fact of 'about.facts' | translate; track fact) {
         <li>

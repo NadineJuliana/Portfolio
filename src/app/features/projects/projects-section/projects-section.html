@@ -13,6 +13,10 @@
     <div class="projects-descriptions">
       @if (showDescription) {
         <div class="role-description">
+          <div class="close-button" (click)="closeOverlay()">
+            <img src="icons/close_white.svg" alt="Close Icon" />
+          </div>
+
           {{ currentProjectKey + '.roleDescription' | translate }}
         </div>
       }
@@ -25,6 +29,7 @@
             alt="Emoji"
             (mouseenter)="showDescription = true"
             (mouseleave)="showDescription = false"
+            (click)="openOverlay()"
           />
         </div>
         <p class="languages">{{ currentProject.languages }}</p>
@@ -43,7 +48,9 @@
         </div>
       </div>
       <div class="projects-navlinks">
-        <button (click)="previousProject()">{{ 'projects.navigation.previous' | translate }}</button>
+        <button (click)="previousProject()">
+          {{ 'projects.navigation.previous' | translate }}
+        </button>
 
         <button (click)="nextProject()">{{ 'projects.navigation.next' | translate }}</button>
       </div>
