@@ -1,10 +1,12 @@
 @use '../../../styles/abstracts/variables.scss' as *;
 @use '../../../styles/abstracts/breakpoints.scss' as *;
+@use '../../../styles/abstracts/keyframes.scss' as *;
 
 .contactform-content {
   width: 100%;
   max-width: 600px;
   min-height: 370px;
+  position: relative;
 
   .form-top {
     display: flex;
@@ -162,6 +164,33 @@
     display: flex;
     justify-content: center;
   }
+
+  .toast {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    right: 72px;
+    bottom: 48px;
+    z-index: 100;
+    max-width: 340px;
+    min-height: 72px;
+    padding: 16px 20px;
+    border-radius: 4px;
+    border: 1px solid $bg-white;
+    font-size: 16px;
+    animation: toast-in 200ms ease-out;
+  }
+
+  .toast-success {
+    background-color: $highlight-secondary;
+    color: $bg-black;
+  }
+
+  .toast-error {
+    background-color: $highlight-primary;
+    color: $bg-black;
+  }
 }
 
 @media (max-width: ($bp-desktop-xl - 1px)) {
@@ -239,6 +268,18 @@
         min-height: 0;
         margin-bottom: 4px;
       }
+    }
+
+    .toast {
+      left: 50%;
+      right: auto;
+      bottom: 48px;
+      width: max-content;
+      max-width: calc(100vw - 32px);
+      min-height: 72px;
+      padding: 16px;
+      transform: translateX(-50%);
+      animation: toast-in-mobile 200ms ease-out;
     }
   }
 }

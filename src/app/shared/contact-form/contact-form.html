@@ -66,4 +66,15 @@
       </button>
     </div>
   </form>
+  @if (submitStatus === 'success') {
+    <div class="toast toast-success" role="status" aria-live="polite">
+      {{ 'contact.form.submitSuccess' | translate }}
+    </div>
+  }
+
+  @if (submitStatus === 'error') {
+    <div class="toast toast-error" role="alert" aria-live="assertive">
+      {{ 'contact.form.submitError' | translate }}
+    </div>
+  }
 </div>
