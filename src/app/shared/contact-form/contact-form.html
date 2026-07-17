@@ -1,48 +1,87 @@
 <div class="contactform-content">
   <form [formGroup]="contactForm" (ngSubmit)="formSubmit()">
     <div class="form-top">
-      <div class="name">
-        <h4>{{ 'contact.form.nameLabel' | translate }}</h4>
-        <input
-          type="text"
-          formControlName="fullname"
-          [class.input-error]="isInvalid(fullname)"
-          [placeholder]="
-            isInvalid(fullname)
-              ? ('contact.form.nameError' | translate)
-              : ('contact.form.namePlaceholder' | translate)
-          "
-        />
+      <div class="field-group">
+        <div class="name">
+          <h4>{{ 'contact.form.nameLabel' | translate }}</h4>
+          <input
+            type="text"
+            formControlName="fullname"
+            (focus)="setFocusedField('fullname')"
+            (blur)="setFocusedField(null)"
+            [class.input-error]="isInvalid(fullname)"
+            [placeholder]="
+              isInvalid(fullname) &&
+              (fullname.hasError('required') || fullname.hasError('whitespace'))
+                ? ('contact.form.nameError' | translate)
+                : ('contact.form.namePlaceholder' | translate)
+            "
+          />
+        </div>
+        <p class="field-error">
+          @if (
+            showFieldError(fullname, 'fullname') &&
+            !fullname.hasError('required') &&
+            !fullname.hasError('whitespace')
+          ) {
+            {{ getFullnameError() | translate }}
+          }
+        </p>
       </div>
-      <div class="email">
-        <h4>{{ 'contact.form.emailLabel' | translate }}</h4>
-        <input
-          type="email"
-          formControlName="mail"
-          [class.input-error]="isInvalid(mail)"
-          [placeholder]="
-            isInvalid(mail)
-              ? ('contact.form.emailError' | translate)
-              : ('contact.form.emailPlaceholder' | translate)
-          "
-        />
+
+      <div class="field-group">
+        <div class="email">
+          <h4>{{ 'contact.form.emailLabel' | translate }}</h4>
+          <input
+            type="email"
+            formControlName="mail"
+            (focus)="setFocusedField('mail')"
+            (blur)="setFocusedField(null)"
+            [class.input-error]="isInvalid(mail)"
+            [placeholder]="
+              isInvalid(mail) && mail.hasError('required')
+                ? ('contact.form.emailError' | translate)
+                : ('contact.form.emailPlaceholder' | translate)
+            "
+          />
+        </div>
+        <p class="field-error">
+          @if (showFieldError(mail, 'mail') && !mail.hasError('required')) {
+            {{ getMailError() | translate }}
+          }
+        </p>
       </div>
     </div>
-    <div class="form-mid">
-      <div class="text">
-        <h4>{{ 'contact.form.messageLabel' | translate }}</h4>
-        <input
-          type="text"
-          formControlName="message"
-          [class.input-error]="isInvalid(message)"
-          [placeholder]="
-            isInvalid(message)
-              ? ('contact.form.messageError' | translate)
-              : ('contact.form.messagePlaceholder' | translate)
-          "
-        />
+
+    <div class="form-mid-group">
+      <div class="form-mid">
+        <div class="text">
+          <h4>{{ 'contact.form.messageLabel' | translate }}</h4>
+          <input
+            type="text"
+            formControlName="message"
+            (focus)="setFocusedField('message')"
+            (blur)="setFocusedField(null)"
+            [class.input-error]="isInvalid(message)"
+            [placeholder]="
+              isInvalid(message) && (message.hasError('required') || message.hasError('whitespace'))
+                ? ('contact.form.messageError' | translate)
+                : ('contact.form.messagePlaceholder' | translate)
+            "
+          />
+        </div>
       </div>
+      <p class="field-error">
+        @if (
+          showFieldError(message, 'message') &&
+          !message.hasError('required') &&
+          !message.hasError('whitespace')
+        ) {
+          {{ getMessageError() | translate }}
+        }
+      </p>
     </div>
+
     <div class="form-label">
       <div class="checkbox-wrapper">
         <input class="checkbox" type="checkbox" formControlName="check" />

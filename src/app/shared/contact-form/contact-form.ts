@@ -6,6 +6,7 @@ import { RouterLink } from "@angular/router";
 import { noWhitespaceValidator } from '../validators/no-whitespace.validator';
 
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
+type FormField = 'fullname' | 'mail' | 'message';
 
 @Component({
   selector: 'app-contact-form',
@@ -19,6 +20,7 @@ export class ContactForm {
   readonly mailEndpoint = 'send_mail.php';
 
   readonly submitStatus = signal<SubmitStatus>('idle');
+  readonly focusedField = signal<FormField | null>(null);
 
   contactForm = new FormGroup({
     fullname: new FormControl('', {
@@ -64,6 +66,52 @@ export class ContactForm {
 
   isInvalid(control: FormControl): boolean {
     return control.invalid && control.touched;
+  }
+
+  setFocusedField(field: FormField | null): void {
+    this.focusedField.set(field);
+  }
+
+  showFieldError(control: FormControl, field: FormField): boolean {
+    return control.invalid
+      && control.touched
+      && this.focusedField() !== field;
+  }
+
+  getFullnameError(): string {
+    if (this.fullname.hasError('minlength')) {
+      return 'contact.form.nameMinLengthError';
+    }
+
+    if (this.fullname.hasError('maxlength')) {
+      return 'contact.form.nameMaxLengthError';
+    }
+
+    return '';
+  }
+
+  getMailError(): string {
+    if (this.mail.hasError('email') || this.mail.hasError('pattern')) {
+      return 'contact.form.emailInvalidError';
+    }
+
+    if (this.mail.hasError('maxlength')) {
+      return 'contact.form.emailMaxLengthError';
+    }
+
+    return '';
+  }
+
+  getMessageError(): string {
+    if (this.message.hasError('minlength')) {
+      return 'contact.form.messageMinLengthError';
+    }
+
+    if (this.message.hasError('maxlength')) {
+      return 'contact.form.messageMaxLengthError';
+    }
+
+    return '';
   }
 
   formSubmit(): void {
