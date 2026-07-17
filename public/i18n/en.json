@@ -104,7 +104,13 @@
       "submit": "Drop a line",
       "sending": "Sending...",
       "submitSuccess": "Your message was sent successfully.",
-      "submitError": "Your message could not be sent. Please try again."
+      "submitError": "Your message could not be sent. Please try again.",
+      "nameMinLengthError": "The name must contain at least 2 characters.",
+      "nameMaxLengthError": "The name may contain no more than 100 characters.",
+      "emailInvalidError": "Please enter a valid email address.",
+      "emailMaxLengthError": "The email address may contain no more than 254 characters.",
+      "messageMinLengthError": "The message must contain at least 10 characters.",
+      "messageMaxLengthError": "The message may contain no more than 1000 characters."
     }
   },
   "footer": {

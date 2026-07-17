@@ -104,7 +104,13 @@
       "submit": "Nachricht senden",
       "sending": "Wird gesendet...",
       "submitSuccess": "Deine Nachricht wurde erfolgreich gesendet.",
-      "submitError": "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut."
+      "submitError": "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut.",
+      "nameMinLengthError": "Der Name muss mindestens 2 Zeichen enthalten.",
+      "nameMaxLengthError": "Der Name darf maximal 100 Zeichen enthalten.",
+      "emailInvalidError": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "emailMaxLengthError": "Die E-Mail-Adresse darf maximal 254 Zeichen enthalten.",
+      "messageMinLengthError": "Die Nachricht muss mindestens 10 Zeichen enthalten.",
+      "messageMaxLengthError": "Die Nachricht darf maximal 1000 Zeichen enthalten."
     }
   },
   "footer": {
