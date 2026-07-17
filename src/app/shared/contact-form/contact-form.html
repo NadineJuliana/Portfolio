@@ -61,18 +61,18 @@
       }
     </p>
     <div class="submit">
-      <button class="btn-primary" type="submit" [disabled]="contactForm.invalid">
+      <button class="btn-primary" type="submit" [disabled]="contactForm.invalid || isSending">
         {{ 'contact.form.submit' | translate }}
       </button>
     </div>
   </form>
-  @if (submitStatus === 'success') {
+  @if (submitStatus() === 'success') {
     <div class="toast toast-success" role="status" aria-live="polite">
       {{ 'contact.form.submitSuccess' | translate }}
     </div>
   }
 
-  @if (submitStatus === 'error') {
+  @if (submitStatus() === 'error') {
     <div class="toast toast-error" role="alert" aria-live="assertive">
       {{ 'contact.form.submitError' | translate }}
     </div>

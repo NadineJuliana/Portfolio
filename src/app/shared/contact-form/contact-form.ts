@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { RouterLink } from "@angular/router";
@@ -18,7 +18,7 @@ export class ContactForm {
 
   readonly mailEndpoint = 'send_mail.php';
 
-  submitStatus: SubmitStatus = 'idle';
+  readonly submitStatus = signal<SubmitStatus>('idle');
 
   contactForm = new FormGroup({
     fullname: new FormControl('', {
@@ -28,7 +28,7 @@ export class ContactForm {
 
     mail: new FormControl('', {
       nonNullable: true,
-      validators: [Validators.required, Validators.email, Validators.maxLength(254),],
+      validators: [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/), Validators.maxLength(254),],
     }),
 
     message: new FormControl('', {
@@ -59,7 +59,7 @@ export class ContactForm {
   }
 
   get isSending(): boolean {
-    return this.submitStatus === 'sending';
+    return this.submitStatus() === 'sending';
   }
 
   isInvalid(control: FormControl): boolean {
@@ -72,7 +72,7 @@ export class ContactForm {
       return;
     }
 
-    this.submitStatus = 'sending';
+    this.submitStatus.set('sending');
 
     const payload = {
       name: this.fullname.value.trim(),
@@ -97,10 +97,11 @@ export class ContactForm {
   }
 
   private showStatusTemporarily(status: 'success' | 'error'): void {
-    this.submitStatus = status;
+    this.submitStatus.set(status);
+
     window.setTimeout(() => {
-      this.submitStatus = 'idle';
-    }, 5000);
+      this.submitStatus.set('idle');
+    }, 3000);
   }
 
   private resetForm(): void {
