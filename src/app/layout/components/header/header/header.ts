@@ -1,8 +1,9 @@
 import { NgClass } from '@angular/common';
 import { ThemeService } from './../../../../core/services/theme.service';
-import { Component, computed, EventEmitter, inject, Output } from '@angular/core';
+import { LanguageService } from './../../../../core/services/language.service';
+import { Component, inject } from '@angular/core';
 import { BurgerMenu } from '../../../../shared/burger-menu/burger-menu';
-import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-header',
@@ -11,22 +12,17 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './header.scss',
 })
 export class Header {
-  @Output() menuToggle = new EventEmitter<void>();
   private themeService = inject(ThemeService);
-  private translate = inject(TranslateService);
+  private languageService = inject(LanguageService);
+
   readonly theme = this.themeService.theme;
   readonly isHeroSection = this.themeService.heroActive;
+  readonly currentLang = this.languageService.currentLanguage;
+
   isMenuOpen = false;
 
-  currentLang: 'de' | 'en' = 'de';
-
-  constructor() {
-    this.translate.use(this.currentLang);
-  }
-
-  setLanguage(lang: 'de' | 'en') {
-    this.currentLang = lang;
-    this.translate.use(lang);
+  toggleLanguage(): void {
+    this.languageService.toggleLanguage();
   }
 
   openMenu() {

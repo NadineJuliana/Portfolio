@@ -152,6 +152,16 @@ header.theme-color {
   align-items: center;
   border-radius: 100px;
 
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
   &:hover {
     background-color: $highlight-primary;
   }

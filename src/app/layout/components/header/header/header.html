@@ -24,11 +24,15 @@
     </a>
     <div class="header-right">
       <div class="header-language-switcher">
-        @if (currentLang === 'de') {
-          <a (click)="setLanguage('en')">EN</a>
-        } @else {
-          <a (click)="setLanguage('de')">DE</a>
-        }
+        <button
+          type="button"
+          (click)="toggleLanguage()"
+          [attr.aria-label]="
+            currentLang() === 'de' ? 'Sprache zu Englisch wechseln' : 'Switch language to German'
+          "
+        >
+          {{ currentLang() === 'de' ? 'DE' : 'EN' }}
+        </button>
       </div>
       <div class="burger" (click)="openMenu()">
         @if (theme() === 'light') {
