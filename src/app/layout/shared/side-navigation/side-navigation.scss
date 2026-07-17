@@ -2,7 +2,7 @@
 
 .side-nav {
   position: fixed;
-  right: max(16px, calc((100vw - 1440px) / 2 + 16px));
+  right: max(72px, calc((100vw - 1440px) / 2 + 72px));
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -27,13 +27,7 @@
   align-items: center;
 }
 
-@media (max-width: ($bp-desktop-xl - 1px)) {
-  .side-nav {
-    right: max(72px, calc((100vw - 1440px) / 2 + 72px));
-  }
-}
-
-@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-lg - 1px))  {
+@media (min-width: $bp-desktop) and (max-width: ($bp-desktop-lg - 1px)) {
   .side-nav {
     right: max(24px, calc((100vw - 1440px) / 2 + 24px));
   }
