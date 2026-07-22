@@ -33,7 +33,7 @@
   }
 }
 
-@media (max-width: ($bp-desktop - 1px)) {
+@media (max-width: ($bp-desktop - 1px)), (max-height: $bp-design-height) {
   .side-nav {
     display: none;
   }

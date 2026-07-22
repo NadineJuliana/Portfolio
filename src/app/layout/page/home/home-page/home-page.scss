@@ -56,7 +56,7 @@ app-side-navigation {
   }
 }
 
-@media (max-width: ($bp-desktop - 1px)) {
+@media (max-width: ($bp-desktop - 1px)), (max-height: $bp-design-height) {
   .section {
     height: auto;
     min-height: 0;
@@ -65,10 +65,11 @@ app-side-navigation {
 
   .container {
     width: 100%;
-    max-width: 100%;
+    max-width: 1440px;
     height: auto;
     min-height: 0;
     min-width: 0;
+    margin-inline: auto;
   }
 
   #hero {
@@ -94,7 +95,8 @@ app-side-navigation {
   }
 }
 
-@media (min-width: $bp-phone) and (max-width: ($bp-desktop - 1px)) {
+@media (min-width: $bp-phone) and (max-width: ($bp-desktop - 1px)),
+  (min-width: $bp-desktop) and (max-height: $bp-design-height) {
   .container {
     padding: 80px 48px 80px 48px;
   }

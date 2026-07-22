@@ -220,7 +220,7 @@
   }
 }
 
-@media (max-width: ($bp-desktop - 1px)) {
+@media (max-width: ($bp-desktop - 1px)), (max-height: $bp-design-height) {
   .projects-content {
     height: auto;
     max-height: none;

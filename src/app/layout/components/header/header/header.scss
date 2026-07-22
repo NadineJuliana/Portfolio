@@ -195,7 +195,7 @@ header.theme-color {
   }
 }
 
-@media (max-width: ($bp-desktop - 1px)) {
+@media (max-width: ($bp-desktop - 1px)), (max-height: $bp-design-height) {
   :host-context(.home-header) header.hero-inactive {
     display: none;
   }
@@ -214,7 +214,9 @@ header.theme-color {
   }
 
   header .container {
-    max-width: 100%;
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;

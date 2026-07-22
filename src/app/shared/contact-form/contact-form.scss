@@ -275,7 +275,7 @@
   }
 }
 
-@media (max-width: $bp-phone-lg) {
+@media (max-width: $bp-phone-lg), (max-height: $bp-design-height) {
   .contactform-content {
     .form-top {
       flex-direction: column;

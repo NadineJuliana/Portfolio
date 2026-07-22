@@ -71,14 +71,13 @@ p {
     img {
       width: 32px;
       height: 32px;
-       display: block;
+      display: block;
       pointer-events: none;
       animation: bounce 1s infinite ease-in-out;
     }
 
-     &:hover img {
+    &:hover img {
       animation-play-state: paused;
-
     }
   }
 }
@@ -157,7 +156,7 @@ p {
   }
 }
 
-@media (max-width: ($bp-desktop - 1px)) {
+@media (max-width: ($bp-desktop - 1px)), (max-height: $bp-design-height) {
   .about-me-content {
     display: flex;
     flex-direction: column;

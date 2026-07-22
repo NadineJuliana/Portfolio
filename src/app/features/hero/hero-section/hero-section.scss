@@ -115,7 +115,7 @@
   }
 }
 
-@media (max-width: ($bp-desktop - 1px)) {
+@media (max-width: ($bp-desktop - 1px)), (max-height: $bp-design-height) {
   .hero-content {
     width: 100%;
     min-height: calc(100dvh - 112px);
