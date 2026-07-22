@@ -18,17 +18,22 @@
       <a href="#contact">
         <button class="btn-primary">{{ 'about.button' | translate }}</button>
       </a>
-      <img
+      <div
         class="bounce"
-        src="icons/emoji.svg"
-        alt="Emoji Icon"
         (mouseenter)="showMore = true"
         (mouseleave)="showMore = false"
         (click)="openOverlay()"
-      />
+      >
+        <img src="icons/emoji.svg" alt="Emoji Icon" />
+      </div>
     </div>
   </div>
-  <div class="about-me-overlay" [class.visible]="showMore">
+  <div
+    class="about-me-overlay"
+    [class.visible]="showMore"
+    (mouseenter)="showMore = true"
+    (mouseleave)="showMore = false"
+  >
     <div class="overlay-header">
       <h4>{{ 'about.overlayTitle' | translate }}</h4>
       <div class="close-button" (click)="closeOverlay()">
