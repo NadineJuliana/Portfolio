@@ -1,7 +1,7 @@
 {
   "hero": {
     "greeting": "Hello there! I'm",
-    "role": "Frontend Developer",
+    "role": "Fullstack Developer",
     "contactButton": "Get in Touch"
   },
   "navigation": {
@@ -80,6 +80,11 @@
         "title": "Pokedex",
         "description": "A Pokédex application that fetches and displays Pokémon data from an external API.",
         "roleDescription": "I worked with API requests, dynamic rendering and interactive UI elements to display structured Pokémon data."
+      },
+      "coderr": {
+        "title": "Coderr",
+        "description": "A freelancer marketplace with a Django REST Framework backend and JavaScript frontend.",
+        "roleDescription": "I developed the Django REST Framework backend, deployed the application to a Google Cloud VM, and integrated it with an existing JavaScript frontend."
       }
     }
   },

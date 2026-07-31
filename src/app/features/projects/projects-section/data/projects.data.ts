@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
     emoji: './icons/checkbox.svg',
 
     github: 'https://github.com/NadineJuliana/Join-Project.git',
-    liveTest: 'https://join-2-1224.developerakademie.net/angular-projects/join/login'
+    liveTest: 'https://join.nadine-juliana.de'
   },
 
   {
@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     emoji: './icons/chicken.svg',
 
     github: 'https://github.com/NadineJuliana/-El-Pollo-Loco-.git',
-    liveTest: 'https://nadine-bauer.developerakademie.net/el-pollo-loco/index.html'
+    liveTest: 'https://el-pollo-loco.nadine-juliana.de'
   },
 
   {
@@ -40,6 +40,20 @@ export const PROJECTS: Project[] = [
     emoji: './icons/speakbubble.svg',
 
     github: 'https://github.com/NadineJuliana/Pokedex.git',
-    liveTest: 'https://nadine-bauer.developerakademie.net/pokedex/index.html'
-  }
+    liveTest: 'https://pokedex.nadine-juliana.de'
+  },
+
+  {
+    translationKey: 'coderr',
+    languages: 'Python | Django REST Framework | JavaScript | Google Cloud',
+    description: 'Freelancer marketplace with a REST API backend.',
+
+    image: './img/coderr.png',
+    backgroundColor: '#b9c814 ',
+    accentIcon: './icons/star_pink_mid.svg',
+    emoji: './icons/checkbox.svg',
+
+    github: 'https://github.com/NadineJuliana/Coderr.git',
+    liveTest: 'https://coderr.nadine-juliana.de'
+  },
 ];

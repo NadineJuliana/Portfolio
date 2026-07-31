@@ -1,7 +1,7 @@
 {
   "hero": {
     "greeting": "Hallo! Ich bin",
-    "role": "Frontend Entwicklerin",
+    "role": "Fullstack Entwicklerin",
     "contactButton": "Kontakt aufnehmen"
   },
   "navigation": {
@@ -80,6 +80,11 @@
         "title": "Pokedex",
         "description": "Eine Pokédex-Anwendung, die Pokémon-Daten über eine externe API lädt und darstellt.",
         "roleDescription": "Ich habe mit API-Requests, dynamischem Rendering und interaktiven UI-Elementen gearbeitet, um strukturierte Pokémon-Daten darzustellen."
+      },
+      "coderr": {
+        "title": "Coderr",
+        "description": "Ein Freelancer-Marktplatz mit Django-REST-Framework-Backend und JavaScript-Frontend.",
+        "roleDescription": "Ich habe das Django-REST-Framework-Backend entwickelt, die Anwendung auf einer Google Cloud VM bereitgestellt und mit einem bestehenden JavaScript-Frontend verbunden."
       }
     }
   },
