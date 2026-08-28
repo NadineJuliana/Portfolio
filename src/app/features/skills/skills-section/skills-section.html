@@ -34,53 +34,115 @@
       </article>
       <div class="more-skills-list">
         <div class="more-skills-items">
-          <img src="icons/python.svg" alt="Python" />
-          <p>Python</p>
+          <img src="icons/react.svg" alt="React" />
+          <p>React</p>
         </div>
         <div class="more-skills-items">
-          <img src="icons/django.svg" alt="Django" />
-          <p>Django</p>
+          <img src="icons/vuejs.svg" alt="Vue.js" />
+          <p>Vue.js</p>
         </div>
         <div class="more-skills-items">
-          <img src="icons/linux.svg" alt="Linux" />
-          <p>Linux</p>
+          <img src="icons/cicd.svg" alt="CI/CD" />
+          <p>CI/CD</p>
         </div>
       </div>
     </div>
-    <div class="skills-list-left">
-      <div class="skills-list">
-        <div class="skills-list-items">
-          <img src="icons/html.svg" alt="HTML" class="skills-items" />
-          <p>HTML</p>
-        </div>
-        <div class="skills-list-items">
-          <img src="icons/css.svg" alt="CSS" class="skills-items" />
-          <p>CSS</p>
-        </div>
-        <div class="skills-list-items">
-          <img src="icons/js.svg" alt="JavaScript" class="skills-items" />
-          <p>JavaScript</p>
-        </div>
-        <div class="skills-list-items">
-          <img src="icons/ts.svg" alt="TypeScript" class="skills-items" />
-          <p>TypeScript</p>
-        </div>
-        <div class="skills-list-items">
-          <img src="icons/angular.svg" alt="Angular" class="skills-items" />
-          <p>Angular</p>
-        </div>
+    <div class="skills-main">
+      <div class="skills-switch">
+        <button
+          type="button"
+          [class.active]="activeSkillCategory === 'frontend'"
+          (click)="activeSkillCategory = 'frontend'"
+        >
+          Frontend
+        </button>
 
-        <div class="skills-list-items">
-          <img src="icons/supabase.svg" alt="Supabase" class="skills-items" />
-          <p>Supabase</p>
-        </div>
-        <div class="skills-list-items">
-          <img src="icons/git.svg" alt="Git" class="skills-items" />
-          <p>Git</p>
-        </div>
-        <div class="skills-list-items">
-          <img src="icons/rest_api.svg" alt="REST API" class="skills-items" />
-          <p>REST API</p>
+        <button
+          type="button"
+          [class.active]="activeSkillCategory === 'backend'"
+          (click)="activeSkillCategory = 'backend'"
+        >
+          Backend
+        </button>
+      </div>
+      <div class="skills-list-left">
+        <div class="skills-list">
+          @if (activeSkillCategory === 'frontend') {
+            <div class="skills-list-items">
+              <img src="icons/html.svg" alt="HTML" class="skills-items" />
+              <p>HTML</p>
+            </div>
+            <div class="skills-list-items">
+              <img src="icons/css.svg" alt="CSS" class="skills-items" />
+              <p>CSS</p>
+            </div>
+            <div class="skills-list-items">
+              <img src="icons/sass.png" alt="Sass" class="skills-items" />
+              <p>Sass</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/js.svg" alt="JavaScript" class="skills-items" />
+              <p>JavaScript</p>
+            </div>
+            <div class="skills-list-items">
+              <img src="icons/ts.svg" alt="TypeScript" class="skills-items" />
+              <p>TypeScript</p>
+            </div>
+            <div class="skills-list-items">
+              <img src="icons/angular.svg" alt="Angular" class="skills-items" />
+              <p>Angular</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/supabase.svg" alt="Supabase" class="skills-items" />
+              <p>Supabase</p>
+            </div>
+            <div class="skills-list-items">
+              <img src="icons/git.svg" alt="Git" class="skills-items" />
+              <p>Git</p>
+            </div>
+            <div class="skills-list-items">
+              <img src="icons/scrum.svg" alt="Scrum" class="skills-items" />
+              <p>Scrum</p>
+            </div>
+          }
+          @if (activeSkillCategory === 'backend') {
+            <div class="skills-list-items">
+              <img src="icons/python.svg" alt="Python" class="skills-items" />
+              <p>Python</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/django.svg" alt="Django" class="skills-items" />
+              <p>Django</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/rest_api.svg" alt="REST API" class="skills-items" />
+              <p>REST API</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/postgre_sql.svg" alt="PostgreSQL" class="skills-items" />
+              <p>PostgreSQL</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/docker.svg" alt="Docker" class="skills-items" />
+              <p>Docker</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/linux.svg" alt="Linux" class="skills-items" />
+              <p>Linux</p>
+            </div>
+
+            <div class="skills-list-items">
+              <img src="icons/git.svg" alt="Git" class="skills-items" />
+              <p>Git</p>
+            </div>
+          }
         </div>
       </div>
     </div>

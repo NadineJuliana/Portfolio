@@ -9,6 +9,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class SkillsSection {
   showMore = false;
+  activeSkillCategory: 'frontend' | 'backend' = 'frontend';
 
   openOverlay() {
     this.showMore = true;
