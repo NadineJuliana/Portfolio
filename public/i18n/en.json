@@ -15,7 +15,7 @@
   "about": {
     "title": "About Me",
     "greeting": "Hi, I'm Nadine.",
-    "paragraph1": "As a former automotive mechatronics technician, I discovered my passion for software development through my enthusiasm for technical systems and structured problem-solving. Today, I build modern web applications with Angular while continuously expanding my frontend and backend skills.",
+    "paragraph1": "As a former automotive mechatronics technician, I discovered my passion for software development through my enthusiasm for technical systems and structured problem-solving. Today, I build modern web applications with Angular and Django, combining frontend and backend development.",
     "paragraph2": "What excites me most isn't just writing code—it's understanding how complex systems work. I enjoy learning new technologies, continuously improving my code and creating clean, maintainable solutions.",
     "button": "Let's Talk",
     "overlayTitle": "More about me",
@@ -91,7 +91,7 @@
   "contact": {
     "title": "Let's build something cool together!",
     "subtitle": "Got a problem to solve?",
-    "text": "I'm currently looking for opportunities as a Junior Frontend Developer, with a growing focus on fullstack development. If you are looking for someone who enjoys clean code, structured problem-solving and continuously improving solutions, feel free to contact me.",
+    "text": "I'm currently looking for opportunities as a Junior Fullstack Developer. If you are looking for someone who enjoys clean code, structured problem-solving and continuously improving solutions, feel free to contact me.",
     "form": {
       "nameLabel": "What's your name?",
       "namePlaceholder": "Your name goes here",

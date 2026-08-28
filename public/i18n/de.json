@@ -15,7 +15,7 @@
   "about": {
     "title": "Über mich",
     "greeting": "Hi, ich bin Nadine.",
-    "paragraph1": "Als ehemalige Kfz-Mechatronikerin habe ich meine Begeisterung für Softwareentwicklung durch meine Leidenschaft für technische Systeme und strukturierte Problemlösung entdeckt. Heute entwickle ich moderne Webanwendungen mit Angular und erweitere kontinuierlich meine Kenntnisse im Frontend- und Backend-Bereich.",
+    "paragraph1": "Als ehemalige Kfz-Mechatronikerin habe ich meine Begeisterung für Softwareentwicklung durch meine Leidenschaft für technische Systeme und strukturierte Problemlösung entdeckt. Heute entwickle ich moderne Webanwendungen mit Angular und Django und verbinde dabei Frontend- und Backend-Entwicklung.",
     "paragraph2": "Mich begeistert nicht nur das Programmieren selbst, sondern vor allem das Verstehen komplexer Zusammenhänge. Ich lerne gerne neue Technologien kennen, verbessere meinen Code kontinuierlich und lege Wert auf saubere, wartbare Lösungen.",
     "button": "Lass uns sprechen",
     "overlayTitle": "Mehr über mich",
@@ -91,7 +91,7 @@
   "contact": {
     "title": "Lass uns gemeinsam etwas Cooles entwickeln!",
     "subtitle": "Du hast ein Problem zu lösen?",
-    "text": "Ich suche aktuell nach Einstiegsmöglichkeiten als Junior Frontend Entwicklerin mit wachsendem Fokus auf Fullstack Development. Wenn du jemanden suchst, der sauberen Code, strukturierte Problemlösung und die kontinuierliche Verbesserung von Lösungen schätzt, freue ich mich über deine Nachricht.",
+    "text": "Ich suche aktuell nach Einstiegsmöglichkeiten als Junior Fullstack Entwicklerin. Wenn du jemanden suchst, der sauberen Code, strukturierte Problemlösung und die kontinuierliche Verbesserung von Lösungen schätzt, freue ich mich über deine Nachricht.",
     "form": {
       "nameLabel": "Wie heißt du?",
       "namePlaceholder": "Dein Name",
