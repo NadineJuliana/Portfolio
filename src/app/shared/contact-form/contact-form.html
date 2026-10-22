@@ -3,13 +3,26 @@
     <div class="form-top">
       <div class="field-group">
         <div class="name">
-          <h4>{{ 'contact.form.nameLabel' | translate }}</h4>
+          <label for="contact-fullname">
+            {{ 'contact.form.nameLabel' | translate }}
+          </label>
           <input
+            id="contact-fullname"
             type="text"
             formControlName="fullname"
+            autocomplete="name"
+            required
             (focus)="setFocusedField('fullname')"
             (blur)="setFocusedField(null)"
             [class.input-error]="isInvalid(fullname)"
+            [attr.aria-invalid]="isInvalid(fullname)"
+            [attr.aria-describedby]="
+              isInvalid(fullname)
+                ? fullname.hasError('required') || fullname.hasError('whitespace')
+                  ? 'fullname-required-error'
+                  : 'fullname-validation-error'
+                : null
+            "
             [placeholder]="
               isInvalid(fullname) &&
               (fullname.hasError('required') || fullname.hasError('whitespace'))
@@ -18,7 +31,7 @@
             "
           />
         </div>
-        <p class="field-error">
+        <p class="field-error" id="fullname-error">
           @if (
             showFieldError(fullname, 'fullname') &&
             !fullname.hasError('required') &&
@@ -27,17 +40,49 @@
             {{ getFullnameError() | translate }}
           }
         </p>
+
+        <p id="fullname-validation-error" class="sr-only">
+          @if (
+            isInvalid(fullname) &&
+            !fullname.hasError('required') &&
+            !fullname.hasError('whitespace')
+          ) {
+            {{ getFullnameError() | translate }}
+          }
+        </p>
+
+        <p id="fullname-required-error" class="sr-only">
+          @if (
+            isInvalid(fullname) &&
+            (fullname.hasError('required') || fullname.hasError('whitespace'))
+          ) {
+            {{ 'contact.form.nameError' | translate }}
+          }
+        </p>
       </div>
 
       <div class="field-group">
         <div class="email">
-          <h4>{{ 'contact.form.emailLabel' | translate }}</h4>
+          <label for="contact-mail">
+            {{ 'contact.form.emailLabel' | translate }}
+          </label>
           <input
+            id="contact-mail"
             type="email"
             formControlName="mail"
+            autocomplete="email"
+            required
             (focus)="setFocusedField('mail')"
             (blur)="setFocusedField(null)"
             [class.input-error]="isInvalid(mail)"
+            [attr.aria-invalid]="isInvalid(mail)"
+            [attr.aria-describedby]="
+              isInvalid(mail)
+                ? mail.hasError('required')
+                  ? 'mail-required-error'
+                  : 'mail-validation-error'
+                : null
+            "
             [placeholder]="
               isInvalid(mail) && mail.hasError('required')
                 ? ('contact.form.emailError' | translate)
@@ -45,9 +90,21 @@
             "
           />
         </div>
-        <p class="field-error">
+        <p class="field-error" id="mail-error">
           @if (showFieldError(mail, 'mail') && !mail.hasError('required')) {
             {{ getMailError() | translate }}
+          }
+        </p>
+
+        <p id="mail-validation-error" class="sr-only">
+          @if (isInvalid(mail) && !mail.hasError('required')) {
+            {{ getMailError() | translate }}
+          }
+        </p>
+
+        <p id="mail-required-error" class="sr-only">
+          @if (isInvalid(mail) && mail.hasError('required')) {
+            {{ 'contact.form.emailError' | translate }}
           }
         </p>
       </div>
@@ -56,22 +113,34 @@
     <div class="form-mid-group">
       <div class="form-mid">
         <div class="text">
-          <h4>{{ 'contact.form.messageLabel' | translate }}</h4>
-          <input
-            type="text"
+          <label for="contact-message">
+            {{ 'contact.form.messageLabel' | translate }}
+          </label>
+          <textarea
+            id="contact-message"
             formControlName="message"
+            required
+            rows="1"
             (focus)="setFocusedField('message')"
             (blur)="setFocusedField(null)"
             [class.input-error]="isInvalid(message)"
+            [attr.aria-invalid]="isInvalid(message)"
+            [attr.aria-describedby]="
+              isInvalid(message)
+                ? message.hasError('required') || message.hasError('whitespace')
+                  ? 'message-required-error'
+                  : 'message-validation-error'
+                : null
+            "
             [placeholder]="
               isInvalid(message) && (message.hasError('required') || message.hasError('whitespace'))
                 ? ('contact.form.messageError' | translate)
                 : ('contact.form.messagePlaceholder' | translate)
             "
-          />
+          ></textarea>
         </div>
       </div>
-      <p class="field-error">
+      <p class="field-error" id="message-error">
         @if (
           showFieldError(message, 'message') &&
           !message.hasError('required') &&
@@ -80,13 +149,38 @@
           {{ getMessageError() | translate }}
         }
       </p>
+
+      <p id="message-validation-error" class="sr-only">
+        @if (
+          isInvalid(message) && !message.hasError('required') && !message.hasError('whitespace')
+        ) {
+          {{ getMessageError() | translate }}
+        }
+      </p>
+
+      <p id="message-required-error" class="sr-only">
+        @if (
+          isInvalid(message) && (message.hasError('required') || message.hasError('whitespace'))
+        ) {
+          {{ 'contact.form.messageError' | translate }}
+        }
+      </p>
     </div>
 
     <div class="form-label">
       <div class="checkbox-wrapper">
-        <input class="checkbox" type="checkbox" formControlName="check" />
+        <input
+          id="contact-privacy"
+          class="checkbox"
+          type="checkbox"
+          formControlName="check"
+          required
+          [attr.aria-invalid]="check.invalid && check.touched"
+          [attr.aria-describedby]="check.invalid && check.touched ? 'privacy-error' : null"
+        />
       </div>
-      <label>
+
+      <label for="contact-privacy">
         <span>
           {{ 'contact.form.privacyTextBefore' | translate }}
           <a routerLink="privacy-policy">{{ 'contact.form.privacyLink' | translate }}</a>
@@ -94,26 +188,41 @@
         </span>
       </label>
     </div>
-    <p class="error-label">
+
+    <p class="error-label" id="privacy-error">
       @if (check.invalid && check.touched) {
         {{ 'contact.form.privacyError' | translate }}
       }
     </p>
+
     <div class="submit">
-      <button class="btn-primary" type="submit" [disabled]="contactForm.invalid || isSending">
+      <button class="btn-primary" type="submit" [disabled]="isSending">
         {{ 'contact.form.submit' | translate }}
       </button>
     </div>
   </form>
+
   @if (submitStatus() === 'success') {
-    <div class="toast toast-success" role="status" aria-live="polite">
+    <div class="toast toast-success">
       {{ 'contact.form.submitSuccess' | translate }}
     </div>
   }
 
   @if (submitStatus() === 'error') {
-    <div class="toast toast-error" role="alert" aria-live="assertive">
+    <div class="toast toast-error">
       {{ 'contact.form.submitError' | translate }}
     </div>
   }
+
+  <div class="sr-only" role="status" aria-atomic="true">
+    @if (submitStatus() === 'success') {
+      {{ 'contact.form.submitSuccess' | translate }}
+    }
+  </div>
+
+  <div class="sr-only" role="alert" aria-atomic="true">
+    @if (submitStatus() === 'error') {
+      {{ 'contact.form.submitError' | translate }}
+    }
+  </div>
 </div>

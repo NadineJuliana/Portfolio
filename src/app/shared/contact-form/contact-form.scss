@@ -8,6 +8,27 @@
   min-height: 370px;
   position: relative;
 
+  .name > label,
+  .email > label,
+  .text > label {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  }
+
+  .btn-primary {
+    &:focus-visible {
+      background-color: $highlight-primary;
+      outline: 2px solid $bg-white;
+      outline-offset: 4px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
   .form-top {
     display: flex;
     align-items: flex-start;
@@ -40,14 +61,15 @@
           margin-bottom: 8px;
         }
 
-        h4 {
+        label {
           margin-bottom: 16px;
         }
 
-        &:hover {
+        &:hover,
+        &:focus-within {
           border-bottom: 1px solid $highlight-primary;
 
-          h4 {
+          label {
             color: $highlight-primary;
           }
         }
@@ -74,24 +96,28 @@
       padding: 8px;
       border-bottom: 1px solid $highlight-secondary;
 
-      h4 {
+      label {
         margin-bottom: 16px;
       }
 
-      input {
+      textarea {
         width: 100%;
         border: none;
         background: none;
         font-size: 16px;
-        outline: none;
         color: $bg-white;
         margin-bottom: 8px;
+        font-family: inherit;
+        outline: none;
+        resize: none;
+        min-height: 24px;
       }
 
-      &:hover {
+      &:hover,
+      &:focus-within {
         border-bottom: 1px solid $highlight-primary;
 
-        h4 {
+        label {
           color: $highlight-primary;
         }
       }
@@ -105,6 +131,18 @@
       font-size: 16px;
       line-height: 18px;
     }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .form-label {
@@ -133,9 +171,15 @@
         color 80ms ease;
       transform-origin: center;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         color: $bg-white;
         transform: scale(1.02);
+      }
+
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
       }
     }
   }
@@ -150,7 +194,8 @@
     justify-content: center;
     border-radius: 100%;
 
-    &:hover {
+    &:hover,
+    &:focus-within {
       background-color: rgba(234, 142, 183, 0.5);
     }
 
@@ -162,6 +207,11 @@
       -webkit-appearance: none;
       border: 2px solid $highlight-primary;
       border-radius: 2px;
+
+      &:focus-visible {
+        outline: 2px solid $bg-white;
+        outline-offset: 4px;
+      }
 
       &:checked::after {
         content: '';
@@ -244,7 +294,7 @@
             margin-bottom: 0;
           }
 
-          h4 {
+          label {
             min-height: 48px;
             margin-bottom: 0;
           }
@@ -254,11 +304,11 @@
 
     .form-mid-group {
       .form-mid {
-        input {
+        textarea {
           margin-bottom: 0;
         }
 
-        h4 {
+        label {
           min-height: 48px;
           margin-bottom: 0;
         }
@@ -298,7 +348,7 @@
         margin-top: 0;
       }
 
-      h4 {
+      label {
         height: auto;
         min-height: 0;
         margin-bottom: 4px;
@@ -310,7 +360,7 @@
     height: 82px;
     min-height: 82px;
 
-    h4 {
+    label {
       height: auto;
       min-height: 0;
       margin-bottom: 4px;
