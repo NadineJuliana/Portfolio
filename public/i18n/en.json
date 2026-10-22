@@ -288,5 +288,16 @@
         "link": "https://www.e-recht24.de"
       }
     }
+  },
+  "accessibility": {
+    "backToTop": "Bauer – back to top",
+    "switchToEnglish": "Switch language to English",
+    "switchToGerman": "Switch language to German",
+    "openNavigation": "Open navigation",
+    "closeNavigation": "Close navigation",
+    "mainNavigation": "Main navigation",
+    "socialNavigation": "Social media links",
+    "sectionNavigation": "Section navigation",
+    "footerNavigation": "Footer navigation"
   }
 }

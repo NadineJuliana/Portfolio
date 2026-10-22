@@ -39,3 +39,10 @@ section {
     scroll-snap-align: none;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  main {
+    scroll-behavior: auto;
+  }
+}

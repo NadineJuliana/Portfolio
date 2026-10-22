@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
@@ -8,10 +8,22 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './burger-menu.scss',
 })
 export class BurgerMenu {
-  @Output() closeMenu = new EventEmitter<void>();
-  isMenuOpen = false;
+  @Output() closeMenu = new EventEmitter<boolean>();
 
-  close(): void {
-    this.closeMenu.emit();
+  @ViewChild('closeButton')
+  closeButton?: ElementRef<HTMLButtonElement>;
+
+  focusCloseButton(): void {
+    this.closeButton?.nativeElement.focus();
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscape(event: Event): void {
+    event.preventDefault();
+    this.close();
+  }
+
+  close(restoreFocus = true): void {
+    this.closeMenu.emit(restoreFocus);
   }
 }

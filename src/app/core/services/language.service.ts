@@ -13,7 +13,9 @@ export class LanguageService {
 
   constructor() {
     this.translate.setFallbackLang('de');
-    this.translate.use(this.currentLanguage());
+    const language = this.currentLanguage();
+    this.translate.use(language);
+    document.documentElement.lang = language;
   }
 
   toggleLanguage(): void {
@@ -24,6 +26,7 @@ export class LanguageService {
   setLanguage(language: Language): void {
     this.currentLanguage.set(language);
     this.translate.use(language);
+    document.documentElement.lang = language;
     localStorage.setItem('language', language);
   }
 

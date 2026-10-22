@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ThemeService } from '../../../core/services/theme.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-side-navigation',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './side-navigation.html',
   styleUrl: './side-navigation.scss',
 })
@@ -21,10 +22,6 @@ export class SideNavigation {
     'references',
     'contact'
   ];
-
-  scrollToSection(sectionId: string) {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  }
 
   getImage(section: string) {
     const isActive = this.activeSection() === section;

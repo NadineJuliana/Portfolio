@@ -1,13 +1,14 @@
 import { NgClass } from '@angular/common';
 import { ThemeService } from './../../../../core/services/theme.service';
 import { LanguageService } from './../../../../core/services/language.service';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ElementRef, ViewChild } from '@angular/core';
 import { BurgerMenu } from '../../../../shared/burger-menu/burger-menu';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, BurgerMenu],
+  imports: [NgClass, BurgerMenu, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -19,6 +20,16 @@ export class Header {
   readonly isHeroSection = this.themeService.heroActive;
   readonly currentLang = this.languageService.currentLanguage;
 
+  @ViewChild('burgerButton')
+  burgerButton?: ElementRef<HTMLButtonElement>;
+
+  @ViewChild(BurgerMenu)
+  set burgerMenu(menu: BurgerMenu | undefined) {
+    if (menu && this.isMenuOpen) {
+      menu.focusCloseButton();
+    }
+  }
+
   isMenuOpen = false;
 
   toggleLanguage(): void {
@@ -29,7 +40,11 @@ export class Header {
     this.isMenuOpen = true;
   }
 
-  closeMenu() {
+  closeMenu(restoreFocus = true): void {
     this.isMenuOpen = false;
+
+    if (restoreFocus) {
+      this.burgerButton?.nativeElement.focus();
+    }
   }
 }

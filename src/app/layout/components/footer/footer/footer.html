@@ -1,8 +1,20 @@
 <footer>
-  <p>(C) Nadine Bauer 2026</p>
-  <div class="footer-links">
-    <a routerLink="/imprint">{{ 'footer.imprint' | translate }}</a>
-    <a href="https://www.linkedin.com/in/nadine-bauer-1615123b6/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/NadineJuliana" target="_blank">GitHub</a>
-  </div>
+  <p>&copy; Nadine Bauer 2026</p>
+  <nav class="footer-links" [attr.aria-label]="'accessibility.footerNavigation' | translate">
+    <a routerLink="/imprint">
+      {{ 'footer.imprint' | translate }}
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/nadine-bauer-1615123b6/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+    </a>
+
+    <a href="https://github.com/NadineJuliana" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+  </nav>
 </footer>

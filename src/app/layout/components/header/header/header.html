@@ -2,48 +2,86 @@
   <div class="container">
     <div class="header-left-links">
       @if (isHeroSection()) {
-        <nav class="navigation-left">
-          <a href="https://github.com/NadineJuliana" target="_blank"
-            ><img class="icon-default" src="icons/github.svg" alt="GitHub" />
-            <img class="icon-hover" src="icons/github_pink.svg" alt="GitHub"
+        <nav
+          class="navigation-left"
+          [attr.aria-label]="'accessibility.socialNavigation' | translate"
+        >
+          <a
+            href="https://github.com/NadineJuliana"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            ><img class="icon-default" src="icons/github.svg" alt="" aria-hidden="true" />
+            <img class="icon-hover" src="icons/github_pink.svg" alt="" aria-hidden="true"
           /></a>
-          <a href="https://www.linkedin.com/in/nadine-bauer-1615123b6/" target="_blank"
-            ><img class="icon-default" src="icons/linkedin.svg" alt="LinkedIn" />
-            <img class="icon-hover" src="icons/linkedin_pink.svg" alt="LinkedIn"
+          <a
+            href="https://www.linkedin.com/in/nadine-bauer-1615123b6/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><img class="icon-default" src="icons/linkedin.svg" alt="" aria-hidden="true" />
+            <img class="icon-hover" src="icons/linkedin_pink.svg" alt="" aria-hidden="true"
           /></a>
-          <a href="#contact"
-            ><img class="icon-default" src="icons/email.svg" alt="Mail" />
-            <img class="icon-hover" src="icons/email_pink.svg" alt="Mail"
-          /></a>
+          <a href="#contact" [attr.aria-label]="'navigation.contact' | translate"
+            ><img class="icon-default" src="icons/email.svg" alt="" aria-hidden="true" />
+            <img class="icon-hover" src="icons/email_pink.svg" alt="" aria-hidden="true" />
+          </a>
         </nav>
       }
     </div>
-    <a href="#hero" class="logo" [class.logo-link]="!isHeroSection()">
-      <img src="icons/initials_logo.png" alt="Favicon" />
-      Bauer
-    </a>
+
+    @if (isHeroSection()) {
+      <div class="logo">
+        <img src="icons/initials_logo.png" alt="" aria-hidden="true" />
+        Bauer
+      </div>
+    } @else {
+      <a
+        href="#hero"
+        class="logo logo-link"
+        [attr.aria-label]="'accessibility.backToTop' | translate"
+      >
+        <img src="icons/initials_logo.png" alt="" aria-hidden="true" />
+        Bauer
+      </a>
+    }
+
     <div class="header-right">
       <div class="header-language-switcher">
         <button
           type="button"
           (click)="toggleLanguage()"
           [attr.aria-label]="
-            currentLang() === 'de' ? 'Sprache zu Englisch wechseln' : 'Switch language to German'
+            (currentLang() === 'de'
+              ? 'accessibility.switchToEnglish'
+              : 'accessibility.switchToGerman'
+            ) | translate
           "
         >
           {{ currentLang() === 'de' ? 'DE' : 'EN' }}
         </button>
       </div>
-      <div class="burger" (click)="openMenu()">
+
+      <button
+        #burgerButton
+        class="burger"
+        type="button"
+        (click)="openMenu()"
+        [attr.aria-controls]="isMenuOpen ? 'mobile-navigation' : null"
+        [attr.aria-expanded]="isMenuOpen"
+        [attr.aria-label]="'accessibility.openNavigation' | translate"
+      >
         @if (theme() === 'light') {
-          <img class="burgericon-default" src="icons/menu_black.svg" alt="Burger Menu" />
+          <img class="burgericon-default" src="icons/menu_black.svg" alt="" aria-hidden="true" />
         } @else {
-          <img class="burgericon-default" src="icons/menu_white.svg" alt="Burger Menu" />
+          <img class="burgericon-default" src="icons/menu_white.svg" alt="" aria-hidden="true" />
         }
-        <img class="burgericon-hover" src="icons/menu_pink.svg" alt="Burger Menu" />
-      </div>
+
+        <img class="burgericon-hover" src="icons/menu_pink.svg" alt="" aria-hidden="true" />
+      </button>
+
       @if (isMenuOpen) {
-        <app-burger-menu (closeMenu)="closeMenu()"></app-burger-menu>
+        <app-burger-menu (closeMenu)="closeMenu($event)"></app-burger-menu>
       }
     </div>
   </div>

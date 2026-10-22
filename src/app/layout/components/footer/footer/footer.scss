@@ -7,19 +7,29 @@ footer {
   display: flex;
   justify-content: space-between;
   color: $bg-white;
+
   .footer-links {
     width: 259px;
     height: 19px;
     display: flex;
     justify-content: space-between;
   }
+
   a {
     color: $bg-white;
     font-size: 16px;
     font-weight: 300;
     text-decoration: none;
-    &:hover {
+
+    &:hover,
+    &:focus-visible {
       color: $highlight-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+      border-radius: 2px;
     }
   }
 }

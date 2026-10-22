@@ -1,7 +1,12 @@
-<nav class="side-nav">
+<nav class="side-nav" [attr.aria-label]="'accessibility.sectionNavigation' | translate">
   @for (section of sections; track section) {
-    <button class="bullet-btn" (click)="scrollToSection(section)" [attr.aria-label]="section">
-      <img [src]="getImage(section)" [alt]="section" />
-    </button>
+    <a
+      class="bullet-btn"
+      [href]="'#' + section"
+      [attr.aria-label]="('navigation.' + section) | translate"
+      [attr.aria-current]="activeSection() === section ? 'location' : null"
+    >
+      <img [src]="getImage(section)" alt="" aria-hidden="true" />
+    </a>
   }
 </nav>
