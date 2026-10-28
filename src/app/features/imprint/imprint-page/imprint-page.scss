@@ -20,12 +20,8 @@
   color: $bg-white;
   width: 100%;
 
-  h4 {
-    color: $highlight-secondary;
-    margin-top: 24px;
-  }
-
-  h5 {
+  .imprint-heading,
+  .imprint-subheading {
     color: $highlight-secondary;
     margin-top: 24px;
   }
@@ -41,6 +37,24 @@
   .paragraph {
     margin-top: 16px;
   }
+}
+
+.imprint-title {
+  font-family: 'Eczar', Arial, Helvetica, sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+}
+
+.imprint-heading {
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.imprint-subheading {
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
 }
 
 .arrow {
@@ -104,6 +118,10 @@
 }
 
 @media (max-width: ($bp-desktop - 1px)) {
+  .imprint-title {
+    font-size: clamp(40px, 5vw, 72px);
+  }
+
   .footer-wrapper {
     flex-direction: column;
     align-items: center;
@@ -137,6 +155,20 @@
     display: flex;
     justify-content: end;
     margin-bottom: 24px;
+
+    &:hover,
+    &:focus-visible {
+      img {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(26%) saturate(900%)
+          hue-rotate(290deg);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $highlight-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
 
     img {
       display: block;
@@ -184,5 +216,12 @@
     img {
       width: 8px;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation-wrapper .pink-star,
+  .animation-wrapper .green-star {
+    animation: none;
   }
 }

@@ -1,44 +1,71 @@
 <app-header class="privacypolicy-header"></app-header>
+
 <main class="privacypolicy-page">
   <section class="privacypolicy-section">
     <div class="container">
       <div class="content">
         <div class="privacypolicy-content">
-          <!-- section1 -->
+          <a
+            routerLink="/"
+            fragment="contact"
+            class="arrow"
+            [attr.aria-label]="'privacy.backToContact' | translate"
+          >
+            <img src="icons/arrow_white.svg" alt="" />
+          </a>
 
-          <a routerLink="/" fragment="contact" class="arrow"
-            ><img src="icons/arrow_white.svg" alt="Arrow Back"
-          /></a>
-          <h2>{{ 'privacy.title' | translate }}</h2>
-          <h4>{{ 'privacy.section1.title' | translate }}</h4>
+          <h1 class="privacy-title">
+            {{ 'privacy.title' | translate }}
+          </h1>
 
-          <h5>{{ 'privacy.section1.generalInformation.title' | translate }}</h5>
+          <!-- Section 1 -->
+          <h2 class="privacy-section-heading">
+            {{ 'privacy.section1.title' | translate }}
+          </h2>
+
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section1.generalInformation.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section1.generalInformation.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section1.dataCollection.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section1.dataCollection.title' | translate }}
+          </h3>
 
-          <h5>{{ 'privacy.section1.dataCollection.controller.title' | translate }}</h5>
+          <h4 class="privacy-detail-heading">
+            {{ 'privacy.section1.dataCollection.controller.title' | translate }}
+          </h4>
           <p>{{ 'privacy.section1.dataCollection.controller.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section1.dataCollection.collection.title' | translate }}</h5>
+          <h4 class="privacy-detail-heading">
+            {{ 'privacy.section1.dataCollection.collection.title' | translate }}
+          </h4>
           <p>{{ 'privacy.section1.dataCollection.collection.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section1.dataCollection.collection.paragraph2' | translate }}</p>
 
-          <h5>{{ 'privacy.section1.dataCollection.usage.title' | translate }}</h5>
+          <h4 class="privacy-detail-heading">
+            {{ 'privacy.section1.dataCollection.usage.title' | translate }}
+          </h4>
           <p>{{ 'privacy.section1.dataCollection.usage.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section1.dataCollection.rights.title' | translate }}</h5>
+          <h4 class="privacy-detail-heading">
+            {{ 'privacy.section1.dataCollection.rights.title' | translate }}
+          </h4>
           <p>{{ 'privacy.section1.dataCollection.rights.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section1.dataCollection.rights.paragraph2' | translate }}</p>
           <p>{{ 'privacy.section1.dataCollection.rights.paragraph3' | translate }}</p>
           <p>{{ 'privacy.section1.dataCollection.rights.paragraph4' | translate }}</p>
 
-          <!-- section2 -->
-          <h4>{{ 'privacy.section2.title' | translate }}</h4>
+          <!-- Section 2 -->
+          <h2 class="privacy-section-heading">
+            {{ 'privacy.section2.title' | translate }}
+          </h2>
 
           <p>{{ 'privacy.section2.intro' | translate }}</p>
 
-          <h5>{{ 'privacy.section2.strato.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section2.strato.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section2.strato.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section2.strato.paragraph2' | translate }}</p>
 
@@ -52,18 +79,26 @@
 
           <p>{{ 'privacy.section2.strato.paragraph3' | translate }}</p>
 
-          <h5>{{ 'privacy.section2.dataProcessingAgreement.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section2.dataProcessingAgreement.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section2.dataProcessingAgreement.text' | translate }}</p>
 
-          <!-- section3 -->
-          <h4>{{ 'privacy.section3.title' | translate }}</h4>
+          <!-- Section 3 -->
+          <h2 class="privacy-section-heading">
+            {{ 'privacy.section3.title' | translate }}
+          </h2>
 
-          <h5>{{ 'privacy.section3.dataProtection.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.dataProtection.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.dataProtection.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section3.dataProtection.paragraph2' | translate }}</p>
           <p>{{ 'privacy.section3.dataProtection.paragraph3' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.controllerInformation.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.controllerInformation.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.controllerInformation.intro' | translate }}</p>
 
           <address>
@@ -75,32 +110,50 @@
 
           <p>{{ 'privacy.section3.controllerInformation.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.storagePeriod.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.storagePeriod.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.storagePeriod.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.legalBasis.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.legalBasis.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.legalBasis.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.recipients.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.recipients.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.recipients.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.withdrawalOfConsent.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.withdrawalOfConsent.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.withdrawalOfConsent.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.rightToObject.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.rightToObject.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.rightToObject.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section3.rightToObject.paragraph2' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.complaint.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.complaint.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.complaint.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.dataPortability.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.dataPortability.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.dataPortability.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.accessRectificationErasure.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.accessRectificationErasure.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.accessRectificationErasure.text' | translate }}</p>
 
-          <h5>{{ 'privacy.section3.restrictionOfProcessing.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section3.restrictionOfProcessing.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section3.restrictionOfProcessing.paragraph1' | translate }}</p>
 
           <ul>
@@ -112,21 +165,28 @@
 
           <p>{{ 'privacy.section3.restrictionOfProcessing.paragraph2' | translate }}</p>
 
-          <!-- section4 -->
+          <!-- Section 4 -->
+          <h2 class="privacy-section-heading">
+            {{ 'privacy.section4.title' | translate }}
+          </h2>
 
-          <h4>{{ 'privacy.section4.title' | translate }}</h4>
-
-          <h5>{{ 'privacy.section4.contactForm.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section4.contactForm.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section4.contactForm.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section4.contactForm.paragraph2' | translate }}</p>
           <p>{{ 'privacy.section4.contactForm.paragraph3' | translate }}</p>
 
-          <h5>{{ 'privacy.section4.emailPhoneFax.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section4.emailPhoneFax.title' | translate }}
+          </h3>
           <p>{{ 'privacy.section4.emailPhoneFax.paragraph1' | translate }}</p>
           <p>{{ 'privacy.section4.emailPhoneFax.paragraph2' | translate }}</p>
           <p>{{ 'privacy.section4.emailPhoneFax.paragraph3' | translate }}</p>
 
-          <h5>{{ 'privacy.section4.source.title' | translate }}</h5>
+          <h3 class="privacy-subheading">
+            {{ 'privacy.section4.source.title' | translate }}
+          </h3>
           <a
             [href]="'privacy.section4.source.link' | translate"
             target="_blank"
@@ -136,11 +196,13 @@
           </a>
         </div>
       </div>
+
       <div class="footer-wrapper">
-        <div class="animation-wrapper">
-          <img class="pink-star" src="icons/star_pink_big.svg" alt="Star Icon" />
-          <img class="green-star" src="icons/star_darkgreen_big.svg" alt="Star Icon" />
+        <div class="animation-wrapper" aria-hidden="true">
+          <img class="pink-star" src="icons/star_pink_big.svg" alt="" />
+          <img class="green-star" src="icons/star_darkgreen_big.svg" alt="" />
         </div>
+
         <app-footer></app-footer>
       </div>
     </div>

@@ -108,6 +108,24 @@
     width: 32px;
     height: 32px;
     animation: bounce 1s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $highlight-secondary;
+      outline-offset: 4px;
+    }
   }
 }
 
@@ -139,7 +157,8 @@
       display: none;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: $highlight-primary;
 
       .default-arrow {
@@ -149,6 +168,11 @@
       .hover-arrow {
         display: block;
       }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $bg-white;
+      outline-offset: 4px;
     }
   }
 }
@@ -165,10 +189,29 @@
     background: none;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: $highlight-primary;
     }
+
+    &:focus-visible {
+      outline: 2px solid $highlight-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (min-width: $bp-desktop-lg) and (max-width: ($bp-desktop-xl - 1px)) {
@@ -263,26 +306,28 @@
     height: auto;
     position: relative;
 
-    .role-description {
-      z-index: 100;
+    .close-button {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 8px;
       width: 100%;
-      max-width: 420px;
-      right: 0;
-      top: -150px;
-      height: auto;
-      padding: 16px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: inherit;
 
-      .close-button {
-        display: flex;
-        justify-content: end;
-        cursor: pointer;
-        margin-bottom: 8px;
+      &:focus-visible {
+        outline: 2px solid $bg-white;
+        outline-offset: 4px;
+        border-radius: 4px;
+      }
 
-        img {
-          object-fit: contain;
-          width: 18px;
-          height: 18px;
-        }
+      img {
+        object-fit: contain;
+        width: 18px;
+        height: 18px;
       }
     }
   }
@@ -337,5 +382,12 @@
       right: 0;
       top: -190px;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accent-icon,
+  .infos-header .bounce {
+    animation: none;
   }
 }

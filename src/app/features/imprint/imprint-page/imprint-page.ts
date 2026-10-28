@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Footer } from '../../../layout/components/footer/footer/footer';
 import { Header } from '../../../layout/components/header/header/header';
 import { ThemeService } from '../../../core/services/theme.service';
@@ -15,30 +14,26 @@ import { RouterLink } from '@angular/router';
 export class ImprintPage {
   private themeService = inject(ThemeService);
 
-  constructor(private sanitizer: DomSanitizer) { }
-
   ngOnInit() {
     this.themeService.setTheme('dark');
     this.themeService.setHeroActive(false);
     this.themeService.setActiveSection('imprint');
   }
 
-  highlightText(text: string): SafeHtml {
+  highlightText(text: string): string {
     if (!text) return '';
 
-    let html = text;
+    return text.replace(
+      /Developer Akademie GmbH|Developer Akademie|Portfolio/g,
+      (match) => {
+        const className =
+          match === 'Portfolio'
+            ? 'portfolio-highlight'
+            : 'developer-highlight';
 
-    html = html.replace(/Portfolio/g, `<span class="portfolio-highlight">Portfolio</span>`);
-    html = html.replace(
-      /Developer Akademie GmbH/g,
-      `<span class="developer-highlight">Developer Akademie GmbH</span>`,
+        return `<span class="${className}">${match}</span>`;
+      }
     );
-    html = html.replace(
-      /Developer Akademie/g,
-      `<span class="developer-highlight">Developer Akademie</span>`,
-    );
-
-    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 }
 

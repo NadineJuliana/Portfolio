@@ -1,5 +1,6 @@
 @use '../../../../styles/abstracts/breakpoints.scss' as *;
 @use '../../../../styles/abstracts/keyframes.scss' as *;
+@use '../../../../styles/abstracts/variables.scss' as *;
 
 .hero-content {
   display: flex;
@@ -12,12 +13,31 @@
 
 .hero-left {
   max-width: 450px;
+
+  a.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+      background-color: $highlight-primary;
+    }
+  }
 }
 
 .greeting {
   margin-bottom: clamp(24px, 3vw, 40px);
   min-height: clamp(240px, 22vw, 304px);
   line-height: 1;
+}
+
+.hero-subtitle {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .wrapper-name {
@@ -195,6 +215,12 @@
   }
 }
 
+@media (max-width: ($bp-desktop - 1px)) {
+  .hero-subtitle {
+    font-size: clamp(32px, 3.33vw, 48px);
+  }
+}
+
 @media (max-width: $bp-phone) {
   .hero-left {
     width: 100%;
@@ -213,5 +239,11 @@
 
   .star {
     width: clamp(230px, 72vw, 320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
   }
 }

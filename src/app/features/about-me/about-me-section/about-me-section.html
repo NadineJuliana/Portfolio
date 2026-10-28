@@ -1,6 +1,6 @@
 <div class="about-me-content">
   <div class="profile-image">
-    <img src="img/portfolio_2.png" alt="Profile Image" />
+    <img src="img/portfolio_2.png" [alt]="'about.profileAlt' | translate" />
   </div>
   <div class="headline">
     <h2>{{ 'about.title' | translate }}</h2>
@@ -15,35 +15,49 @@
       <p>{{ 'about.paragraph2' | translate }}</p>
     </article>
     <div class="description-footer">
-      <a href="#contact">
-        <button class="btn-primary">{{ 'about.button' | translate }}</button>
+      <a href="#contact" class="btn-primary">
+        {{ 'about.button' | translate }}
       </a>
-      <div
+      <button
+        type="button"
         class="bounce"
-        (mouseenter)="showMore = true"
-        (mouseleave)="showMore = false"
-        (click)="openOverlay()"
+        [attr.aria-label]="'about.moreInfo' | translate"
+        [attr.aria-expanded]="showMore"
+        aria-controls="about-more-overlay"
+        (mouseenter)="openOverlay()"
+        (mouseleave)="closeOverlay()"
+        (click)="toggleOverlay()"
+        (keydown.escape)="dismissOverlay()"
       >
-        <img src="icons/emoji.svg" alt="Emoji Icon" />
-      </div>
+        <img src="icons/emoji.svg" alt="" />
+      </button>
     </div>
   </div>
   <div
+    id="about-more-overlay"
     class="about-me-overlay"
     [class.visible]="showMore"
-    (mouseenter)="showMore = true"
-    (mouseleave)="showMore = false"
+    [attr.aria-hidden]="!showMore"
+    [inert]="!showMore"
+    (mouseenter)="openOverlay()"
+    (mouseleave)="closeOverlay()"
+    (keydown.escape)="dismissOverlay()"
   >
     <div class="overlay-header">
       <h4>{{ 'about.overlayTitle' | translate }}</h4>
-      <div class="close-button" (click)="closeOverlay()">
-        <img src="icons/close_white.svg" alt="Close Icon" />
-      </div>
+      <button
+        type="button"
+        class="close-button"
+        [attr.aria-label]="'about.closeInfo' | translate"
+        (click)="dismissOverlay()"
+      >
+        <img src="icons/close_white.svg" alt="" />
+      </button>
     </div>
     <ul>
       @for (fact of 'about.facts' | translate; track fact) {
         <li>
-          <img src="icons/check_circle.svg" alt="Check Circle" />
+          <img src="icons/check_circle.svg" alt="" />
           {{ fact }}
         </li>
       }

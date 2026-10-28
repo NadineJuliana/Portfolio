@@ -2,56 +2,22 @@
   <div class="skills-top">
     <h2>{{ 'skills.title' | translate }}</h2>
     <div class="skills-description">
-      <article>
-        {{ 'skills.description' | translate }}
-      </article>
+      <div class="skills-description">
+        <p>{{ 'skills.description' | translate }}</p>
+      </div>
     </div>
   </div>
   <div class="skills-bottom">
-    <div class="spinner" (click)="openOverlay()">
-      <img
-        src="icons/star_pink_mid.svg"
-        alt="Spinner"
-        class="spinner-icon"
-        (mouseenter)="showMore = true"
-        (mouseleave)="showMore = false"
-      />
-      <img
-        src="icons/mortarboard.svg"
-        alt="Education Image"
-        class="spinner-img"
-        (mouseenter)="showMore = true"
-        (mouseleave)="showMore = false"
-      />
-    </div>
-    <div class="more-skills" [class.visible]="showMore">
-      <div class="close-button" (click)="closeOverlay()">
-        <img src="icons/close_white.svg" alt="Close Icon" />
-      </div>
-      <h4>{{ 'skills.overlay.title' | translate }}</h4>
-      <article>
-        {{ 'skills.overlay.description' | translate }}
-      </article>
-      <div class="more-skills-list">
-        <div class="more-skills-items">
-          <img src="icons/react.svg" alt="React" />
-          <p>React</p>
-        </div>
-        <div class="more-skills-items">
-          <img src="icons/vuejs.svg" alt="Vue.js" />
-          <p>Vue.js</p>
-        </div>
-        <div class="more-skills-items">
-          <img src="icons/cicd.svg" alt="CI/CD" />
-          <p>CI/CD</p>
-        </div>
-      </div>
-    </div>
     <div class="skills-main">
-      <div class="skills-switch">
+      <div
+        class="skills-switch"
+        role="group"
+        [attr.aria-label]="'skills.categoryLabel' | translate"
+      >
         <button
           type="button"
           [class.active]="activeSkillCategory === 'frontend'"
+          [attr.aria-pressed]="activeSkillCategory === 'frontend'"
           (click)="activeSkillCategory = 'frontend'"
         >
           Frontend
@@ -60,6 +26,7 @@
         <button
           type="button"
           [class.active]="activeSkillCategory === 'backend'"
+          [attr.aria-pressed]="activeSkillCategory === 'backend'"
           (click)="activeSkillCategory = 'backend'"
         >
           Backend
@@ -69,80 +36,129 @@
         <div class="skills-list">
           @if (activeSkillCategory === 'frontend') {
             <div class="skills-list-items">
-              <img src="icons/html.svg" alt="HTML" class="skills-items" />
+              <img src="icons/html.svg" alt="" class="skills-items" />
               <p>HTML</p>
             </div>
             <div class="skills-list-items">
-              <img src="icons/css.svg" alt="CSS" class="skills-items" />
+              <img src="icons/css.svg" alt="" class="skills-items" />
               <p>CSS</p>
             </div>
             <div class="skills-list-items">
-              <img src="icons/sass.png" alt="Sass" class="skills-items" />
+              <img src="icons/sass.png" alt="" class="skills-items" />
               <p>Sass</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/js.svg" alt="JavaScript" class="skills-items" />
+              <img src="icons/js.svg" alt="" class="skills-items" />
               <p>JavaScript</p>
             </div>
             <div class="skills-list-items">
-              <img src="icons/ts.svg" alt="TypeScript" class="skills-items" />
+              <img src="icons/ts.svg" alt="" class="skills-items" />
               <p>TypeScript</p>
             </div>
             <div class="skills-list-items">
-              <img src="icons/angular.svg" alt="Angular" class="skills-items" />
+              <img src="icons/angular.svg" alt="" class="skills-items" />
               <p>Angular</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/supabase.svg" alt="Supabase" class="skills-items" />
+              <img src="icons/supabase.svg" alt="" class="skills-items" />
               <p>Supabase</p>
             </div>
             <div class="skills-list-items">
-              <img src="icons/git.svg" alt="Git" class="skills-items" />
+              <img src="icons/git.svg" alt="" class="skills-items" />
               <p>Git</p>
             </div>
             <div class="skills-list-items">
-              <img src="icons/scrum.svg" alt="Scrum" class="skills-items" />
+              <img src="icons/scrum.svg" alt="" class="skills-items" />
               <p>Scrum</p>
             </div>
           }
           @if (activeSkillCategory === 'backend') {
             <div class="skills-list-items">
-              <img src="icons/python.svg" alt="Python" class="skills-items" />
+              <img src="icons/python.svg" alt="" class="skills-items" />
               <p>Python</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/django.svg" alt="Django" class="skills-items" />
+              <img src="icons/django.svg" alt="" class="skills-items" />
               <p>Django</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/rest_api.svg" alt="REST API" class="skills-items" />
+              <img src="icons/rest_api.svg" alt="" class="skills-items" />
               <p>REST API</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/postgre_sql.svg" alt="PostgreSQL" class="skills-items" />
+              <img src="icons/postgre_sql.svg" alt="" class="skills-items" />
               <p>PostgreSQL</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/docker.svg" alt="Docker" class="skills-items" />
+              <img src="icons/docker.svg" alt="" class="skills-items" />
               <p>Docker</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/linux.svg" alt="Linux" class="skills-items" />
+              <img src="icons/linux.svg" alt="" class="skills-items" />
               <p>Linux</p>
             </div>
 
             <div class="skills-list-items">
-              <img src="icons/git.svg" alt="Git" class="skills-items" />
+              <img src="icons/git.svg" alt="" class="skills-items" />
               <p>Git</p>
             </div>
           }
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="spinner"
+      [attr.aria-label]="'skills.moreInfo' | translate"
+      [attr.aria-expanded]="showMore"
+      aria-controls="more-skills-overlay"
+      (mouseenter)="openOverlay()"
+      (mouseleave)="closeOverlay()"
+      (click)="toggleOverlay()"
+      (keydown.escape)="dismissOverlay()"
+    >
+      <img src="icons/star_pink_mid.svg" alt="" class="spinner-icon" />
+      <img src="icons/mortarboard.svg" alt="" class="spinner-img" />
+    </button>
+    <div
+      id="more-skills-overlay"
+      class="more-skills"
+      [class.visible]="showMore"
+      [attr.aria-hidden]="!showMore"
+      [inert]="!showMore"
+      (mouseenter)="openOverlay()"
+      (mouseleave)="closeOverlay()"
+      (keydown.escape)="dismissOverlay()"
+    >
+      <button
+        type="button"
+        class="close-button"
+        [attr.aria-label]="'skills.closeInfo' | translate"
+        (click)="dismissOverlay()"
+      >
+        <img src="icons/close_white.svg" alt="" />
+      </button>
+      <h4>{{ 'skills.overlay.title' | translate }}</h4>
+      <p>{{ 'skills.overlay.description' | translate }}</p>
+      <div class="more-skills-list">
+        <div class="more-skills-items">
+          <img src="icons/react.svg" alt="" />
+          <p>React</p>
+        </div>
+        <div class="more-skills-items">
+          <img src="icons/vuejs.svg" alt="" />
+          <p>Vue.js</p>
+        </div>
+        <div class="more-skills-items">
+          <img src="icons/cicd.svg" alt="" />
+          <p>CI/CD</p>
         </div>
       </div>
     </div>

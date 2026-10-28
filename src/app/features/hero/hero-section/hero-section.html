@@ -1,26 +1,26 @@
 <div class="hero-content">
   <div class="hero-left">
     <div class="greeting">
-      <h3>{{ 'hero.greeting' | translate }}</h3>
+      <p class="hero-subtitle">{{ 'hero.greeting' | translate }}</p>
       <div class="wrapper-name">
         <h1>Nadine Bauer</h1>
       </div>
-      <h3>{{ 'hero.role' | translate }}</h3>
+      <p class="hero-subtitle">{{ 'hero.role' | translate }}</p>
     </div>
 
-    <a href="#contact">
-      <button class="btn-primary">{{ 'hero.contactButton' | translate }}</button>
+    <a href="#contact" class="btn-primary">
+      {{ 'hero.contactButton' | translate }}
     </a>
 
     <div class="scroll-down">
-      <img class="arrow" src="icons/scrolldown_arrow.svg" alt="Arrow pointing down" />
-      <img class="spinner" src="icons/star_rotate.svg" alt="Scroll down" />
+      <img class="arrow" src="icons/scrolldown_arrow.svg" alt="" />
+      <img class="spinner" src="icons/star_rotate.svg" alt="" />
     </div>
   </div>
 
   <div class="hero-right">
-    <img src="icons/star_green_big.svg" alt="Star Green" class="star big-green" />
-    <img src="icons/star_pink_big.svg" alt="Star Pink" class="star big-pink" />
-    <img src="img/portfolio_1.png" alt="Profile Image" class="profile-img" />
+    <img src="icons/star_green_big.svg" alt="" class="star big-green" />
+    <img src="icons/star_pink_big.svg" alt="" class="star big-pink" />
+    <img src="img/portfolio_1.png" [alt]="'hero.profileAlt' | translate" class="profile-img" />
   </div>
 </div>

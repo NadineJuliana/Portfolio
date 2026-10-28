@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, QueryList, ViewChildren, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Header } from '../../../components/header/header/header';
 import { HeroSection } from '../../../../features/hero/hero-section/hero-section';
 import { AboutMeSection } from '../../../../features/about-me/about-me-section/about-me-section';
@@ -19,6 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage implements AfterViewInit {
   private themeService = inject(ThemeService);
   private route = inject(ActivatedRoute);
+  private destroyRef = inject(DestroyRef);
   private sectionObserver!: IntersectionObserver;
 
   @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
@@ -42,17 +44,24 @@ export class HomePage implements AfterViewInit {
     this.sections.forEach(section => this.sectionObserver.observe(section.nativeElement));
   }
 
-  private scrollToFragment() {
-    this.route.fragment.subscribe(fragment => {
-      if (!fragment) return;
+  private scrollToFragment(): void {
+    this.route.fragment
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(fragment => {
+        if (!fragment) return;
 
-      requestAnimationFrame(() => {
-        document.getElementById(fragment)?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
+        requestAnimationFrame(() => {
+          const target = document.getElementById(fragment);
+          if (!target) return;
+
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          target.scrollIntoView({
+            behavior: reduceMotion ? 'instant' : 'smooth',
+            block: 'start',
+          });
         });
       });
-    });
   }
 
   ngOnDestroy() {

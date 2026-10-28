@@ -7,15 +7,32 @@
   </div>
   <div class="projects-slider">
     <div class="projects-preview" [style.background]="currentProject.backgroundColor">
-      <img class="project-image" [src]="currentProject.image" alt="Projects Screenshot" />
-      <img class="accent-icon" [src]="currentProject.accentIcon" alt="Accent Icon" />
+      <img
+        class="project-image"
+        [src]="currentProject.image"
+        [alt]="
+          ('projects.screenshotAlt' | translate) + ': ' + (currentProjectKey + '.title' | translate)
+        "
+      />
+
+      <img class="accent-icon" [src]="currentProject.accentIcon" alt="" aria-hidden="true" />
     </div>
     <div class="projects-descriptions">
       @if (showDescription) {
-        <div class="role-description">
-          <div class="close-button" (click)="closeOverlay()">
-            <img src="icons/close_white.svg" alt="Close Icon" />
-          </div>
+        <div
+          id="project-role-description"
+          class="role-description"
+          role="region"
+          [attr.aria-label]="'projects.roleInfo' | translate"
+        >
+          <button
+            type="button"
+            class="close-button"
+            [attr.aria-label]="'projects.closeInfo' | translate"
+            (click)="closeOverlay()"
+          >
+            <img src="icons/close_white.svg" alt="" />
+          </button>
 
           {{ currentProjectKey + '.roleDescription' | translate }}
         </div>
@@ -23,37 +40,64 @@
       <div class="projects-infos">
         <div class="infos-header">
           <h4>{{ currentProjectKey + '.title' | translate }}</h4>
-          <img
+          <button
+            type="button"
             class="bounce"
-            [src]="currentProject.emoji"
-            alt="Emoji"
+            [attr.aria-label]="
+              (showDescription ? 'projects.closeInfo' : 'projects.moreInfo') | translate
+            "
+            [attr.aria-expanded]="showDescription"
+            aria-controls="project-role-description"
+            (click)="toggleOverlay()"
             (mouseenter)="showDescription = true"
             (mouseleave)="showDescription = false"
-            (click)="openOverlay()"
-          />
+          >
+            <img [src]="currentProject.emoji" alt="" />
+          </button>
         </div>
         <p class="languages">{{ currentProject.languages }}</p>
         <article>
           {{ currentProjectKey + '.description' | translate }}
         </article>
+
         <div class="info-buttons">
-          <a class="btn-primary" [href]="currentProject.github" target="_blank">
-            GitHub <img class="arrow default-arrow" src="icons/arrow_right.svg" alt="Arrow" />
-            <img class="arrow hover-arrow" src="icons/arrow_outward.svg" alt="Arrow Hover" />
+          <a
+            class="btn-primary"
+            [href]="currentProject.github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            <img class="arrow default-arrow" src="icons/arrow_right.svg" alt="" />
+            <img class="arrow hover-arrow" src="icons/arrow_outward.svg" alt="" />
           </a>
-          <a class="btn-primary" [href]="currentProject.liveTest" target="_blank">
-            Live Test <img class="arrow default-arrow" src="icons/arrow_right.svg" alt="Arrow" />
-            <img class="arrow hover-arrow" src="icons/arrow_outward.svg" alt="Arrow Hover" />
-          </a>
+
+          @if (currentProject.liveTest) {
+            <a
+              class="btn-primary"
+              [href]="currentProject.liveTest"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live Test
+              <img class="arrow default-arrow" src="icons/arrow_right.svg" alt="" />
+              <img class="arrow hover-arrow" src="icons/arrow_outward.svg" alt="" />
+            </a>
+          }
         </div>
       </div>
       <div class="projects-navlinks">
-        <button (click)="previousProject()">
+        <button type="button" (click)="previousProject()">
           {{ 'projects.navigation.previous' | translate }}
         </button>
 
-        <button (click)="nextProject()">{{ 'projects.navigation.next' | translate }}</button>
+        <button type="button" (click)="nextProject()">
+          {{ 'projects.navigation.next' | translate }}
+        </button>
       </div>
     </div>
+  </div>
+  <div class="sr-only" role="status" aria-live="polite" aria-atomic="true">
+    {{ currentProjectKey + '.title' | translate }}
   </div>
 </div>

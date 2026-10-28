@@ -1,52 +1,76 @@
 <div class="references-content">
   <h2>{{ 'references.title' | translate }}</h2>
+
   <div class="references-list">
-    <div class="reference first">
+    <article class="reference first">
       <div class="reference-content">
         <div class="content-header">
-          <h4>{{ 'references.dominik.name' | translate }}</h4>
-          <img src="icons/star_pink_mid.svg" alt="Star Icon" />
+          <h3 class="reference-heading">{{ 'references.dominik.name' | translate }}</h3>
+          <img src="icons/star_pink_mid.svg" alt="" aria-hidden="true" />
         </div>
-        <article>
-          {{ 'references.dominik.text' | translate }}
-        </article>
-        <h4>{{ 'references.dominik.role' | translate }}</h4>
-      </div>
-      <a [href]="'references.dominik.linkedin' | translate" target="_blank">{{
-        'references.linkedinLabel' | translate
-      }}</a>
-    </div>
 
-    <div class="reference second">
-      <div class="reference-content">
-        <div class="content-header">
-          <h4>{{ 'references.vladislav.name' | translate }}</h4>
-          <img src="icons/star_pink_mid.svg" alt="Star Icon" />
-        </div>
-        <article>
-          {{ 'references.vladislav.text' | translate }}
-        </article>
-        <h4>{{ 'references.vladislav.role' | translate }}</h4>
+        <p>{{ 'references.dominik.text' | translate }}</p>
+        <p class="reference-role">{{ 'references.dominik.role' | translate }}</p>
       </div>
-      <a [href]="'references.vladislav.linkedin' | translate" target="_blank">{{
-        'references.linkedinLabel' | translate
-      }}</a>
-    </div>
 
-    <div class="reference third">
+      <a
+        [href]="'references.dominik.linkedin' | translate"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="
+          ('references.linkedinLabel' | translate) + ': ' + ('references.dominik.name' | translate)
+        "
+      >
+        {{ 'references.linkedinLabel' | translate }}
+      </a>
+    </article>
+
+    <article class="reference second">
       <div class="reference-content">
         <div class="content-header">
-          <h4>{{ 'references.third.name' | translate }}</h4>
-          <img src="icons/star_pink_mid.svg" alt="Star Icon" />
+          <h3 class="reference-heading">{{ 'references.vladislav.name' | translate }}</h3>
+          <img src="icons/star_pink_mid.svg" alt="" aria-hidden="true" />
         </div>
-        <article>
-          {{ 'references.third.text' | translate }}
-        </article>
-        <h4>{{ 'references.third.role' | translate }}</h4>
+
+        <p>{{ 'references.vladislav.text' | translate }}</p>
+        <p class="reference-role">{{ 'references.vladislav.role' | translate }}</p>
       </div>
-      <a [href]="'references.third.linkedin' | translate" target="_blank">{{
-        'references.linkedinLabel' | translate
-      }}</a>
-    </div>
+
+      <a
+        [href]="'references.vladislav.linkedin' | translate"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="
+          ('references.linkedinLabel' | translate) +
+          ': ' +
+          ('references.vladislav.name' | translate)
+        "
+      >
+        {{ 'references.linkedinLabel' | translate }}
+      </a>
+    </article>
+
+    <article class="reference third">
+      <div class="reference-content">
+        <div class="content-header">
+          <h3 class="reference-heading">{{ 'references.third.name' | translate }}</h3>
+          <img src="icons/star_pink_mid.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <p>{{ 'references.third.text' | translate }}</p>
+        <p class="reference-role">{{ 'references.third.role' | translate }}</p>
+      </div>
+
+      <a
+        [href]="'references.third.linkedin' | translate"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="
+          ('references.linkedinLabel' | translate) + ': ' + ('references.third.name' | translate)
+        "
+      >
+        {{ 'references.linkedinLabel' | translate }}
+      </a>
+    </article>
   </div>
 </div>

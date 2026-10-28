@@ -4,47 +4,51 @@
     <div class="container">
       <div class="content">
         <div class="imprint-content">
-          <a routerLink="/" fragment="contact" class="arrow"
-            ><img src="icons/arrow_white.svg" alt="Arrow Back"
-          /></a>
-          <h2>{{ 'imprint.title' | translate }}</h2>
-
-          <h4>{{ 'imprint.imprint.title' | translate }}</h4>
+          <a
+            routerLink="/"
+            fragment="contact"
+            class="arrow"
+            [attr.aria-label]="'imprint.backToContact' | translate"
+          >
+            <img src="icons/arrow_white.svg" alt="" />
+          </a>
+          <h1 class="imprint-title">{{ 'imprint.title' | translate }}</h1>
+          <h2 class="imprint-heading">{{ 'imprint.imprint.title' | translate }}</h2>
           <ul>
             @for (address of 'imprint.imprint.address' | translate; track address) {
               <li>{{ address }}</li>
             }
           </ul>
 
-          <h5>{{ 'imprint.email.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.email.title' | translate }}</h2>
           <p>{{ 'imprint.email.text' | translate }}</p>
 
-          <h5>{{ 'imprint.acceptance.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.acceptance.title' | translate }}</h2>
           <p [innerHTML]="highlightText('imprint.acceptance.text' | translate)"></p>
 
-          <h5>{{ 'imprint.scope.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.scope.title' | translate }}</h2>
           <p [innerHTML]="highlightText('imprint.scope.paragraph1' | translate)"></p>
           <p
             [innerHTML]="highlightText('imprint.scope.paragraph2' | translate)"
             class="paragraph"
           ></p>
-          <h5>{{ 'imprint.rights.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.rights.title' | translate }}</h2>
           <p [innerHTML]="highlightText('imprint.rights.text' | translate)"></p>
-          <h5>{{ 'imprint.use.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.use.title' | translate }}</h2>
           <p [innerHTML]="highlightText('imprint.use.text' | translate)"></p>
 
-          <h5>{{ 'imprint.disclaimer.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.disclaimer.title' | translate }}</h2>
           <p [innerHTML]="highlightText('imprint.disclaimer.text' | translate)"></p>
-          <h5>{{ 'imprint.indemnity.title' | translate }}</h5>
+          <h2 class="imprint-subheading">{{ 'imprint.indemnity.title' | translate }}</h2>
           <p [innerHTML]="highlightText('imprint.indemnity.text' | translate)"></p>
           <p>{{ 'imprint.close' | translate }}</p>
           <p>{{ 'imprint.date' | translate }}</p>
         </div>
       </div>
       <div class="footer-wrapper">
-        <div class="animation-wrapper">
-          <img class="pink-star" src="icons/star_pink_big.svg" alt="Star Icon" />
-          <img class="green-star" src="icons/star_darkgreen_big.svg" alt="Star Icon" />
+        <div class="animation-wrapper" aria-hidden="true">
+          <img class="pink-star" src="icons/star_pink_big.svg" alt="" />
+          <img class="green-star" src="icons/star_darkgreen_big.svg" alt="" />
         </div>
         <app-footer></app-footer>
       </div>

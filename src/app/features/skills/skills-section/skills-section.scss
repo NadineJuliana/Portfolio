@@ -29,6 +29,17 @@
   width: 120px;
   height: 120px;
   position: relative;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  order: 1;
+
+  &:focus-visible {
+    outline: 2px solid $bg-white;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
 
   .spinner-icon {
     width: 120px;
@@ -77,7 +88,7 @@
     margin-bottom: 16px;
   }
 
-  article {
+  p {
     text-align: justify;
   }
 
@@ -117,6 +128,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  order: 2;
 }
 
 .skills-switch {
@@ -150,6 +162,12 @@
     background-color: $highlight-primary;
     color: $bg-white;
     border: 1px solid $bg-white;
+    border-radius: 4px;
+  }
+
+  button:focus-visible {
+    outline: 2px solid $bg-white;
+    outline-offset: 4px;
     border-radius: 4px;
   }
 }
@@ -299,5 +317,16 @@
     .skills-description {
       padding: 16px;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner-icon,
+  .skills-items {
+    animation: none;
+  }
+
+  .more-skills {
+    transition: none;
   }
 }

@@ -15,7 +15,9 @@
     margin-bottom: 52px;
   }
 
-  h4 {
+  .contact-subtitle {
+    font-size: 24px;
+    font-weight: 700;
     color: $highlight-primary;
     margin-bottom: 40px;
   }
@@ -123,7 +125,8 @@ app-footer {
       transform 200ms ease;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     .arrow-default {
       display: none;
     }
@@ -136,6 +139,12 @@ app-footer {
       opacity: 1;
       transform: scaleX(1);
     }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $highlight-primary;
+    outline-offset: 4px;
+    border-radius: 4px;
   }
 }
 
@@ -270,5 +279,17 @@ app-footer {
 @media (max-width: $bp-phone) {
   .scroll-top {
     margin-right: -8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pink-star,
+  .green-star,
+  .scroll-top .arrow {
+    animation: none;
+  }
+
+  .scroll-top::after {
+    transition: none;
   }
 }

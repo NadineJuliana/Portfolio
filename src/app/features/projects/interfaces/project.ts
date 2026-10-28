@@ -9,5 +9,6 @@ export interface Project {
   emoji: string;
 
   github: string;
-  liveTest: string;
+  liveTest?: string;
+  enabled?: boolean;
 }

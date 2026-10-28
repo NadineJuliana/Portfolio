@@ -9,7 +9,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './projects-section.scss',
 })
 export class ProjectsSection {
-  projects = PROJECTS;
+  projects = PROJECTS.filter(project => project.enabled !== false);
   currentIndex = 0;
   showDescription = false;
 
@@ -21,15 +21,15 @@ export class ProjectsSection {
     return `projects.items.${this.currentProject.translationKey}`;
   }
 
-  nextProject() {
-    this.currentIndex =
-      (this.currentIndex + 1) % this.projects.length;
+  nextProject(): void {
+    this.showDescription = false;
+    this.currentIndex = (this.currentIndex + 1) % this.projects.length;
   }
 
-  previousProject() {
+  previousProject(): void {
+    this.showDescription = false;
     this.currentIndex =
-      (this.currentIndex - 1 + this.projects.length)
-      % this.projects.length;
+      (this.currentIndex - 1 + this.projects.length) % this.projects.length;
   }
 
   openOverlay() {
@@ -38,5 +38,9 @@ export class ProjectsSection {
 
   closeOverlay() {
     this.showDescription = false;
+  }
+
+  toggleOverlay(): void {
+    this.showDescription = !this.showDescription;
   }
 }

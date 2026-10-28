@@ -12,16 +12,26 @@
   color: $bg-white;
   width: 100%;
 
-  h2 {
+  .privacy-title {
+    font-family: 'Eczar', Arial, Helvetica, sans-serif;
+    font-size: 72px;
+    font-weight: 700;
     line-height: 1;
   }
 
-  h4 {
+  .privacy-section-heading {
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
     color: $highlight-primary;
-    margin: 32px 0 32px 0;
+    margin: 32px 0;
   }
 
-  h5 {
+  .privacy-subheading,
+  .privacy-detail-heading {
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
     color: $highlight-secondary;
     margin-top: 24px;
   }
@@ -40,17 +50,28 @@
 }
 
 .arrow {
- display: none;
+  display: none;
 }
 
-.privacypolicy-content a {
-  color: inherit;
-  text-decoration: none;
+.privacypolicy-content a:not(.arrow) {
+  color: $highlight-primary;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 300;
-}
 
+  &:hover,
+  &:focus-visible {
+    color: $highlight-secondary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $highlight-secondary;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+}
 .privacypolicy-section {
   display: flex;
   justify-content: center;
@@ -109,6 +130,12 @@
 }
 
 @media (max-width: ($bp-desktop - 1px)) {
+  .privacypolicy-page {
+    .privacy-title {
+      font-size: clamp(40px, 5vw, 72px);
+    }
+  }
+
   .footer-wrapper {
     flex-direction: column;
     align-items: center;
@@ -142,6 +169,20 @@
     display: flex;
     justify-content: end;
     margin-bottom: 24px;
+
+    &:hover,
+    &:focus-visible {
+      img {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(26%) saturate(900%)
+          hue-rotate(290deg);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $highlight-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
 
     img {
       display: block;
@@ -189,5 +230,12 @@
     img {
       width: 8px;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation-wrapper .pink-star,
+  .animation-wrapper .green-star {
+    animation: none;
   }
 }

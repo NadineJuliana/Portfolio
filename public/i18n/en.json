@@ -2,7 +2,8 @@
   "hero": {
     "greeting": "Hello there! I'm",
     "role": "Fullstack Developer",
-    "contactButton": "Get in Touch"
+    "contactButton": "Get in Touch",
+    "profileAlt": "Portrait of Nadine Bauer"
   },
   "navigation": {
     "menu": "Menu",
@@ -14,6 +15,7 @@
   },
   "about": {
     "title": "About Me",
+    "profileAlt": "Portrait of Nadine Bauer",
     "greeting": "Hi, I'm Nadine.",
     "paragraph1": "As a former automotive mechatronics technician, I discovered my passion for software development through my enthusiasm for technical systems and structured problem-solving. Today, I build modern web applications with Angular and Django, combining frontend and backend development.",
     "paragraph2": "What excites me most isn't just writing code—it's understanding how complex systems work. I enjoy learning new technologies, continuously improving my code and creating clean, maintainable solutions.",
@@ -34,7 +36,10 @@
     "overlay": {
       "title": "Don't see the skill you're looking for?",
       "description": "I'm always excited to learn new technologies and expand my skill set. Here are a few topics I'm currently exploring and would love to deepen further."
-    }
+    },
+    "moreInfo": "Show additional skills",
+    "closeInfo": "Close additional skills",
+    "categoryLabel": "Select technology category"
   },
   "references": {
     "title": "What my colleagues say about me",
@@ -76,17 +81,26 @@
         "description": "A 2D jump-and-run game built with JavaScript, HTML and CSS.",
         "roleDescription": "I developed game logic, character movement, collision detection and interactive gameplay mechanics using object-oriented JavaScript."
       },
-      "pokedex": {
-        "title": "Pokedex",
-        "description": "A Pokédex application that fetches and displays Pokémon data from an external API.",
-        "roleDescription": "I worked with API requests, dynamic rendering and interactive UI elements to display structured Pokémon data."
-      },
       "coderr": {
         "title": "Coderr",
         "description": "A freelancer marketplace with a Django REST Framework backend and JavaScript frontend.",
         "roleDescription": "I developed the Django REST Framework backend, deployed the application to a Google Cloud VM, and integrated it with an existing JavaScript frontend."
+      },
+      "videoflix": {
+        "title": "Videoflix",
+        "description": "Backend for a video streaming platform built with Django REST Framework, Docker, and PostgreSQL. Videos are processed with FFmpeg and delivered via HLS.",
+        "roleDescription": "Independent backend development covering authentication, video processing, streaming, and containerized infrastructure."
+      },
+      "pokedex": {
+        "title": "Pokedex",
+        "description": "An interactive Pokédex application using the PokéAPI with a custom-designed user interface.",
+        "roleDescription": "In this early learning project, after approximately two months of coding experience, I independently designed the UI and implemented it using JavaScript, API requests and dynamic rendering."
       }
-    }
+    },
+    "screenshotAlt": "Project preview",
+    "moreInfo": "Show additional project information",
+    "closeInfo": "Close project information",
+    "roleInfo": "My contribution to the project"
   },
   "contact": {
     "title": "Let's build something cool together!",
@@ -129,7 +143,7 @@
     },
     "email": {
       "title": "Contact",
-      "text": "Email: nadine.juliana.b@web.de"
+      "text": "Email: contact@nadine.juliana.de"
     },
     "acceptance": {
       "title": "Acceptance of terms",
@@ -156,8 +170,9 @@
       "title": "Indemnity",
       "text": "You agree to indemnify, defend and hold harmless me, the Developer Akademie, and its affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice."
     },
-    "close": "For any questions or notices, please contact me at nadine.juliana.b@web.de.",
-    "date": "Date: July 01, 2026"
+    "close": "For any questions or notices, please contact me at contact@nadine.juliana.de.",
+    "date": "Date: July 01, 2026",
+    "backToContact": "Back to Contact Section"
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -220,7 +235,7 @@
         "name": "Nadine Bauer",
         "street": "Birkenweg 2c",
         "city": "82269 Geltendorf",
-        "email": "Email: nadine.juliana.b@web.de",
+        "email": "Email: contact@nadine.juliana.de",
         "text": "The controller is the natural or legal person who, alone or jointly with others, determines the purposes and means of the processing of personal data, such as names, email addresses or similar information."
       },
       "storagePeriod": {
@@ -287,7 +302,8 @@
         "title": "Source",
         "link": "https://www.e-recht24.de"
       }
-    }
+    },
+    "backToContact": "Back to contact section"
   },
   "accessibility": {
     "backToTop": "Bauer – back to top",

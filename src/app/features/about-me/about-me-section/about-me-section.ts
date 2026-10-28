@@ -9,12 +9,25 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class AboutMeSection {
   showMore = false;
+  private pinnedOpen = false;
 
-  openOverlay() {
+  openOverlay(): void {
     this.showMore = true;
   }
 
-  closeOverlay() {
+  closeOverlay(): void {
+    if (!this.pinnedOpen) {
+      this.showMore = false;
+    }
+  }
+
+  toggleOverlay(): void {
+    this.pinnedOpen = !this.pinnedOpen;
+    this.showMore = this.pinnedOpen;
+  }
+
+  dismissOverlay(): void {
+    this.pinnedOpen = false;
     this.showMore = false;
   }
 }

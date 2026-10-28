@@ -2,7 +2,8 @@
   "hero": {
     "greeting": "Hallo! Ich bin",
     "role": "Fullstack Entwicklerin",
-    "contactButton": "Kontakt aufnehmen"
+    "contactButton": "Kontakt aufnehmen",
+    "profileAlt": "Porträt von Nadine Bauer"
   },
   "navigation": {
     "menu": "Menü",
@@ -14,6 +15,7 @@
   },
   "about": {
     "title": "Über mich",
+    "profileAlt": "Porträt von Nadine Bauer",
     "greeting": "Hi, ich bin Nadine.",
     "paragraph1": "Als ehemalige Kfz-Mechatronikerin habe ich meine Begeisterung für Softwareentwicklung durch meine Leidenschaft für technische Systeme und strukturierte Problemlösung entdeckt. Heute entwickle ich moderne Webanwendungen mit Angular und Django und verbinde dabei Frontend- und Backend-Entwicklung.",
     "paragraph2": "Mich begeistert nicht nur das Programmieren selbst, sondern vor allem das Verstehen komplexer Zusammenhänge. Ich lerne gerne neue Technologien kennen, verbessere meinen Code kontinuierlich und lege Wert auf saubere, wartbare Lösungen.",
@@ -34,7 +36,10 @@
     "overlay": {
       "title": "Die gesuchte Technologie ist nicht dabei?",
       "description": "Ich lerne gerne neue Technologien kennen und erweitere kontinuierlich mein Wissen. Besonders diese Themen möchte ich in Zukunft noch weiter vertiefen."
-    }
+    },
+    "moreInfo": "Weitere Fähigkeiten anzeigen",
+    "closeInfo": "Weitere Fähigkeiten schließen",
+    "categoryLabel": "Technologiebereich auswählen"
   },
   "references": {
     "title": "Was meine Kollegen über mich sagen",
@@ -76,17 +81,26 @@
         "description": "Ein 2D-Jump-and-Run-Spiel, entwickelt mit JavaScript, HTML und CSS.",
         "roleDescription": "Ich habe Spiellogik, Charakterbewegung, Kollisionsabfragen und interaktive Gameplay-Mechaniken mit objektorientiertem JavaScript umgesetzt."
       },
-      "pokedex": {
-        "title": "Pokedex",
-        "description": "Eine Pokédex-Anwendung, die Pokémon-Daten über eine externe API lädt und darstellt.",
-        "roleDescription": "Ich habe mit API-Requests, dynamischem Rendering und interaktiven UI-Elementen gearbeitet, um strukturierte Pokémon-Daten darzustellen."
-      },
       "coderr": {
         "title": "Coderr",
         "description": "Ein Freelancer-Marktplatz mit Django-REST-Framework-Backend und JavaScript-Frontend.",
         "roleDescription": "Ich habe das Django-REST-Framework-Backend entwickelt, die Anwendung auf einer Google Cloud VM bereitgestellt und mit einem bestehenden JavaScript-Frontend verbunden."
+      },
+      "videoflix": {
+        "title": "Videoflix",
+        "description": "Backend einer Videostreaming-Plattform mit Django REST Framework, Docker und PostgreSQL. Videos werden mit FFmpeg verarbeitet und über HLS für das Streaming bereitgestellt.",
+        "roleDescription": "Eigenständige Backend-Entwicklung mit Authentifizierung, Videoverarbeitung, Streaming und containerisierter Infrastruktur."
+      },
+      "pokedex": {
+        "title": "Pokedex",
+        "description": "Eine interaktive Pokédex-Anwendung mit PokéAPI-Anbindung und individuell gestaltetem UI.",
+        "roleDescription": "In diesem frühen Lernprojekt habe ich nach rund zwei Monaten Programmiererfahrung ein eigenständiges UI-Konzept entwickelt und mit JavaScript, API-Requests und dynamischem Rendering umgesetzt."
       }
-    }
+    },
+    "screenshotAlt": "Projektvorschau",
+    "moreInfo": "Weitere Projektinformationen anzeigen",
+    "closeInfo": "Projektinformationen schließen",
+    "roleInfo": "Mein Beitrag zum Projekt"
   },
   "contact": {
     "title": "Lass uns gemeinsam etwas Cooles entwickeln!",
@@ -129,7 +143,7 @@
     },
     "email": {
       "title": "Kontakt",
-      "text": "E-Mail: nadine.juliana.b@web.de"
+      "text": "E-Mail: contact@nadine.juliana.de"
     },
     "acceptance": {
       "title": "Nutzungsbedingungen",
@@ -156,8 +170,9 @@
       "title": "Freistellung",
       "text": "Du erklärst dich damit einverstanden, mich, die Developer Akademie sowie deren Partner, Vertreter und Mitarbeitende von Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen freizustellen, die aus deiner Nutzung von Portfolio oder einem Verstoß gegen dieses Impressum entstehen."
     },
-    "close": "Bei Fragen oder Hinweisen kontaktiere mich bitte unter nadine.juliana.b@web.de.",
-    "date": "Stand: 01. Juli 2026"
+    "close": "Bei Fragen oder Hinweisen kontaktiere mich bitte unter contact@nadine.juliana.de.",
+    "date": "Stand: 01. Juli 2026",
+    "backToContact": "Zurück zum Kontaktbereich"
   },
   "privacy": {
     "title": "Datenschutz\u00ADerklärung",
@@ -220,7 +235,7 @@
         "name": "Nadine Bauer",
         "street": "Birkenweg 2c",
         "city": "82269 Geltendorf",
-        "email": "E-Mail: nadine.juliana.b@web.de",
+        "email": "E-Mail: contact@nadine.juliana.de",
         "text": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet."
       },
       "storagePeriod": {
@@ -287,7 +302,8 @@
         "title": "Quelle",
         "link": "https://www.e-recht24.de"
       }
-    }
+    },
+    "backToContact": "Zurück zum Kontaktbereich"
   },
   "accessibility": {
     "backToTop": "Bauer – zurück zum Seitenanfang",
