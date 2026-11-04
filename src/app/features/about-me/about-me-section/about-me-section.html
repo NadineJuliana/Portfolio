@@ -55,7 +55,7 @@
       </button>
     </div>
     <ul>
-      @for (fact of 'about.facts' | translate; track fact) {
+      @for (fact of 'about.facts' | translate; track $index) {
         <li>
           <img src="icons/check_circle.svg" alt="" />
           {{ fact }}
