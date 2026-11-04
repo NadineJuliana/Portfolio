@@ -63,12 +63,13 @@
       </div>
 
       <button
+        id="main-navigation"
         #burgerButton
         class="burger"
         type="button"
         (click)="openMenu()"
-        [attr.aria-controls]="isMenuOpen ? 'mobile-navigation' : null"
-        [attr.aria-expanded]="isMenuOpen"
+        [attr.aria-controls]="isMenuOpen() ? 'mobile-navigation' : null"
+        [attr.aria-expanded]="isMenuOpen()"
         [attr.aria-label]="'accessibility.openNavigation' | translate"
       >
         @if (theme() === 'light') {
@@ -80,7 +81,7 @@
         <img class="burgericon-hover" src="icons/menu_pink.svg" alt="" aria-hidden="true" />
       </button>
 
-      @if (isMenuOpen) {
+      @if (isMenuOpen()) {
         <app-burger-menu (closeMenu)="closeMenu($event)"></app-burger-menu>
       }
     </div>

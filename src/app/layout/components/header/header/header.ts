@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
+import { Component, inject, ElementRef, viewChild, effect, signal } from '@angular/core';
 import { ThemeService } from './../../../../core/services/theme.service';
 import { LanguageService } from './../../../../core/services/language.service';
-import { Component, inject, ElementRef, ViewChild } from '@angular/core';
 import { BurgerMenu } from '../../../../shared/burger-menu/burger-menu';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -20,31 +20,35 @@ export class Header {
   readonly isHeroSection = this.themeService.heroActive;
   readonly currentLang = this.languageService.currentLanguage;
 
-  @ViewChild('burgerButton')
-  burgerButton?: ElementRef<HTMLButtonElement>;
+  readonly burgerButton =
+    viewChild.required<ElementRef<HTMLButtonElement>>('burgerButton');
 
-  @ViewChild(BurgerMenu)
-  set burgerMenu(menu: BurgerMenu | undefined) {
-    if (menu && this.isMenuOpen) {
-      menu.focusCloseButton();
-    }
+  readonly burgerMenu = viewChild(BurgerMenu);
+  readonly isMenuOpen = signal(false);
+
+  constructor() {
+    effect(() => {
+      const menu = this.burgerMenu();
+
+      if (menu && this.isMenuOpen()) {
+        menu.focusCloseButton();
+      }
+    });
   }
-
-  isMenuOpen = false;
 
   toggleLanguage(): void {
     this.languageService.toggleLanguage();
   }
 
-  openMenu() {
-    this.isMenuOpen = true;
+  openMenu(): void {
+    this.isMenuOpen.set(true);
   }
 
   closeMenu(restoreFocus = true): void {
-    this.isMenuOpen = false;
+    this.isMenuOpen.set(false);
 
     if (restoreFocus) {
-      this.burgerButton?.nativeElement.focus();
+      this.burgerButton().nativeElement.focus();
     }
   }
 }

@@ -314,6 +314,7 @@
     "mainNavigation": "Main navigation",
     "socialNavigation": "Social media links",
     "sectionNavigation": "Section navigation",
-    "footerNavigation": "Footer navigation"
+    "footerNavigation": "Footer navigation",
+    "skipToNavigation": "Skip to navigation"
   }
 }

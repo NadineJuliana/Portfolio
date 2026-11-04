@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, QueryList, ViewChildren, DestroyRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, DestroyRef, viewChild, viewChildren } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Header } from '../../../components/header/header/header';
 import { HeroSection } from '../../../../features/hero/hero-section/hero-section';
@@ -10,10 +10,21 @@ import { ContactSection } from '../../../../features/contact/contact-section/con
 import { ThemeService } from '../../../../core/services/theme.service';
 import { SideNavigation } from '../../../shared/side-navigation/side-navigation';
 import { ActivatedRoute } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Header, HeroSection, AboutMeSection, SkillsSection, ProjectsSection, ReferencesSection, ContactSection, SideNavigation],
+  imports: [
+    Header,
+    HeroSection,
+    AboutMeSection,
+    SkillsSection,
+    ProjectsSection,
+    ReferencesSection,
+    ContactSection,
+    SideNavigation,
+    TranslatePipe
+  ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
@@ -23,7 +34,46 @@ export class HomePage implements AfterViewInit {
   private destroyRef = inject(DestroyRef);
   private sectionObserver!: IntersectionObserver;
 
-  @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
+  readonly sections = viewChildren<ElementRef<HTMLElement>>('sectionRef');
+  readonly header = viewChild.required(Header);
+
+  focusNavigation(event: Event): void {
+    event.preventDefault();
+
+    const burgerButton = this.header().burgerButton().nativeElement;
+
+    if (!this.isMobileLayout()) {
+      burgerButton.focus({ preventScroll: true });
+      return;
+    }
+
+    document.getElementById('hero')?.scrollIntoView({
+      behavior: 'instant',
+      block: 'start',
+    });
+
+    this.focusBurgerWhenVisible(burgerButton);
+  }
+
+  private focusBurgerWhenVisible(button: HTMLButtonElement): void {
+    const focusWhenReady = () => {
+      if (button.getClientRects().length > 0) {
+        button.focus({ preventScroll: true });
+        return;
+      }
+
+      requestAnimationFrame(focusWhenReady);
+    };
+
+    requestAnimationFrame(focusWhenReady);
+  }
+
+  private isMobileLayout(): boolean {
+    return window.matchMedia(
+      '(max-width: 1023px), (max-height: 800px)'
+    ).matches;
+  }
+
 
 
   ngAfterViewInit() {
@@ -41,7 +91,7 @@ export class HomePage implements AfterViewInit {
         this.themeService.setActiveSection(entry.target.id);
       });
     }, { threshold: 0.6 });
-    this.sections.forEach(section => this.sectionObserver.observe(section.nativeElement));
+    this.sections().forEach(section => this.sectionObserver.observe(section.nativeElement));
   }
 
   private scrollToFragment(): void {
