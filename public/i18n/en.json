@@ -3,7 +3,9 @@
     "greeting": "Hello there! I'm",
     "role": "Fullstack Developer",
     "contactButton": "Get in Touch",
-    "profileAlt": "Portrait of Nadine Bauer"
+    "profileAlt": "Portrait of Nadine Bauer",
+    "exploreTitle": "Psst ... there's more to discover!",
+    "exploreDescription": "Just hover or click."
   },
   "navigation": {
     "menu": "Menu",
