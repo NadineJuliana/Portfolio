@@ -17,22 +17,22 @@
     "title": "Über mich",
     "profileAlt": "Porträt von Nadine Bauer",
     "greeting": "Hi, ich bin Nadine.",
-    "paragraph1": "Als ehemalige Kfz-Mechatronikerin habe ich meine Begeisterung für Softwareentwicklung durch meine Leidenschaft für technische Systeme und strukturierte Problemlösung entdeckt. Heute entwickle ich moderne Webanwendungen mit Angular und Django und verbinde dabei Frontend- und Backend-Entwicklung.",
-    "paragraph2": "Mich begeistert nicht nur das Programmieren selbst, sondern vor allem das Verstehen komplexer Zusammenhänge. Ich lerne gerne neue Technologien kennen, verbessere meinen Code kontinuierlich und lege Wert auf saubere, wartbare Lösungen.",
+    "paragraph1": "Meine Erfahrung in der Fahrzeugelektronik und komplexen Fehlersuche hat mein analytisches Denken geprägt und mein Interesse an Softwareentwicklung geweckt. Heute entwickle ich Webanwendungen mit Angular, TypeScript, Python und Django und verbinde dabei Frontend- und Backend-Entwicklung.",
+    "paragraph2": "Mich begeistert nicht nur das Programmieren, sondern vor allem das Verstehen komplexer Zusammenhänge. Besonders interessieren mich Backend-Entwicklung, Softwarearchitektur und TDD. Dabei lege ich Wert auf durchdachte Lösungen, wartbaren Code und kontinuierliches Lernen.",
     "button": "Lass uns sprechen",
     "overlayTitle": "Mehr über mich",
     "facts": [
       "Nähe München",
-      "Offen für Remote-Arbeit",
-      "Umzugsbereit",
+      "Offen für Remote & Hybrid",
+      "Systemverständnis",
       "Analytische Denkweise",
-      "Kontinuierliches Lernen",
+      "Testgetriebene Entwicklung",
       "Automotive Background"
     ]
   },
   "skills": {
     "title": "Kern\u00ADkompetenzen",
-    "description": "In meinen Frontend- und Backend-Projekten habe ich mit modernen Webtechnologien responsive und interaktive Anwendungen entwickelt. Besonders wichtig sind mir saubere Benutzeroberflächen, wiederverwendbare Komponenten sowie eine kontinuierliche Verbesserung von Benutzerfreundlichkeit und Codequalität.",
+    "description": "In meinen Frontend- und Backend-Projekten habe ich responsive Benutzeroberflächen, wiederverwendbare Komponenten und REST APIs entwickelt. Dabei habe ich mit modernen Webtechnologien, Datenbanken und Docker gearbeitet. Besonders wichtig sind mir durchdachte Strukturen, wartbarer Code und testgetriebene Entwicklung.",
     "overlay": {
       "title": "Die gesuchte Technologie ist nicht dabei?",
       "description": "Ich lerne gerne neue Technologien kennen und erweitere kontinuierlich mein Wissen. Besonders diese Themen möchte ich in Zukunft noch weiter vertiefen."
@@ -65,7 +65,7 @@
   },
   "projects": {
     "title": "Meine Projekte",
-    "intro": "Entdecke hier eine Auswahl meiner Arbeiten — interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "intro": "Entdecke eine Auswahl meiner Projekte und probiere sie selbst aus, um meine Fähigkeiten in Aktion zu sehen.",
     "navigation": {
       "previous": "<< Vorheriges Projekt",
       "next": "Nächstes Projekt >>"
@@ -83,13 +83,13 @@
       },
       "coderr": {
         "title": "Coderr",
-        "description": "Ein Freelancer-Marktplatz mit Django-REST-Framework-Backend und JavaScript-Frontend.",
-        "roleDescription": "Ich habe das Django-REST-Framework-Backend entwickelt, die Anwendung auf einer Google Cloud VM bereitgestellt und mit einem bestehenden JavaScript-Frontend verbunden."
+        "description": "Ein Freelancer-Marktplatz zur Verwaltung von Angeboten, Aufträgen und Bewertungen.",
+        "roleDescription": "Ich entwickelte das Backend mit Django REST Framework nach TDD, implementierte REST APIs, Authentifizierung und Berechtigungen und integrierte es in ein bereitgestelltes Frontend."
       },
       "videoflix": {
         "title": "Videoflix",
-        "description": "Backend einer Videostreaming-Plattform mit Django REST Framework, Docker und PostgreSQL. Videos werden mit FFmpeg verarbeitet und über HLS für das Streaming bereitgestellt.",
-        "roleDescription": "Eigenständige Backend-Entwicklung mit Authentifizierung, Videoverarbeitung, Streaming und containerisierter Infrastruktur."
+        "description": "Eine Videostreaming-Plattform mit Benutzerverwaltung, Videoverarbeitung und adaptivem Streaming über HLS.",
+        "roleDescription": "Ich entwickelte das Backend testgetrieben mit Django REST Framework, PostgreSQL und Docker und implementierte die Videoverarbeitung mit FFmpeg sowie die Streaming-Bereitstellung."
       },
       "pokedex": {
         "title": "Pokedex",
@@ -104,18 +104,18 @@
   },
   "contact": {
     "title": "Lass uns gemeinsam etwas Cooles entwickeln!",
-    "subtitle": "Du hast ein Problem zu lösen?",
-    "text": "Ich suche aktuell nach Einstiegsmöglichkeiten als Junior Fullstack Entwicklerin. Wenn du jemanden suchst, der sauberen Code, strukturierte Problemlösung und die kontinuierliche Verbesserung von Lösungen schätzt, freue ich mich über deine Nachricht.",
+    "subtitle": "Auf der Suche nach Verstärkung?",
+    "text": "Ich suche aktuell den Einstieg in die Softwareentwicklung, insbesondere im Backend-, Fullstack- oder Frontend-Bereich. Wenn du jemanden suchst, der analytisch denkt, Herausforderungen strukturiert angeht und sich gerne weiterentwickelt, freue ich mich über deine Nachricht.",
     "form": {
       "nameLabel": "Wie heißt du?",
       "namePlaceholder": "Dein Name",
-      "nameError": "Ups! Dein Name fehlt noch",
+      "nameError": "Bitte gib deinen Namen ein.",
       "emailLabel": "Wie lautet deine E-Mail?",
       "emailPlaceholder": "deineemail@email.de",
-      "emailError": "Ups! Deine E-Mail wird benötigt",
-      "messageLabel": "Wie kann ich dir helfen?",
-      "messagePlaceholder": "Hallo Nadine, ich interessiere mich für...",
-      "messageError": "Wobei kann ich dich unterstützen?",
+      "emailError": "Bitte gib deine E-Mail-Adresse ein.",
+      "messageLabel": "Was möchtest du mir mitteilen?",
+      "messagePlaceholder": "Hallo Nadine, ich möchte mich bei dir melden, weil ...",
+      "messageError": "Bitte gib eine Nachricht ein.",
       "privacyTextBefore": "Ich habe die",
       "privacyLink": "Datenschutzerklärung",
       "privacyTextAfter": "gelesen und stimme der Verarbeitung meiner Daten zu.",

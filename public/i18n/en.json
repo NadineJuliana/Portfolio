@@ -17,22 +17,22 @@
     "title": "About Me",
     "profileAlt": "Portrait of Nadine Bauer",
     "greeting": "Hi, I'm Nadine.",
-    "paragraph1": "As a former automotive mechatronics technician, I discovered my passion for software development through my enthusiasm for technical systems and structured problem-solving. Today, I build modern web applications with Angular and Django, combining frontend and backend development.",
-    "paragraph2": "What excites me most isn't just writing code—it's understanding how complex systems work. I enjoy learning new technologies, continuously improving my code and creating clean, maintainable solutions.",
+    "paragraph1": "My experience in automotive electronics and complex troubleshooting has shaped my analytical thinking and sparked my interest in software development. Today, I build web applications using Angular, TypeScript, Python and Django, combining frontend and backend development.",
+    "paragraph2": "What excites me isn't just coding, but understanding how complex systems work. I'm particularly interested in backend development, software architecture and TDD. I value thoughtful solutions, maintainable code and continuous learning.",
     "button": "Let's Talk",
     "overlayTitle": "More about me",
     "facts": [
       "Based near Munich",
-      "Open to Remote Work",
-      "Open to relocate",
+      "Open to Remote & Hybrid",
+      "Systems Thinking",
       "Analytical Mindset",
-      "Continuous Learner",
+      "Test-Driven Development",
       "Automotive Background"
     ]
   },
   "skills": {
     "title": "Core Competencies",
-    "description": "Throughout my frontend and backend projects, I have worked with modern web technologies to build responsive and interactive applications. I enjoy creating clean user interfaces, developing reusable components and continuously improving both usability and code quality.",
+    "description": "In my frontend and backend projects, I developed responsive user interfaces, reusable components and REST APIs. I gained hands-on experience with modern web technologies, databases and Docker. I value well-structured solutions, maintainable code and test-driven development.",
     "overlay": {
       "title": "Don't see the skill you're looking for?",
       "description": "I'm always excited to learn new technologies and expand my skill set. Here are a few topics I'm currently exploring and would love to deepen further."
@@ -65,7 +65,7 @@
   },
   "projects": {
     "title": "My work",
-    "intro": "Explore a selection of my work here — interact with the projects to see my skills in action.",
+    "intro": "Explore a selection of my projects and try them out to see my skills in action.",
     "navigation": {
       "previous": "<< Previous project",
       "next": "Next project >>"
@@ -74,7 +74,7 @@
       "join": {
         "title": "Join",
         "description": "Task management app inspired by Kanban.",
-        "roleDescription": "In this group project, I focused on implementing core Angular functionality, working with Supabase and building interactive task management features."
+        "roleDescription": "In this team project, I developed interactive Kanban board features using Angular and TypeScript and worked with Supabase for authentication and data management."
       },
       "elPolloLoco": {
         "title": "El Pollo Loco",
@@ -83,13 +83,13 @@
       },
       "coderr": {
         "title": "Coderr",
-        "description": "A freelancer marketplace with a Django REST Framework backend and JavaScript frontend.",
-        "roleDescription": "I developed the Django REST Framework backend, deployed the application to a Google Cloud VM, and integrated it with an existing JavaScript frontend."
+        "description": "A freelancer marketplace for managing offers, orders and reviews.",
+        "roleDescription": "I developed the backend using Django REST Framework and TDD, implemented REST APIs, authentication and permissions, and integrated it with a provided frontend."
       },
       "videoflix": {
         "title": "Videoflix",
-        "description": "Backend for a video streaming platform built with Django REST Framework, Docker, and PostgreSQL. Videos are processed with FFmpeg and delivered via HLS.",
-        "roleDescription": "Independent backend development covering authentication, video processing, streaming, and containerized infrastructure."
+        "description": "A video streaming platform featuring user management, video processing and adaptive streaming via HLS.",
+        "roleDescription": "I developed the backend using TDD, Django REST Framework, PostgreSQL and Docker, implementing video processing with FFmpeg and streaming delivery."
       },
       "pokedex": {
         "title": "Pokedex",
@@ -104,23 +104,23 @@
   },
   "contact": {
     "title": "Let's build something cool together!",
-    "subtitle": "Got a problem to solve?",
-    "text": "I'm currently looking for opportunities as a Junior Fullstack Developer. If you are looking for someone who enjoys clean code, structured problem-solving and continuously improving solutions, feel free to contact me.",
+    "subtitle": "Looking for a new team member?",
+    "text": "I'm currently looking for an opportunity to start my career in software development, particularly in backend, fullstack or frontend development. If you're looking for someone with an analytical mindset, a structured approach to problem-solving and a drive to keep learning, I'd love to hear from you.",
     "form": {
       "nameLabel": "What's your name?",
       "namePlaceholder": "Your name goes here",
-      "nameError": "Oops! It seems your name is missing",
+      "nameError": "Please enter your name.",
       "emailLabel": "What's your email?",
       "emailPlaceholder": "youremail@email.com",
-      "emailError": "Oops! Your email is required",
-      "messageLabel": "How can I help you?",
-      "messagePlaceholder": "Hello Nadine, I am interested in...",
-      "messageError": "What do you need to develop?",
+      "emailError": "Please enter your email.",
+      "messageLabel": "What would you like to tell me?",
+      "messagePlaceholder": "Hi Nadine, I'm reaching out because...",
+      "messageError": "Please enter a message.",
       "privacyTextBefore": "I've read the",
       "privacyLink": "privacy policy",
       "privacyTextAfter": "and agree to the processing of my data.",
       "privacyError": "Please accept the privacy policy",
-      "submit": "Drop a line",
+      "submit": "Send Message",
       "sending": "Sending...",
       "submitSuccess": "Your message was sent successfully.",
       "submitError": "Your message could not be sent. Please try again.",

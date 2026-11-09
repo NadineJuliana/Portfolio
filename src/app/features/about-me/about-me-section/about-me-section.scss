@@ -109,7 +109,7 @@ p {
 .about-me-overlay {
   width: 272px;
   min-height: 260px;
-  padding: 32px;
+  padding: 24px;
   color: $bg-white;
   background-color: $highlight-primary;
   border-radius: 4px;
@@ -251,6 +251,7 @@ p {
     position: absolute;
     left: 0;
     right: auto;
+    padding: 32px;
     bottom: -80px;
     width: min(100%, 350px);
     min-height: 260px;
@@ -260,10 +261,6 @@ p {
     transition:
       opacity 250ms ease,
       transform 250ms ease;
-
-    ul {
-      padding-left: 20px;
-    }
 
     &.visible {
       opacity: 1;

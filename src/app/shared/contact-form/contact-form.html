@@ -197,7 +197,7 @@
 
     <div class="submit">
       <button class="btn-primary" type="submit" [disabled]="isSending">
-        {{ 'contact.form.submit' | translate }}
+        {{ (isSending ? 'contact.form.sending' : 'contact.form.submit') | translate }}
       </button>
     </div>
   </form>
