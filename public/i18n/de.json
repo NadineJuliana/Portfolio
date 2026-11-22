@@ -145,7 +145,7 @@
     },
     "email": {
       "title": "Kontakt",
-      "text": "E-Mail: contact@nadine.juliana.de"
+      "text": "E-Mail: contact@nadine-juliana.de"
     },
     "acceptance": {
       "title": "Nutzungsbedingungen",
@@ -172,7 +172,7 @@
       "title": "Freistellung",
       "text": "Du erklärst dich damit einverstanden, mich, die Developer Akademie sowie deren Partner, Vertreter und Mitarbeitende von Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen freizustellen, die aus deiner Nutzung von Portfolio oder einem Verstoß gegen dieses Impressum entstehen."
     },
-    "close": "Bei Fragen oder Hinweisen kontaktiere mich bitte unter contact@nadine.juliana.de.",
+    "close": "Bei Fragen oder Hinweisen kontaktiere mich bitte unter contact@nadine-juliana.de.",
     "date": "Stand: 01. Juli 2026",
     "backToContact": "Zurück zum Kontaktbereich"
   },
@@ -237,7 +237,7 @@
         "name": "Nadine Bauer",
         "street": "Birkenweg 2c",
         "city": "82269 Geltendorf",
-        "email": "E-Mail: contact@nadine.juliana.de",
+        "email": "E-Mail: contact@nadine-juliana.de",
         "text": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet."
       },
       "storagePeriod": {

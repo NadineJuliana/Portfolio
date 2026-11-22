@@ -14,11 +14,11 @@
           </a>
           <h1 class="imprint-title">{{ 'imprint.title' | translate }}</h1>
           <h2 class="imprint-heading">{{ 'imprint.imprint.title' | translate }}</h2>
-          <ul>
-            @for (address of 'imprint.imprint.address' | translate; track address) {
-              <li>{{ address }}</li>
+          <address>
+            @for (address of 'imprint.imprint.address' | translate; track address; let last = $last) {
+              {{ address }}@if (!last) {<br>}
             }
-          </ul>
+          </address>
 
           <h2 class="imprint-subheading">{{ 'imprint.email.title' | translate }}</h2>
           <p>{{ 'imprint.email.text' | translate }}</p>

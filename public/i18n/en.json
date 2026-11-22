@@ -145,7 +145,7 @@
     },
     "email": {
       "title": "Contact",
-      "text": "Email: contact@nadine.juliana.de"
+      "text": "Email: contact@nadine-juliana.de"
     },
     "acceptance": {
       "title": "Acceptance of terms",
@@ -172,7 +172,7 @@
       "title": "Indemnity",
       "text": "You agree to indemnify, defend and hold harmless me, the Developer Akademie, and its affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice."
     },
-    "close": "For any questions or notices, please contact me at contact@nadine.juliana.de.",
+    "close": "For any questions or notices, please contact me at contact@nadine-juliana.de.",
     "date": "Date: July 01, 2026",
     "backToContact": "Back to Contact Section"
   },
@@ -237,7 +237,7 @@
         "name": "Nadine Bauer",
         "street": "Birkenweg 2c",
         "city": "82269 Geltendorf",
-        "email": "Email: contact@nadine.juliana.de",
+        "email": "Email: contact@nadine-juliana.de",
         "text": "The controller is the natural or legal person who, alone or jointly with others, determines the purposes and means of the processing of personal data, such as names, email addresses or similar information."
       },
       "storagePeriod": {
